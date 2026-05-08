@@ -8,9 +8,9 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     <CustomTransition>
         <section class="card-style all-projects-card">
             <h4 class="all-projects-card__title-text">
-                <span class="all-projects-card__title-text-one heading-4">See My</span>
+                <span class="all-projects-card__title-text-one heading-4">{{ $t('projectsCard.title.one') }}</span>
                 <span class="all-projects-card__title-text-two heading-4">
-                    Latest Works
+                    {{ $t('projectsCard.title.two') }}
                 </span>
             </h4>
 
@@ -21,7 +21,7 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
                 width="200"
             />
             <LinkPrimary
-                linkText="All Projects"
+                :linkText="$t('projectsCard.linkText')"
                 :link="{ name: 'all-projects' }"
                 class="all-projects-card__link"
             />

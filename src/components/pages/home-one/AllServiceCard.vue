@@ -1,45 +1,19 @@
 <script setup lang="ts">
+import { personalData } from "@/assets/data/personalData";
 import allServicesShape from "@/assets/image/all-service-shape.png";
-import service1 from "@/assets/image/service-1.png";
-import service2 from "@/assets/image/service-2.png";
-import service3 from "@/assets/image/service-3.png";
-import service4 from "@/assets/image/service-4.png";
 import serviceThumb from "@/assets/image/service-thum.png";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import LinkPrimary from "@/components/shared/LinkPrimary.vue";
-
-const serviceData = [
-    {
-        image: service1,
-        title: "Design Precision",
-    },
-    {
-        image: service2,
-        title: "maintainable code",
-    },
-    {
-        image: service3,
-        title: "Accessible UI",
-    },
-    {
-        image: service4,
-        title: "Web Development",
-    },
-    // {
-    //   image: ,
-    //   title: "Semantic frontend",
-    // },
-];
 </script>
 
 <template>
     <CustomTransition>
         <section class="card-style all-services-card">
-            <h4 class="all-services-card__sub-title">Services Offering</h4>
+            <h4 class="all-services-card__sub-title">{{ $t('servicesCard.title') }}</h4>
 
             <ul class="all-services-card__services">
                 <li
-                    v-for="(service, index) in serviceData"
+                    v-for="(service, index) in personalData.services"
                     class="all-services-card__services-service"
                     :key="`${service.title}_${index}`"
                 >
@@ -55,7 +29,7 @@ const serviceData = [
             </ul>
 
             <header class="all-services-card__title">
-                <h5 class="heading-2">Things I’m good at</h5>
+                <h5 class="heading-2">{{ $t('servicesCard.subText') }}</h5>
                 <img
                     :src="serviceThumb"
                     width="56"
@@ -68,7 +42,7 @@ const serviceData = [
             </header>
 
             <LinkPrimary
-                linkText="All Services"
+                :linkText="$t('servicesCard.linkText')"
                 :link="{ name: 'services'}"
                 class="all-services-card__link"
             />

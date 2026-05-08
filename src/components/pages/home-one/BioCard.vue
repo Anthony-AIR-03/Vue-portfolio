@@ -21,7 +21,7 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
                 />
             </figure>
             <ButtonPrimary />
-            <LinkPrimary linkText="Biography" :link="{ name: 'about-us' }" />
+            <LinkPrimary :linkText="$t('bioCard.biography')" :link="{ name: 'about-us' }" />
         </section>
     </CustomTransition>
 </template>

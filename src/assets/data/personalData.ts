@@ -1,12 +1,23 @@
-import BioCard from "@/components/pages/home-one/BioCard.vue";
-import { toRaw } from "vue";
+import service1 from "@/assets/image/service-1.png";
+import service2 from "@/assets/image/service-2.png";
+import service3 from "@/assets/image/service-3.png";
+import service4 from "@/assets/image/service-4.png";
+import {
+  PhCodepenLogo,
+  PhFigmaLogo,
+  PhGithubLogo,
+  PhGitlabLogo,
+  PhMicrosoftTeamsLogo,
+  PhPencil,
+  PhStackOverflowLogo,
+} from "@phosphor-icons/vue";
 
 export const personalData = {
     name: "Anthony Inocencio ramos",
     contactInfo: {
         phoneNumber: "+31 6 3647 0448",
         email: "anthonyair03@gmail.com",
-        address: "Rotterdam Lombardijen"
+        address: "Rotterdam Lombardijen",
     },
     title: {
         full: "Software Developer",
@@ -15,11 +26,20 @@ export const personalData = {
             Two: "Developer",
         },
     },
+    bio: {
+        introduction: {
+            one: "Hello,",
+            two: "I'm Anthony Inocencio Ramos",
+            three: "Software Developer.",
+        },
+        description:
+            "As a frontend-focused software developer, I build scalable, maintainable, and user-centered applications. With a strong foundation in modern frameworks and real-world project experience, I translate complex ideas into intuitive and performant digital solutions.",
+    },
     socials: {
         linkedIn:
             "https://www.linkedin.com/in/anthony-inoc%C3%AAncio-ramos-b89003277/",
         instagram: "https://www.instagram.com/anthony.air/",
-        threads: "https://www.threads.com/@anthony.air"
+        threads: "https://www.threads.com/@anthony.air",
     },
     experiences: [
         {
@@ -207,13 +227,69 @@ export const personalData = {
             text: "lorem ipsum hnfuijreoro vniwer jhjniofrweo vjdfssjdf uijbnofdonofd jvcuioodwbnfjiwsd ",
         },
     ],
-    bio: {
-        introduction: {
-            one: "Hello,",
-            two: "I'm Anthony Inocencio Ramos",
-            three: "Software Developer.",
+    services: [
+        {
+            image: service1,
+            title: "Design Precision",
         },
-        description:
-            "As a frontend-focused software developer, I build scalable, maintainable, and user-centered applications. With a strong foundation in modern frameworks and real-world project experience, I translate complex ideas into intuitive and performant digital solutions.",
-    },
+        {
+            image: service2,
+            title: "maintainable code",
+        },
+        {
+            image: service3,
+            title: "Accessible UI",
+        },
+        {
+            image: service4,
+            title: "Web Development",
+        },
+        // {
+        //   image: ,
+        //   title: "Semantic frontend",
+        // },
+    ],
+    skills: [
+        "UI/UX Design",
+        "Components",
+        "Maintainability",
+        "Web development",
+        "App development",
+        "Accesible UI",
+        "UI/UX Design",
+        "Components",
+        "Maintainability",
+        "Web development",
+        "App development",
+        "Accesible UI",
+        "UI/UX Design",
+        "Components",
+        "Maintainability",
+        "Web development",
+        "App development",
+        "Accesible UI",
+    ],
+    tools: [
+        { icon: PhFigmaLogo },
+        { icon: PhStackOverflowLogo },
+        { icon: PhGithubLogo },
+        { icon: PhGitlabLogo },
+        { icon: PhPencil },
+        { icon: PhMicrosoftTeamsLogo },
+        { icon: PhCodepenLogo },
+        { icon: PhFigmaLogo },
+        { icon: PhStackOverflowLogo },
+        { icon: PhGithubLogo },
+        { icon: PhGitlabLogo },
+        { icon: PhPencil },
+        { icon: PhMicrosoftTeamsLogo },
+        { icon: PhCodepenLogo },
+        { icon: PhFigmaLogo },
+        { icon: PhStackOverflowLogo },
+        { icon: PhGithubLogo },
+        { icon: PhGitlabLogo },
+        { icon: PhPencil },
+        { icon: PhMicrosoftTeamsLogo },
+        { icon: PhCodepenLogo },
+    ],
 };

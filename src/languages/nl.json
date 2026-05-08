@@ -1,3 +1,48 @@
 {
-    "key": ""
+    "bioCard": {
+        "buttonText": "Anthony Inocencio Ramos",
+        "biography": "biografie"
+    },
+    "allBlogsCard": {
+        "title": {
+            "partOne": "Artikelen &",
+            "partTwo": "Publicaties"
+        },
+        "linkText": "Alle blogs"
+    },
+    "titleCard": {
+        "title": "titel"
+    },
+    "profileCard": {
+        "linkText": "Profielen"
+    },
+    "servicesCard": {
+        "title": "Diensten",
+        "subText": "Waar ik goed in ben",
+        "linkText": "Alle diensten"
+    },
+    "skillsCard": {
+        "title": "Vaardigheden & Tools"
+    },
+    "contactCard": {
+        "title": {
+            "one": "Laten we",
+            "two": "samenwerken...!"
+        },
+        "linkText": "Neem contact op"
+    },
+    "latestCard": {
+        "featuredText": {
+            "one": "NIEUWSTE PROJECTEN",
+            "two": "HIGHLIGHTS"
+        }
+    },
+    "experienceCard": {},
+    "projectsCard": {
+        "title": {
+            "one": "Bekijk mijn",
+            "two": "laatste werk"
+        },
+        "linkText": "Alle projecten"
+    }
 }

@@ -1,114 +1,19 @@
 <script setup lang="ts">
+import { personalData } from "@/assets/data/personalData";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
-import {
-  PhCodepenLogo,
-  PhFigmaLogo,
-  PhGithubLogo,
-  PhGitlabLogo,
-  PhMicrosoftTeamsLogo,
-  PhPencil,
-  PhStackOverflowLogo,
-} from "@phosphor-icons/vue";
-
-const sliderOneData = [
-  "UI/UX Design",
-  "Components",
-  "Maintainability",
-  "Web development",
-  "App development",
-  "Accesible UI",
-  "UI/UX Design",
-  "Components",
-  "Maintainability",
-  "Web development",
-  "App development",
-  "Accesible UI",
-  "UI/UX Design",
-  "Components",
-  "Maintainability",
-  "Web development",
-  "App development",
-  "Accesible UI",
-];
-
-const sliderTwo = [
-  {
-    icon: PhFigmaLogo,
-  },
-  {
-    icon: PhStackOverflowLogo,
-  },
-  {
-    icon: PhGithubLogo,
-  },
-  {
-    icon: PhGitlabLogo,
-  },
-  {
-    icon: PhPencil,
-  },
-  {
-    icon: PhMicrosoftTeamsLogo,
-  },
-  {
-    icon: PhCodepenLogo,
-  },
-  {
-    icon: PhFigmaLogo,
-  },
-  {
-    icon: PhStackOverflowLogo,
-  },
-  {
-    icon: PhGithubLogo,
-  },
-  {
-    icon: PhGitlabLogo,
-  },
-  {
-    icon: PhPencil,
-  },
-  {
-    icon: PhMicrosoftTeamsLogo,
-  },
-  {
-    icon: PhCodepenLogo,
-  },
-  {
-    icon: PhFigmaLogo,
-  },
-  {
-    icon: PhStackOverflowLogo,
-  },
-  {
-    icon: PhGithubLogo,
-  },
-  {
-    icon: PhGitlabLogo,
-  },
-  {
-    icon: PhPencil,
-  },
-  {
-    icon: PhMicrosoftTeamsLogo,
-  },
-  {
-    icon: PhCodepenLogo,
-  },
-];
 </script>
 
 <template>
   <CustomTransition>
     <div class="card-style skills-card">
-      <span class="heading-4 skills-card__title">Skills & Tools</span>
+      <span class="heading-4 skills-card__title">{{ $t('skillsCard.title') }}</span>
       <div class="skills-card__slider-aria">
         <div class="marquee-wrapper text-slider">
           <div class="marquee-inner to-left">
             <ul class="marqee-list d-flex">
               <li class="marquee-item">
                 <span
-                  v-for="(item, index) in sliderOneData"
+                  v-for="(item, index) in personalData.skills"
                   :key="`skill-slider-one-${index}`"
                   class="skills-card__slider-text"
                 >
@@ -124,7 +29,7 @@ const sliderTwo = [
             <ul class="marqee-list d-flex">
               <li class="marquee-item">
                 <span
-                  v-for="({ icon }, index) in sliderTwo"
+                  v-for="({ icon }, index) in personalData.tools"
                   :key="`skill-slider-two-${index}`"
                   class="skills-card__slider-two__box"
                 >

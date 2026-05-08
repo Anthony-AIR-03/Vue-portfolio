@@ -1,5 +1,6 @@
 -
 <script setup lang="ts">
+import { personalData } from "@/assets/data/personalData";
 import titleCardShape from "@/assets/image/title-card-shape.png";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 </script>
@@ -7,11 +8,11 @@ import CustomTransition from "@/components/shared/CustomTransition.vue";
 <template>
     <CustomTransition>
         <article class="card-style title-card">
-            <h4 class="title-card__title-sub-text">Title</h4>
+            <h4 class="title-card__title-sub-text">{{ $t('titleCard.title') }}</h4>
 
             <section class="title-card__title-text">
-                <p>Software</p>
-                <p class="title-card__title-text-two">Developer</p>
+                <p>{{ personalData.title.dual.one }}</p>
+                <p class="title-card__title-text-two">{{ personalData.title.dual.Two }}</p>
             </section>
 
             <img

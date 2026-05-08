@@ -1,3 +1,50 @@
 {
-    "key": ""
+    "bioCard": {
+        "buttonText": "i'm Anthony Inocencio Ramos",
+        "biography": "biography"
+    },
+    "allBlogsCard": {
+        "title": {
+            "partOne": "Articles &",
+            "partTwo": "Publications"
+        },
+        "linkText": "All Blogs"
+    },
+    "titleCard": {
+        "title": "title"
+    },
+    "profileCard": {
+        "linkText": "Profiles"
+    },
+    "servicesCard": {
+        "title": "Services Offering",
+        "subText": "Things I’m good at",
+        "linkText": "All Services"
+    },
+    "skillsCard": {
+        "title": "Skills & Tools"
+    },
+    "contactCard": {
+        "title": {
+            "one": "let's work",
+            "two": "Together...!"
+        },
+        "linkText": "Get In Touch"
+    },
+    "latestCard": {
+        "featuredText": {
+            "one": "LATEST WORKS AND",
+            "two": "FEATURED"
+        }
+    },
+    "experienceCard": {
+
+    },
+    "projectsCard": {
+        "title": {
+            "one": "See My",
+            "two": "Latest Works"
+        },
+        "linkText": "All Projects"
+    }
 }

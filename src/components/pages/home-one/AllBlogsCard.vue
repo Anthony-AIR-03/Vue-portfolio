@@ -8,14 +8,14 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     <CustomTransition>
         <section class="card-style all-blog-card">
             <article class="all-blog-card__title-text">
-                <p class="heading-4">Articles &</p>
+                <p class="heading-4">{{ $t("allBlogsCard.title.partOne")}}</p>
                 <p class="all-blog-card__title-text-two heading-4">
-                    Publications
+                    {{ $t("allBlogsCard.title.partTwo")}}
                 </p>
             </article>
 
             <LinkPrimary
-                linkText="All Blogs"
+                :linkText="$t('allBlogsCard.linkText')"
                 :link="{ name: 'blogs'}"
                 class="all-blog-card__link"
             />

@@ -26,9 +26,9 @@ const arrayLength = Array.from({ length: 3 });
                                 />
                                 <span class="latest-work-slider-text textL">
                                     <span class="latest-work-light-text">
-                                        LATEST WORKS AND
+                                        {{ $t('latestCard.featuredText.one') }}
                                     </span>
-                                    FEATURED
+                                    {{ $t('latestCard.featuredText.two') }}
                                 </span>
                             </p>
                         </li>

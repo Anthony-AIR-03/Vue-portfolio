@@ -1,15 +1,9 @@
-<script setup lang="ts">
-import { templateText } from "@/assets/data/templateText";
-import { PhPaperPlaneTilt } from "@phosphor-icons/vue";
-</script>
-
 <template>
     <router-link
       :to="{ name: 'about-us' }"
       class="button-primary text-center justify-content-center gap-2 d-inline-flex align-items-center"
     >
-      <p class="n0-color textM primary-button-text">{{ templateText.BioCard.buttonText }}</p>
-      <!-- <PhPaperPlaneTilt class="primary-button-icon" :size="24" /> -->
+      <p class="n0-color textM primary-button-text">{{ $t("bioCard.buttonText") }}</p>
     </router-link>
 </template>
 
