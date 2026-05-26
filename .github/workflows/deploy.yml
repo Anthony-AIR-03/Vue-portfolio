@@ -1,0 +1,41 @@
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Deploy dist locally
+        run: |
+          find /volume3/docker-ssd/portfolio/html -mindepth 1 ! -name ".env" -exec rm -rf {} +
+          cp -r dist/* /volume3/docker-ssd/portfolio/html/
+          find /volume3/docker-ssd/portfolio/html -type d -exec chmod 755 {} \;
+          find /volume3/docker-ssd/portfolio/html -type f -exec chmod 644 {} \;
+          chmod 600 /volume3/docker-ssd/portfolio/html/.env
