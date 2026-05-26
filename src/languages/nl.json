@@ -1,48 +1,91 @@
 {
-    "bioCard": {
-        "buttonText": "Anthony Inocencio Ramos",
-        "biography": "biografie"
+  "general": {
+    "optional": "(Optioneel)"
+  },
+  "bioCard": {
+    "buttonText": "Anthony Inocencio Ramos",
+    "biography": "biografie"
+  },
+  "allBlogsCard": {
+    "title": {
+      "partOne": "Artikelen &",
+      "partTwo": "Publicaties"
     },
-    "allBlogsCard": {
-        "title": {
-            "partOne": "Artikelen &",
-            "partTwo": "Publicaties"
-        },
-        "linkText": "Alle blogs"
+    "linkText": "Alle blogs"
+  },
+  "titleCard": {
+    "title": "titel"
+  },
+  "profileCard": {
+    "linkText": "Profielen"
+  },
+  "servicesCard": {
+    "title": "Diensten",
+    "subText": "Waar ik goed in ben",
+    "linkText": "Alle diensten"
+  },
+  "skillsCard": {
+    "title": "Vaardigheden & Tools"
+  },
+  "contactCard": {
+    "title": {
+      "one": "Laten we",
+      "two": "samenwerken...!"
     },
-    "titleCard": {
-        "title": "titel"
-    },
-    "profileCard": {
-        "linkText": "Profielen"
-    },
-    "servicesCard": {
-        "title": "Diensten",
-        "subText": "Waar ik goed in ben",
-        "linkText": "Alle diensten"
-    },
-    "skillsCard": {
-        "title": "Vaardigheden & Tools"
-    },
-    "contactCard": {
-        "title": {
-            "one": "Laten we",
-            "two": "samenwerken...!"
-        },
-        "linkText": "Neem contact op"
-    },
-    "latestCard": {
-        "featuredText": {
-            "one": "NIEUWSTE PROJECTEN",
-            "two": "HIGHLIGHTS"
-        }
-    },
-    "experienceCard": {},
-    "projectsCard": {
-        "title": {
-            "one": "Bekijk mijn",
-            "two": "laatste werk"
-        },
-        "linkText": "Alle projecten"
+    "linkText": "Neem contact op"
+  },
+  "latestCard": {
+    "featuredText": {
+      "one": "NIEUWSTE PROJECTEN",
+      "two": "HIGHLIGHTS"
     }
+  },
+  "experienceCard": {},
+  "projectsCard": {
+    "title": {
+      "one": "Bekijk mijn",
+      "two": "laatste werk"
+    },
+    "linkText": "Alle projecten"
+  },
+  "contactPage": {
+    "messages": {
+      "success": "Je bericht is succesvol verzonden.",
+      "failed": "Er is iets misgegaan tijdens het verzenden van je bericht."
+    },
+    "contactInfo": {
+      "title": "Contactinformatie",
+      "slogan": "Neem contact op",
+      "note":"Een goed gesprek begint met een simpel bericht.",
+      "phone": "Telefoon",
+      "email": "E-mail",
+      "address": "Adres"
+    },
+    "form": {
+      "name": {
+        "label": "Naam",
+        "placeholder": "Je naam"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "E-mailadres"
+      },
+      "phone": {
+        "label": "Telefoon",
+        "placeholder": "Telefoonnummer"
+      },
+      "subject": {
+        "label": "Onderwerp",
+        "placeholder": "Onderwerp"
+      },
+      "message": {
+        "label": "Bericht",
+        "placeholder": "Typ je bericht"
+      },
+      "submitBtn": {
+        "sending": "Versturen...",
+        "submit": "Nu verzenden"
+      }
+    }
+  }
 }

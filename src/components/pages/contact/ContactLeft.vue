@@ -4,11 +4,10 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
 </script>
 <template>
     <div class="contact-section__left">
-        <span class="heading-5 contact-sub-title">Contact Info</span>
-        <h3 class="heading-2 section-title">Get In Touch</h3>
+        <span class="heading-5 contact-sub-title">{{ $t('contactPage.contactInfo.title') }}</span>
+        <h3 class="heading-2 section-title">{{ $t('contactPage.contactInfo.slogan') }}</h3>
         <p class="textXL font-thin just-hello">
-            Don’t be afraid man! Just <br />
-            say hello
+            {{ $t('contactPage.contactInfo.note') }}
         </p>
 
         <div class="m-t-60px contact-info">
@@ -18,7 +17,7 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
                     <PhPhone :size="32" color="#9747FF" />
                 </div>
                 <div class="contact-info__card-info">
-                    <p class="textLead">Phone</p>
+                    <p class="textLead">{{ $t('contactPage.contactInfo.phone') }}</p>
                     <a href="tel:+3567897483" class="textM font-thin link">
                         {{ personalData.contactInfo.phoneNumber }}
                     </a>
@@ -30,7 +29,7 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
                     <PhPaperPlaneTilt :size="32" color="#9747FF" />
                 </div>
                 <div class="contact-info__card-info">
-                    <p class="textLead">Email</p>
+                    <p class="textLead">{{ $t('contactPage.contactInfo.email') }}</p>
                     <a
                         href="mailto:tanya.hill@example.com"
                         class="textM font-thin link"
@@ -44,7 +43,7 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
                     <PhMapPin :size="32" color="#9747FF" />
                 </div>
                 <div class="contact-info__card-info">
-                    <p class="textLead">Address</p>
+                    <p class="textLead">{{ $t('contactPage.contactInfo.address') }}</p>
                     <p class="textM font-thin link">
                         {{ personalData.contactInfo.address }}
                     </p>

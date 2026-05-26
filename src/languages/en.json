@@ -1,4 +1,7 @@
 {
+    "general": {
+        "optional": "(Optional)"
+    },
     "bioCard": {
         "buttonText": "i'm Anthony Inocencio Ramos",
         "biography": "biography"
@@ -46,5 +49,45 @@
             "two": "Latest Works"
         },
         "linkText": "All Projects"
+    },
+    "contactPage": {
+        "messages": {
+            "success": "Your message has been sent successfully.",
+            "failed": "Something went wrong while sending your message."
+        },
+        "contactInfo": {
+            "title": "Contact Info",
+            "slogan": "Get In Touch",
+            "note": "Don't be afraid! Just say hello",
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address"
+        },
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Your name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Your email"
+            },
+            "phone": {
+                "label": "Phone",
+                "placeholder": "Your phone"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "Your subject"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Type your message"
+            },
+            "submitBtn": {
+                "sending": "Sending...",
+                "submit": "Submit Now"
+            }
+        }
     }
 }

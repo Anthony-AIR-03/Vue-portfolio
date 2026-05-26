@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import emailjs from "@emailjs/browser";
+import { useI18n } from 'vue-i18n'
 
+
+const { t } = useI18n()
 const form = ref<HTMLFormElement | null>(null);
 const isSending = ref(false);
 const successMessage = ref("");
 const errorMessage = ref("");
 
 async function sendEmail() {
-    if (!form.value) return;
+    if (!form.value || isSending.value) return;
 
     isSending.value = true;
     successMessage.value = "";
@@ -16,18 +19,19 @@ async function sendEmail() {
 
     try {
         await emailjs.sendForm(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             form.value,
             {
-                publicKey: "YOUR_PUBLIC_KEY",
+                publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
             },
-        );
+        ) 
 
-        successMessage.value = "Your message has been sent successfully.";
-        form.value.reset();
-    } catch {
-        errorMessage.value = "Something went wrong while sending your message.";
+        successMessage.value = t('contactPage.messages.success');
+        form.value?.reset();
+    } catch (error) {
+        errorMessage.value = t('contactPage.messages.failed');;
+        console.error(error);
     } finally {
         isSending.value = false;
     }
@@ -41,73 +45,79 @@ async function sendEmail() {
                 <div class="two-input-field">
                     <div class="single__input">
                         <label class="textXL label__style" for="name"
-                            >Name</label
+                            >{{ $t('contactPage.form.name.label') }}</label
                         >
                         <input
                             class="input-field-style"
                             id="name"
                             type="text"
                             name="name"
-                            placeholder="Your name"
+                            :placeholder="$t('contactPage.form.name.placeholder')"
                             required
+                            :disabled="isSending"
                         />
                     </div>
 
                     <div class="single__input">
                         <label class="textXL label__style" for="email"
-                            >Email</label
+                            >{{ $t('contactPage.form.email.label') }}</label
                         >
                         <input
                             class="input-field-style"
                             id="email"
                             type="email"
                             name="email"
-                            placeholder="Your email"
+                            :placeholder="$t('contactPage.form.email.placeholder')"
                             required
+                            :disabled="isSending"
                         />
                     </div>
                 </div>
 
                 <div class="two-input-field">
                     <div class="single__input">
-                        <label class="textXL label__style" for="phone"
-                            >Phone Optional</label
-                        >
+                        <label class="textXL label__style" for="phone">
+                            {{ $t('contactPage.form.phone.label') }}
+                            {{ $t('general.optional') }}
+                        </label>
                         <input
                             class="input-field-style"
                             id="phone"
                             type="tel"
                             name="phone"
-                            placeholder="Your phone"
+                            :placeholder="$t('contactPage.form.phone.placeholder')"
+                            :disabled="isSending"
                         />
                     </div>
 
                     <div class="single__input">
                         <label class="textXL label__style" for="subject"
-                            >Subject</label
+                            >{{ $t('contactPage.form.subject.label') }}</label
                         >
                         <input
                             class="input-field-style"
                             id="subject"
                             type="text"
                             name="subject"
-                            placeholder="Your subject"
+                            :placeholder="$t('contactPage.form.subject.placeholder')"
                             required
+                            :disabled="isSending"
                         />
                     </div>
                 </div>
 
                 <div class="single__input">
                     <label class="textXL label__style" for="message"
-                        >Message</label
+                        >{{ $t('contactPage.form.message.label') }}</label
                     >
                     <textarea
                         class="input-field-style"
                         id="message"
                         rows="8"
                         name="message"
-                        placeholder="Type your message"
+                        :placeholder="$t('contactPage.form.message.placeholder')"
                         required
+                        :disabled="isSending"
                     ></textarea>
                 </div>
             </div>
@@ -122,7 +132,11 @@ async function sendEmail() {
                     :disabled="isSending"
                 >
                     <span class="textM post-comment light-theme-white-text">
-                        {{ isSending ? "Sending..." : "Submit Now" }}
+                        {{
+                            isSending
+                                ? $t('contactPage.form.submitBtn.sending')
+                                : $t('contactPage.form.submitBtn.submit')
+                        }}
                     </span>
                 </button>
             </div>
