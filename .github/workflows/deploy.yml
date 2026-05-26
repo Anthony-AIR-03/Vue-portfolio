@@ -38,7 +38,7 @@ jobs:
           
       - name: Deploy dist locally
         run: |
-          m -rf /volume3/docker-ssd/portfolio/html/*
+          rm -rf /volume3/docker-ssd/portfolio/html/*
           cp -r dist/* /volume3/docker-ssd/portfolio/html/
           find /volume3/docker-ssd/portfolio/html -type d -exec chmod 755 {} \;
           find /volume3/docker-ssd/portfolio/html -type f -exec chmod 644 {} \;
