@@ -10,6 +10,7 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     <CustomTransition>
         <section class="card-style all-services-card">
             <h4 class="all-services-card__sub-title">{{ $t('servicesCard.title') }}</h4>
+            <h5 class="heading-2">{{ $t('servicesCard.subText') }}</h5>
 
             <ul class="all-services-card__services">
                 <li
@@ -27,19 +28,6 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
                     <span>{{ service.title }}</span>
                 </li>
             </ul>
-
-            <header class="all-services-card__title">
-                <h5 class="heading-2">{{ $t('servicesCard.subText') }}</h5>
-                <img
-                    :src="serviceThumb"
-                    width="56"
-                    height="56"
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                />
-            </header>
 
             <LinkPrimary
                 :linkText="$t('servicesCard.linkText')"
@@ -71,5 +59,25 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     color: var(--white-neutral1);
     opacity: 0.9;
     text-align: center;
+}
+
+.all-services-card__link {
+    margin-top: 36px;
+}
+
+@media (min-width: 922px) {
+    .all-services-card__link {
+        margin-top: 36px;
+    }
+}
+
+@media (min-width: 992px) {
+    .all-services-card__services {
+        padding: 20px 0 0 0;
+    }
+    
+    .all-services-card__link {
+        margin-top: 48px;
+    }
 }
 </style>

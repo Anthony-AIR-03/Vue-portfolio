@@ -234,7 +234,7 @@ export const personalData = {
         },
         {
             image: service2,
-            title: "maintainable code",
+            title: "Maintainable code",
         },
         {
             image: service3,

@@ -88,7 +88,7 @@ export default {
                     id: "maintainable-code",
                     image: marketingImage,
                     title: {
-                        full: "maintainable code",
+                        full: "Maintainable code",
                         duel: { one: "Maintainable", two: "Code" },
                     },
                     description:
