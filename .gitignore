@@ -31,3 +31,6 @@ coverage
 
 .vercel
 .env
+
+# Local-only Claude Code context (NAS/deployment specifics — never publish)
+CLAUDE.local.md
