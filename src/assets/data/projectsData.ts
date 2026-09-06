@@ -1,8 +1,8 @@
-import image11 from "@/assets/image/all-project-11.png";
-import image12 from "@/assets/image/all-project-12.png";
 import image13 from "@/assets/image/all-project-13.png";
-import image21 from "@/assets/image/all-project-21.png";
 import image31 from "@/assets/image/all-project-31.png";
+import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
+import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
+import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.jpg";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -27,8 +27,9 @@ export interface Project {
   custom?: boolean;
 }
 
-// Card images below are still the purchased template's placeholder art (visibly labeled with
-// pixel dimensions) — swap for real screenshots once available, nothing else needs to change.
+// Telumera/wuzzi-cp/github-dashboard use real screenshots. Hupol has no UI to screenshot (a
+// backend-only REST API) and Your Studio's real site is currently unreachable (broken SSL cert) —
+// both still use the purchased template's placeholder art, visibly labeled with pixel dimensions.
 export const projectsData: Project[] = [
   {
     slug: "telumera",
@@ -37,7 +38,7 @@ export const projectsData: Project[] = [
       "A self-hosted, privacy-first analytics platform — built module by module, with strict data-ownership rules over feature count.",
     description:
       "Telumera is a modular, self-hosted analytics platform in the spirit of PostHog or Plausible, built module by module as a full-stack learning and portfolio project. Each service owns its own database and schema — no service ever reads another's tables directly — and they only ever talk to each other through versioned events and typed APIs. Every metric traces back to raw vs. processed event counts, bot/duplicate classification, and consent state, instead of presenting a polished number with no visible provenance. It's live at telumera.nl, tracking this very portfolio's own traffic.",
-    image: image21,
+    image: telumeraScreenshot,
     featured: true,
     tags: ["Vue 3", "TypeScript", "ASP.NET Core", "C#", "PostgreSQL", "ClickHouse", "Dapr", "Docker", "Azure"],
     links: [
@@ -53,7 +54,7 @@ export const projectsData: Project[] = [
       "Client portal for a personal safety-alarm company — device tracking, safezones, and emergency contacts, with a fully mocked demo mode for public showcasing.",
     description:
       "A Vue 3 + Pinia client portal built for Wuzzi Alert, a Dutch personal-alarm provider, letting care staff manage a client's devices, GPS safezones, emergency call lists, and subscriptions with live WebSocket device notifications. The public demo here runs entirely against a self-hosted mock API and WebSocket server, seeded from the same fixtures used in its own Cypress test suite — the real production backend is never exposed.",
-    image: image11,
+    image: wuzziCpScreenshot,
     featured: true,
     tags: ["Vue 3", "Pinia", "Vite", "Tailwind CSS", "Cypress", "WebSocket", "i18n"],
     links: [{ label: "Live demo", href: "https://wuzzi-cp.anthony-air.nl" }],
@@ -65,7 +66,7 @@ export const projectsData: Project[] = [
       "A school assignment: a GitHub analytics dashboard built entirely in native Web Components — no React, no Vue.",
     description:
       "Built as a final course assignment, this dashboard signs in with a GitHub token to browse your repositories and drill into one for its language breakdown, collaborators, and commit-frequency history. It's built with Lit and vanilla Web Components instead of a frontend framework, with a clean service/controller/view separation, a hand-rolled design-token system, and correct retry-with-backoff handling of GitHub's async stats endpoints (which return 202 until the data is ready).",
-    image: image12,
+    image: githubDashboardScreenshot,
     tags: ["Lit", "Web Components", "ApexCharts", "Vite", "GitHub REST API", "School Assignment"],
   },
   {
@@ -87,6 +88,10 @@ export const projectsData: Project[] = [
       "Your Studio was a freelance web-design partnership with a fellow developer: real small-business client sites, built and launched together rather than as solo practice. The flagship is Smokies, a burger restaurant's site with a JSON-driven menu system, a PHPMailer-backed contact form, and hand-tuned responsive and animation fixes down to iOS-specific quirks — no framework, no build step, just vanilla HTML/CSS/JS and PHP.",
     image: image31,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
+    // yourstudio.nl is the studio's real site (credited in Smokies's own footer) — confirmed live
+    // and serving real content, but currently has a broken/expired SSL certificate, so visitors hit
+    // a browser security warning. Fix the cert, or drop this link, before shipping.
+    links: [{ label: "Studio site", href: "https://www.yourstudio.nl" }],
     custom: true,
   },
 ];

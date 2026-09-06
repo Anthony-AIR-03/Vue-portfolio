@@ -46,6 +46,19 @@ const sites = [
           </li>
         </ul>
       </section>
+
+      <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
+        <a
+          v-for="link in project.links"
+          :key="link.href"
+          :href="link.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-links__item"
+        >
+          {{ link.label }}
+        </a>
+      </nav>
     </article>
   </CustomTransition>
 </template>
@@ -110,5 +123,17 @@ const sites = [
   font-size: 12px;
   font-weight: 600;
   color: var(--secondary-color);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-links__item {
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-decoration: underline;
 }
 </style>
