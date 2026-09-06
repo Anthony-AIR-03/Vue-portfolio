@@ -28,7 +28,7 @@ const CustomDetail = computed(() => {
 </script>
 <template>
   <div v-if="project" class="container">
-    <LinkBackHome :to="{ name: 'projects' }" label="Back To Projects" class="m-b-60px" />
+    <LinkBackHome :to="{ name: 'projects' }" label="Back To Projects" class="back-link" />
     <component :is="CustomDetail" v-if="CustomDetail" :project="project" />
     <ProjectDetailContent v-else :project="project" />
   </div>
@@ -37,4 +37,8 @@ const CustomDetail = computed(() => {
   <EllipseShapeLandingTwoBottomRight />
 </template>
 
-<style scoped></style>
+<style scoped>
+.back-link {
+  margin-bottom: 30px;
+}
+</style>
