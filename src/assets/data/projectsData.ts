@@ -33,8 +33,8 @@ export interface Project {
 }
 
 // Telumera/wuzzi-cp/github-dashboard use real screenshots. Hupol has no UI to screenshot (a
-// backend-only REST API) and Your Studio's real site is currently unreachable (broken SSL cert) —
-// both still use the purchased template's placeholder art, visibly labeled with pixel dimensions.
+// backend-only REST API) and Smokies has no standalone domain to screenshot from — both still use
+// the purchased template's placeholder art, visibly labeled with pixel dimensions.
 export const projectsData: Project[] = [
   {
     slug: "telumera",
@@ -88,12 +88,12 @@ export const projectsData: Project[] = [
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
   },
   {
-    slug: "your-studio",
-    title: "Your Studio",
+    slug: "smokies",
+    title: "Smokies",
     shortDescription:
-      "A small freelance web-design partnership — real client sites built and shipped together, not solo practice work.",
+      "A burger restaurant's website, built together with a fellow developer — a JSON-driven menu and a working contact form, no framework needed.",
     description:
-      "Your Studio was a freelance web-design partnership with a fellow developer: real small-business client sites, built and launched together rather than as solo practice. The flagship is Smokies, a burger restaurant's site with a JSON-driven menu system, a PHPMailer-backed contact form, and hand-tuned responsive and animation fixes down to iOS-specific quirks — no framework, no build step, just vanilla HTML/CSS/JS and PHP.",
+      "Smokies is a real small-business site — built together with a fellow developer (Berkan Kaya), with commits from both of us in its history, not just a shared repo. A JSON menu feed builds the page instead of hand-written HTML per item, an image carousel, an about page, and a PHPMailer-backed contact form, plus hand-tuned responsive and animation fixes down to iOS-specific quirks. No framework, no build step — just vanilla HTML/CSS/JS and PHP.",
     image: image31,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
     // Smokies has no standalone domain (its own <link rel="canonical"> is still the placeholder
@@ -102,6 +102,5 @@ export const projectsData: Project[] = [
     // the Smokies listing (the listing looks inactive) — verify before shipping, or replace with a
     // real domain if Smokies gets one.
     links: [{ label: "Smokies", href: "https://www.thuisbezorgd.nl/menu/smokies" }],
-    custom: true,
   },
 ];
