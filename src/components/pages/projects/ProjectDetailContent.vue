@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import ProjectScreenshots from "./ProjectScreenshots.vue";
+import LiveDemoSection from "./LiveDemoSection.vue";
 import type { Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
@@ -20,6 +21,10 @@ defineProps<{ project: Project }>();
         </li>
       </ul>
 
+      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
+
+      <LiveDemoSection v-if="project.liveDemo" :text="project.liveDemo" />
+
       <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
         <a
           v-for="link in project.links"
@@ -32,8 +37,6 @@ defineProps<{ project: Project }>();
           {{ link.label }}
         </a>
       </nav>
-
-      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
     </article>
   </CustomTransition>
 </template>

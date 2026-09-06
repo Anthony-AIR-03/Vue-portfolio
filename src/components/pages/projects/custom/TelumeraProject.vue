@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import ProjectScreenshots from "../ProjectScreenshots.vue";
+import LiveDemoSection from "../LiveDemoSection.vue";
 import type { Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
@@ -51,13 +52,7 @@ const modules = [
 
       <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
 
-      <section class="project-demo" aria-label="Live demo">
-        <h2 class="heading-3">Live demo</h2>
-        <p class="textL">
-          The dashboard is live at telumera.nl, sitting behind real sign-in — it's tracking this
-          portfolio's own visitors right now. See the links below for the source and the live site.
-        </p>
-      </section>
+      <LiveDemoSection v-if="project.liveDemo" :text="project.liveDemo" />
 
       <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
         <a
@@ -94,8 +89,7 @@ const modules = [
   font-weight: 500;
 }
 
-.project-modules,
-.project-demo {
+.project-modules {
   border-radius: 32px;
   border: 1px solid var(--black-neutral2);
   padding: 23px;

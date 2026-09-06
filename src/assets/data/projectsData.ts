@@ -4,6 +4,9 @@ import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geograp
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
 import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
+import wuzziCpMessagesScreenshot from "@/assets/image/project-wuzzi-cp-messages.jpg";
+import wuzziCpAlarmSettingsScreenshot from "@/assets/image/project-wuzzi-cp-alarm-settings.jpg";
+import wuzziCpBillingScreenshot from "@/assets/image/project-wuzzi-cp-billing.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
 import smokiesHero from "@/assets/image/smokies-real-1.png";
 import smokiesMenu from "@/assets/image/smokies-real-2.png";
@@ -12,8 +15,6 @@ import smokiesMenuDesserts from "@/assets/image/smokies-real-4.png";
 import smokiesAbout from "@/assets/image/smokies-real-5.png";
 import smokiesContact from "@/assets/image/smokies-real-6.png";
 import smokiesFooter from "@/assets/image/smokies-real-7.png";
-import smokiesBurger1 from "@/assets/image/smokies-burger-1.png";
-import smokiesBurger2 from "@/assets/image/smokies-burger-2.png";
 import tickItScreenshot from "@/assets/image/ticket-systeem-real.png";
 import daliDashboard from "@/assets/image/project-dali-dashboard.jpg";
 import daliPve from "@/assets/image/project-dali-pve.jpg";
@@ -42,6 +43,8 @@ export interface Project {
   links?: { label: string; href: string }[];
   /** Extra screenshots shown in a "Screenshots" gallery on the detail page. */
   screenshots?: string[];
+  /** Prose shown in a "Live demo" section, only when there's something to say about one. */
+  liveDemo?: string;
   /**
    * When true, /projects/:slug renders this project's own component from
    * `components/pages/projects/custom/registry.ts` instead of the generic
@@ -70,6 +73,8 @@ export const projectsData: Project[] = [
       { label: "Live", href: "https://telumera.nl" },
     ],
     screenshots: [telumeraScreenshot, telumeraGeographyScreenshot, telumeraQualityScreenshot],
+    liveDemo:
+      "The dashboard is live at telumera.nl, sitting behind real sign-in — it's tracking this portfolio's own visitors right now. See the links below for the source and the live site.",
     custom: true,
   },
   {
@@ -82,8 +87,15 @@ export const projectsData: Project[] = [
     image: wuzziCpScreenshot,
     featured: true,
     tags: ["Vue 3", "Pinia", "Vite", "Tailwind CSS", "Cypress", "WebSocket", "i18n"],
-    links: [{ label: "Live demo", href: "https://wuzzi-cp.anthony-air.nl" }],
-    screenshots: [wuzziCpLoginScreenshot, wuzziCpScreenshot],
+    screenshots: [
+      wuzziCpLoginScreenshot,
+      wuzziCpScreenshot,
+      wuzziCpMessagesScreenshot,
+      wuzziCpAlarmSettingsScreenshot,
+      wuzziCpBillingScreenshot,
+    ],
+    liveDemo:
+      "A live demo ran at wuzzi-cp.anthony-air.nl against the mocked backend described above — the real Wuzzi Alert production API was never exposed. It's currently locked down for confidentiality reasons agreed with the company, so it isn't publicly reachable right now.",
   },
   {
     slug: "github-dashboard",
@@ -120,8 +132,6 @@ export const projectsData: Project[] = [
       smokiesMenu,
       smokiesMenuMains,
       smokiesMenuDesserts,
-      smokiesBurger1,
-      smokiesBurger2,
       smokiesAbout,
       smokiesContact,
       smokiesFooter,
