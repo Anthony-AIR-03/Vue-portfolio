@@ -1,7 +1,10 @@
 import image13 from "@/assets/image/all-project-13.png";
 import image31 from "@/assets/image/all-project-31.png";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
+import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
+import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
+import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.jpg";
 
 export interface Project {
@@ -18,6 +21,8 @@ export interface Project {
   /** Tech-stack badges shown on the detail page. Also used for a "School Assignment" marker. */
   tags?: string[];
   links?: { label: string; href: string }[];
+  /** Extra screenshots shown in a "Screenshots" gallery on the detail page. */
+  screenshots?: string[];
   /**
    * When true, /projects/:slug renders this project's own component from
    * `components/pages/projects/custom/registry.ts` instead of the generic
@@ -45,6 +50,7 @@ export const projectsData: Project[] = [
       { label: "GitHub", href: "https://github.com/Anthony-AIR-03/telumera" },
       { label: "Live", href: "https://telumera.nl" },
     ],
+    screenshots: [telumeraScreenshot, telumeraGeographyScreenshot, telumeraQualityScreenshot],
     custom: true,
   },
   {
@@ -58,6 +64,7 @@ export const projectsData: Project[] = [
     featured: true,
     tags: ["Vue 3", "Pinia", "Vite", "Tailwind CSS", "Cypress", "WebSocket", "i18n"],
     links: [{ label: "Live demo", href: "https://wuzzi-cp.anthony-air.nl" }],
+    screenshots: [wuzziCpLoginScreenshot, wuzziCpScreenshot],
   },
   {
     slug: "github-dashboard",
@@ -68,6 +75,7 @@ export const projectsData: Project[] = [
       "Built as a final course assignment, this dashboard signs in with a GitHub token to browse your repositories and drill into one for its language breakdown, collaborators, and commit-frequency history. It's built with Lit and vanilla Web Components instead of a frontend framework, with a clean service/controller/view separation, a hand-rolled design-token system, and correct retry-with-backoff handling of GitHub's async stats endpoints (which return 202 until the data is ready).",
     image: githubDashboardScreenshot,
     tags: ["Lit", "Web Components", "ApexCharts", "Vite", "GitHub REST API", "School Assignment"],
+    screenshots: [githubDashboardScreenshot],
   },
   {
     slug: "hupol",

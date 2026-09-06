@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CustomTransition from "@/components/shared/CustomTransition.vue";
+import ProjectScreenshots from "../ProjectScreenshots.vue";
 import type { Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
@@ -20,7 +21,7 @@ const modules = [
   <CustomTransition>
     <article class="card-style-two project-details p-32px">
       <header class="project-details__banner">
-        <img :src="project.image" :alt="`${project.title} banner`" class="img-fluid" />
+        <img :src="project.image" :alt="`${project.title} banner`" />
         <h1 class="heading-2">{{ project.title }}</h1>
         <p class="textL">{{ project.description }}</p>
       </header>
@@ -68,6 +69,8 @@ const modules = [
           {{ link.label }}
         </a>
       </nav>
+
+      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
     </article>
   </CustomTransition>
 </template>
