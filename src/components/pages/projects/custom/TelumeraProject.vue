@@ -4,14 +4,16 @@ import type { Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
 
-// TODO: replace with the real module list once the case study is adapted for the portfolio —
-// see telumera/CLAUDE.md's module roadmap table and docs/case-studies/product-analytics.md.
+// Roadmap per telumera/CLAUDE.md — each module only becomes its own deployable service once it
+// actually needs independent scaling/security/failure isolation, not by default.
 const modules = [
-  "Product Analytics — tracking SDK, collector, dashboards",
-  "Performance Monitoring",
-  "Error Tracking",
-  "Deployment Intelligence",
-  "AI Insights",
+  { name: "Product Analytics", detail: "tracking SDK, collector, ClickHouse pipeline, live dashboard", status: "Shipped" },
+  { name: "Performance Monitoring", detail: "Web Vitals, percentiles, regression detection", status: "Planned" },
+  { name: "Error Tracking", detail: "grouping, source maps, issue lifecycle", status: "Planned" },
+  { name: "Deployment Intelligence", detail: "release tracking, before/after comparison", status: "Planned" },
+  { name: "Goals and Funnels", detail: "", status: "Planned" },
+  { name: "AI Insights", detail: "Claude via typed tools, no raw DB access", status: "Planned" },
+  { name: "Alerts and Uptime", detail: "", status: "Planned" },
 ];
 </script>
 <template>
@@ -32,17 +34,26 @@ const modules = [
       <section class="project-modules" aria-label="Modules">
         <h2 class="heading-3">Modules</h2>
         <p class="textL project-modules__note">
-          TODO: this is a self-hosted, modular analytics platform built module-by-module — replace
-          this placeholder list with the real, current module status.
+          Built module by module, each one only becoming its own deployable service once it
+          genuinely needs independent scaling, storage, or a security boundary.
         </p>
         <ul class="project-modules__list">
-          <li v-for="module in modules" :key="module">{{ module }}</li>
+          <li v-for="module in modules" :key="module.name" class="project-modules__item">
+            <span class="project-modules__status" :data-status="module.status">{{ module.status }}</span>
+            <span>
+              <strong>{{ module.name }}</strong>
+              <template v-if="module.detail"> — {{ module.detail }}</template>
+            </span>
+          </li>
         </ul>
       </section>
 
       <section class="project-demo" aria-label="Live demo">
         <h2 class="heading-3">Live demo</h2>
-        <p class="textL">TODO: embed a real screenshot/demo once ready — for now, see the links below.</p>
+        <p class="textL">
+          The dashboard is live at telumera.nl, sitting behind real sign-in — it's tracking this
+          portfolio's own visitors right now. See the links below for the source and the live site.
+        </p>
       </section>
 
       <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
@@ -97,6 +108,36 @@ const modules = [
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.project-modules__item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.project-modules__status {
+  flex-shrink: 0;
+  width: 70px;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.project-modules__status[data-status="Shipped"] {
+  background: #0ca30c;
+}
+
+.project-modules__status[data-status="Planned"] {
+  background: var(--black-neutral3);
+  color: var(--white-neutral1);
 }
 
 .project-links {
