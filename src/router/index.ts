@@ -4,6 +4,8 @@ import Contact from "@/pages/Contact.vue";
 import Home from "@/pages/Home.vue";
 import InConstruction from "@/pages/InConstruction.vue";
 import NotFound from "@/pages/NotFound.vue";
+import ProjectDetail from "@/pages/ProjectDetail.vue";
+import Projects from "@/pages/Projects.vue";
 import Services from "@/pages/Services.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -46,27 +48,25 @@ const router = createRouter({
             },
         },
         {
-            path: "/all-projects",
-            name: "all-projects",
-
-            redirect: (to) => {
-                return { name: "in-construction" };
-            },
-            // component: AllProjectsPage,
+            path: "/projects",
+            name: "projects",
+            component: Projects,
             meta: {
-                title: "App Projects",
+                title: "Projects",
             },
         },
         {
-            path: "/project-details",
-
-            redirect: (to) => {
-                return { name: "in-construction" };
-            },
-            // component: ProjectDetails,
+            path: "/projects/:slug",
+            name: "project-detail",
+            component: ProjectDetail,
             meta: {
-                title: "App Projects",
+                title: "Project",
             },
+        },
+        // Cheap safety net for any stray links to the old path.
+        {
+            path: "/all-projects",
+            redirect: { name: "projects" },
         },
         {
             path: "/services",

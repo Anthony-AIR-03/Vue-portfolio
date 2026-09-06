@@ -22,7 +22,7 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
             />
             <LinkPrimary
                 :linkText="$t('projectsCard.linkText')"
-                :link="{ name: 'all-projects' }"
+                :link="{ name: 'projects' }"
                 class="all-projects-card__link"
             />
 

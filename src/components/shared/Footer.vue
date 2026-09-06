@@ -14,7 +14,7 @@
         <router-link class="textL" :to="{ name: 'about-us'}"> About </router-link>
       </li>
       <li class="landing-footer__menu-item">
-        <router-link class="textL" :to="{ name: 'all-projects' }"> Works </router-link>
+        <router-link class="textL" :to="{ name: 'projects' }"> Works </router-link>
       </li>
       <li class="landing-footer__menu-item">
         <router-link class="textL" :to="{ name: 'contact' }"> Contact </router-link>

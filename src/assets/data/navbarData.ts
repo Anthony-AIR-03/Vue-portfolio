@@ -37,6 +37,11 @@ export const navbarData: MenuItem[] = [
     path: "/about-us",
   },
   {
+    id: "project",
+    menuTitle: "Projects",
+    path: "/projects",
+  },
+  {
     id: "menu2",
     menuTitle: "Blog",
     path: "/blogs",
@@ -90,7 +95,7 @@ export const mobileNavbarData: MenuItem[] = [
     id: "project",
     menuTitle: "Projects",
     icon: PhBagSimple,
-    path: "/all-projects",
+    path: "/projects",
     // menuItems: [
     //   {
     //     id: "all-project",
