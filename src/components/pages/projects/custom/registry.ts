@@ -6,4 +6,5 @@ import type { Component } from "vue";
  */
 export const customProjectComponents: Record<string, () => Promise<Component>> = {
   telumera: () => import("./TelumeraProject.vue"),
+  "your-studio": () => import("./YourStudioProject.vue"),
 };

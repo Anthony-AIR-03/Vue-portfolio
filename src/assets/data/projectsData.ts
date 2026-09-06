@@ -2,6 +2,7 @@ import image11 from "@/assets/image/all-project-11.png";
 import image12 from "@/assets/image/all-project-12.png";
 import image13 from "@/assets/image/all-project-13.png";
 import image21 from "@/assets/image/all-project-21.png";
+import image31 from "@/assets/image/all-project-31.png";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -76,5 +77,16 @@ export const projectsData: Project[] = [
       "Hupol is a candidate/voting/results backend built for a software-quality-focused course at Hogeschool Utrecht. Beyond standard Spring Boot and JWT security, it enforces its own layered architecture with an ArchUnit test that fails the build if application-layer code is reached from the wrong package, plus EqualsVerifier-checked value objects and a benchmark-driven refactor exercise comparing two implementations of the same service under test.",
     image: image13,
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
+  },
+  {
+    slug: "your-studio",
+    title: "Your Studio",
+    shortDescription:
+      "A small freelance web-design partnership — real client sites built and shipped together, not solo practice work.",
+    description:
+      "Your Studio was a freelance web-design partnership with a fellow developer: real small-business client sites, built and launched together rather than as solo practice. The flagship is Smokies, a burger restaurant's site with a JSON-driven menu system, a PHPMailer-backed contact form, and hand-tuned responsive and animation fixes down to iOS-specific quirks — no framework, no build step, just vanilla HTML/CSS/JS and PHP.",
+    image: image31,
+    tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
+    custom: true,
   },
 ];
