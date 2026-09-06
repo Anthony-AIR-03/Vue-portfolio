@@ -5,7 +5,7 @@ import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geograp
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
 import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
-import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.jpg";
+import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -96,10 +96,12 @@ export const projectsData: Project[] = [
       "Your Studio was a freelance web-design partnership with a fellow developer: real small-business client sites, built and launched together rather than as solo practice. The flagship is Smokies, a burger restaurant's site with a JSON-driven menu system, a PHPMailer-backed contact form, and hand-tuned responsive and animation fixes down to iOS-specific quirks — no framework, no build step, just vanilla HTML/CSS/JS and PHP.",
     image: image31,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
-    // yourstudio.nl is the studio's real site (credited in Smokies's own footer) — confirmed live
-    // and serving real content, but currently has a broken/expired SSL certificate, so visitors hit
-    // a browser security warning. Fix the cert, or drop this link, before shipping.
-    links: [{ label: "Studio site", href: "https://www.yourstudio.nl" }],
+    // Smokies has no standalone domain (its own <link rel="canonical"> is still the placeholder
+    // https://example.com/) — the only real, code-referenced "Smokies site" is its Thuisbezorgd.nl
+    // ordering page. As of this writing that URL redirects to Thuisbezorgd's own homepage instead of
+    // the Smokies listing (the listing looks inactive) — verify before shipping, or replace with a
+    // real domain if Smokies gets one.
+    links: [{ label: "Smokies", href: "https://www.thuisbezorgd.nl/menu/smokies" }],
     custom: true,
   },
 ];

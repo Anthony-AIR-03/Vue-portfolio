@@ -49,6 +49,8 @@ const modules = [
         </ul>
       </section>
 
+      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
+
       <section class="project-demo" aria-label="Live demo">
         <h2 class="heading-3">Live demo</h2>
         <p class="textL">
@@ -69,8 +71,6 @@ const modules = [
           {{ link.label }}
         </a>
       </nav>
-
-      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
     </article>
   </CustomTransition>
 </template>
