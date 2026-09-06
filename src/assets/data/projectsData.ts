@@ -7,9 +7,13 @@ import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
 import smokiesHero from "@/assets/image/smokies-real-1.png";
 import smokiesMenu from "@/assets/image/smokies-real-2.png";
+import smokiesMenuMains from "@/assets/image/smokies-real-3.png";
+import smokiesMenuDesserts from "@/assets/image/smokies-real-4.png";
 import smokiesAbout from "@/assets/image/smokies-real-5.png";
 import smokiesContact from "@/assets/image/smokies-real-6.png";
 import smokiesFooter from "@/assets/image/smokies-real-7.png";
+import smokiesBurger1 from "@/assets/image/smokies-burger-1.png";
+import smokiesBurger2 from "@/assets/image/smokies-burger-2.png";
 import tickItScreenshot from "@/assets/image/ticket-systeem-real.png";
 import daliDashboard from "@/assets/image/project-dali-dashboard.jpg";
 import daliPve from "@/assets/image/project-dali-pve.jpg";
@@ -104,7 +108,17 @@ export const projectsData: Project[] = [
       "Smokies was a real burger restaurant in Rotterdam. Built together with a fellow developer (Berkan Kaya) — commits from both of us are in its history, not just a shared repo — with a JSON menu feed building the page instead of hand-written HTML per item, an image carousel, an about page, and a PHPMailer-backed contact form, plus hand-tuned responsive and animation fixes down to iOS-specific quirks. No framework, no build step — just vanilla HTML/CSS/JS and PHP. The restaurant has since closed and its site is offline; the screenshots below are from its last live version.",
     image: smokiesHero,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
-    screenshots: [smokiesHero, smokiesMenu, smokiesAbout, smokiesContact, smokiesFooter],
+    screenshots: [
+      smokiesHero,
+      smokiesMenu,
+      smokiesMenuMains,
+      smokiesMenuDesserts,
+      smokiesBurger1,
+      smokiesBurger2,
+      smokiesAbout,
+      smokiesContact,
+      smokiesFooter,
+    ],
   },
   {
     slug: "tick-it",
@@ -120,11 +134,11 @@ export const projectsData: Project[] = [
     slug: "dali",
     title: "Dali",
     shortDescription:
-      "A Buro CITE client project — a public-space reference handbook made accessible, component by component, plus its own attachments API.",
+      "A year-long Buro CITE internship — researching WCAG and ISO/IEC 25010, then refactoring a public-space reference handbook into accessible, testable components.",
     description:
-      "Dali is a reference and requirements handbook for public-space management — chapters like climate adaptation, earthworks, sewage, and utilities, each with its own source references and a two-column \"Program of Requirements\" view. Built for Buro CITE Nederland across two real sprints: a solo accessibility pass — refactoring the app into components matching a new house style, running client-reported screen-reader tests, and fixing a real accessibility bug (skip links inside accordions that were invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
+      "Dali is a reference and requirements handbook for public-space management — chapters like climate adaptation, earthworks, sewage, and utilities, each with its own source references and a two-column \"Program of Requirements\" view. This was a roughly year-long (2022–2023) Front-end & Accessibility Developer internship at Buro CITE Nederland, spent researching and applying the WCAG and ISO/IEC 25010 standards throughout: auditing the existing application for accessibility and usability problems, translating WCAG guidelines into concrete technical fixes, and restructuring its semantic HTML and navigation for different user groups. Two documented sprints from that year show the work concretely — a component-based refactor to match a new house style, with client-run screen-reader testing that caught a real accessibility bug (skip links inside accordions that stayed invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
     image: daliDashboard,
-    tags: ["Accessibility", "JavaScript", "ASP.NET Core", "Web API"],
+    tags: ["Accessibility", "WCAG", "ISO 25010", "JavaScript", "ASP.NET Core", "Web API"],
     screenshots: [daliDashboard, daliPve, daliBronnen],
   },
 ];
