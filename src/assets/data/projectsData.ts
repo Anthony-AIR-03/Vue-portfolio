@@ -6,6 +6,12 @@ import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.j
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
 import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
+import smokiesHero from "@/assets/image/smokies-real-1.png";
+import smokiesMenu from "@/assets/image/smokies-real-2.png";
+import smokiesAbout from "@/assets/image/smokies-real-5.png";
+import smokiesContact from "@/assets/image/smokies-real-6.png";
+import smokiesFooter from "@/assets/image/smokies-real-7.png";
+import tickItScreenshot from "@/assets/image/ticket-systeem-real.png";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -32,9 +38,9 @@ export interface Project {
   custom?: boolean;
 }
 
-// Telumera/wuzzi-cp/github-dashboard use real screenshots. Hupol has no UI to screenshot (a
-// backend-only REST API) and Smokies has no standalone domain to screenshot from — both still use
-// the purchased template's placeholder art, visibly labeled with pixel dimensions.
+// Most entries below use real screenshots. Hupol has no UI to screenshot (a backend-only REST
+// API) and Dali has none available yet (see its own note) — both still use the purchased
+// template's placeholder art, visibly labeled with pixel dimensions.
 export const projectsData: Project[] = [
   {
     slug: "telumera",
@@ -91,16 +97,34 @@ export const projectsData: Project[] = [
     slug: "smokies",
     title: "Smokies",
     shortDescription:
-      "A burger restaurant's website, built together with a fellow developer — a JSON-driven menu and a working contact form, no framework needed.",
+      "A Rotterdam burger restaurant's website, built together with a fellow developer — since closed, but its own screenshots remain.",
     description:
-      "Smokies is a real small-business site — built together with a fellow developer (Berkan Kaya), with commits from both of us in its history, not just a shared repo. A JSON menu feed builds the page instead of hand-written HTML per item, an image carousel, an about page, and a PHPMailer-backed contact form, plus hand-tuned responsive and animation fixes down to iOS-specific quirks. No framework, no build step — just vanilla HTML/CSS/JS and PHP.",
-    image: image31,
+      "Smokies was a real burger restaurant in Rotterdam. Built together with a fellow developer (Berkan Kaya) — commits from both of us are in its history, not just a shared repo — with a JSON menu feed building the page instead of hand-written HTML per item, an image carousel, an about page, and a PHPMailer-backed contact form, plus hand-tuned responsive and animation fixes down to iOS-specific quirks. No framework, no build step — just vanilla HTML/CSS/JS and PHP. The restaurant has since closed and its site is offline; the screenshots below are from its last live version.",
+    image: smokiesHero,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
-    // Smokies has no standalone domain (its own <link rel="canonical"> is still the placeholder
-    // https://example.com/) — the only real, code-referenced "Smokies site" is its Thuisbezorgd.nl
-    // ordering page. As of this writing that URL redirects to Thuisbezorgd's own homepage instead of
-    // the Smokies listing (the listing looks inactive) — verify before shipping, or replace with a
-    // real domain if Smokies gets one.
-    links: [{ label: "Smokies", href: "https://www.thuisbezorgd.nl/menu/smokies" }],
+    screenshots: [smokiesHero, smokiesMenu, smokiesAbout, smokiesContact, smokiesFooter],
+  },
+  {
+    slug: "tick-it",
+    title: "Tick-It",
+    shortDescription:
+      "A group project from Da Vinci College — a Trello-style help-ticket board where classmates post coding questions tagged by language.",
+    description:
+      "Tick-It is a Trello-style ticket board built as a group project at Da Vinci College with three or four classmates. Students post coding questions as cards tagged by language (PHP, HTML/CSS, JavaScript, Laravel, C++), organized into lesson-specific columns (e.g. \"PHP Les 1\", \"Laravel Les 1\") that a teacher or TA can manage — adding students, adding tags, and viewing all participants.",
+    image: tickItScreenshot,
+    tags: ["PHP", "Laravel", "JavaScript", "Group Project"],
+  },
+  {
+    slug: "dali",
+    title: "Dali",
+    shortDescription:
+      "A Buro CITE client project — refactoring an internal tool into accessible, testable components, plus its own attachments API.",
+    description:
+      "Dali is an internal tool built for Buro CITE Nederland. Two real sprints: a solo accessibility pass — refactoring the app into components matching a new house style, running client-reported screen-reader tests, and fixing a real accessibility bug (skip links inside accordions that were invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
+    image: image31,
+    tags: ["Accessibility", "JavaScript", "ASP.NET Core", "Web API"],
+    // No screenshots yet — none found locally (no repo, no matching local screenshots either; the
+    // referenced backend repo, github.com/Swen0109/BuroCite-DALI-BackEnd-API, 404s as of this
+    // writing). Add real ones from LinkedIn if available.
   },
 ];
