@@ -1,5 +1,4 @@
 import image13 from "@/assets/image/all-project-13.png";
-import image31 from "@/assets/image/all-project-31.png";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
 import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
@@ -12,6 +11,9 @@ import smokiesAbout from "@/assets/image/smokies-real-5.png";
 import smokiesContact from "@/assets/image/smokies-real-6.png";
 import smokiesFooter from "@/assets/image/smokies-real-7.png";
 import tickItScreenshot from "@/assets/image/ticket-systeem-real.png";
+import daliDashboard from "@/assets/image/project-dali-dashboard.jpg";
+import daliPve from "@/assets/image/project-dali-pve.jpg";
+import daliBronnen from "@/assets/image/project-dali-bronnen.jpg";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -39,8 +41,8 @@ export interface Project {
 }
 
 // Most entries below use real screenshots. Hupol has no UI to screenshot (a backend-only REST
-// API) and Dali has none available yet (see its own note) — both still use the purchased
-// template's placeholder art, visibly labeled with pixel dimensions.
+// API) — it still uses the purchased template's placeholder art, visibly labeled with pixel
+// dimensions.
 export const projectsData: Project[] = [
   {
     slug: "telumera",
@@ -118,13 +120,11 @@ export const projectsData: Project[] = [
     slug: "dali",
     title: "Dali",
     shortDescription:
-      "A Buro CITE client project — refactoring an internal tool into accessible, testable components, plus its own attachments API.",
+      "A Buro CITE client project — a public-space reference handbook made accessible, component by component, plus its own attachments API.",
     description:
-      "Dali is an internal tool built for Buro CITE Nederland. Two real sprints: a solo accessibility pass — refactoring the app into components matching a new house style, running client-reported screen-reader tests, and fixing a real accessibility bug (skip links inside accordions that were invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
-    image: image31,
+      "Dali is a reference and requirements handbook for public-space management — chapters like climate adaptation, earthworks, sewage, and utilities, each with its own source references and a two-column \"Program of Requirements\" view. Built for Buro CITE Nederland across two real sprints: a solo accessibility pass — refactoring the app into components matching a new house style, running client-reported screen-reader tests, and fixing a real accessibility bug (skip links inside accordions that were invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
+    image: daliDashboard,
     tags: ["Accessibility", "JavaScript", "ASP.NET Core", "Web API"],
-    // No screenshots yet — none found locally (no repo, no matching local screenshots either; the
-    // referenced backend repo, github.com/Swen0109/BuroCite-DALI-BackEnd-API, 404s as of this
-    // writing). Add real ones from LinkedIn if available.
+    screenshots: [daliDashboard, daliPve, daliBronnen],
   },
 ];
