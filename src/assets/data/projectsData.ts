@@ -1,4 +1,4 @@
-import image13 from "@/assets/image/all-project-13.png";
+import hupolArchTest from "@/assets/image/project-hupol-archtest.jpg";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
 import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
@@ -23,7 +23,7 @@ import kayaC4Context from "@/assets/image/project-kaya-c4-context.png";
 import kayaC4Container from "@/assets/image/project-kaya-c4-container.png";
 import kayaC4Component from "@/assets/image/project-kaya-c4-component.png";
 import kayaDomainModel from "@/assets/image/project-kaya-domain-model.png";
-import lingoPlaceholder from "@/assets/image/all-project-12.png";
+import lingoGuess from "@/assets/image/project-lingo-guess.jpg";
 import hulandCasinoUseCase from "@/assets/image/project-huland-casino-usecase.png";
 import hulandCasinoPackages from "@/assets/image/project-huland-casino-packages.png";
 
@@ -54,9 +54,8 @@ export interface Project {
   custom?: boolean;
 }
 
-// Most entries below use real screenshots. Hupol has no UI to screenshot (a backend-only REST
-// API) — it still uses the purchased template's placeholder art, visibly labeled with pixel
-// dimensions.
+// Most entries below use real screenshots. Hupol and Lingo Trainer are backend-only REST APIs
+// with no UI to screenshot, so their image is a real source-code excerpt instead.
 export const projectsData: Project[] = [
   {
     slug: "telumera",
@@ -115,8 +114,9 @@ export const projectsData: Project[] = [
       "A school assignment: a JWT-secured Spring Boot voting system with its own architecture rules enforced by automated tests.",
     description:
       "Hupol is a candidate/voting/results backend built for a software-quality-focused course at Hogeschool Utrecht. Beyond standard Spring Boot and JWT security, it enforces its own layered architecture with an ArchUnit test that fails the build if application-layer code is reached from the wrong package, plus EqualsVerifier-checked value objects and a benchmark-driven refactor exercise comparing two implementations of the same service under test.",
-    image: image13,
+    image: hupolArchTest,
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
+    screenshots: [hupolArchTest],
   },
   {
     slug: "smokies",
@@ -176,8 +176,9 @@ export const projectsData: Project[] = [
       "A school assignment: a TDD-built Lingo word-guessing trainer, developed feature-first from Cucumber scenarios through to a tested Spring Boot API.",
     description:
       "Lingo Trainer is a backend for the word-guessing game Lingo, built for HU's Continuous Integration and Software Quality 1 (CISQ1) course with a strict test-first workflow: it started from user stories and Cucumber feature scenarios, followed by a UML diagram derived directly from those scenarios, before any production code was written. The core Round/Guess domain logic handles the trickiest part of Lingo's rules honestly — repeated letters in a guess are tracked with a hash map so a correct letter can't be marked twice — with edge cases driven out through iterative JUnit tests rather than assumed upfront. A Spring Data JPA-backed word repository and a random-word REST endpoint sit on top, with GitHub Actions running the full test suite (including a Postgres-free CI profile) on every push.",
-    image: lingoPlaceholder,
+    image: lingoGuess,
     tags: ["Java", "Spring Boot", "TDD", "Cucumber", "JUnit", "PostgreSQL", "GitHub Actions", "School Assignment"],
+    screenshots: [lingoGuess],
   },
   {
     slug: "huland-casino",
