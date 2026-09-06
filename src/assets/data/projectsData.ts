@@ -18,6 +18,13 @@ import tickItScreenshot from "@/assets/image/ticket-systeem-real.png";
 import daliDashboard from "@/assets/image/project-dali-dashboard.jpg";
 import daliPve from "@/assets/image/project-dali-pve.jpg";
 import daliBronnen from "@/assets/image/project-dali-bronnen.jpg";
+import kayaC4Context from "@/assets/image/project-kaya-c4-context.png";
+import kayaC4Container from "@/assets/image/project-kaya-c4-container.png";
+import kayaC4Component from "@/assets/image/project-kaya-c4-component.png";
+import kayaDomainModel from "@/assets/image/project-kaya-domain-model.png";
+import lingoPlaceholder from "@/assets/image/all-project-12.png";
+import hulandCasinoUseCase from "@/assets/image/project-huland-casino-usecase.png";
+import hulandCasinoPackages from "@/assets/image/project-huland-casino-packages.png";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -140,5 +147,37 @@ export const projectsData: Project[] = [
     image: daliDashboard,
     tags: ["Accessibility", "WCAG", "ISO 25010", "JavaScript", "ASP.NET Core", "Web API"],
     screenshots: [daliDashboard, daliPve, daliBronnen],
+  },
+  {
+    slug: "kaya-airbarlines",
+    title: "Kaya AIRBARlines",
+    shortDescription:
+      "A group project for an HU software-architecture course — redesigning a brownfield event-planner API into a scalable airline booking platform using DDD, C4 diagrams, and a modular monolith.",
+    description:
+      "Kaya AIRBARlines is a software-architecture design exercise done with two fellow students (Berkan Kaya, Baris Sariusta) for an HU course on distributed-systems design. Starting from an existing brownfield Java/Spring Boot \"Event Planner\" REST API built by another developer, the assignment was to redesign it into a scalable SaaS platform for a fictional airline — translating events into flights and users into passengers. The real deliverable was the architecture work: a full design document covering functional scope and quality requirements (scalability, security, reliability, maintainability, performance), a Domain-Driven Design pass identifying bounded contexts (Passenger Management, Flight Management, Booking Management, Access Control, Communication), a chosen system architecture (a modular monolith over microservices, deliberately, given the team size and scope) and application architecture (a pragmatic Hexagonal/Ports & Adapters style layered onto the existing controller/service/repository structure), plus C4 context/container/component diagrams, a domain model, and a sequence diagram for the booking flow.",
+    image: kayaC4Context,
+    tags: ["Software Architecture", "DDD", "C4 Model", "Hexagonal Architecture", "Spring Boot", "Team Project"],
+    screenshots: [kayaC4Context, kayaC4Container, kayaC4Component, kayaDomainModel],
+  },
+  {
+    slug: "lingo-trainer",
+    title: "Lingo Trainer",
+    shortDescription:
+      "A school assignment: a TDD-built Lingo word-guessing trainer, developed feature-first from Cucumber scenarios through to a tested Spring Boot API.",
+    description:
+      "Lingo Trainer is a backend for the word-guessing game Lingo, built for HU's Continuous Integration and Software Quality 1 (CISQ1) course with a strict test-first workflow: it started from user stories and Cucumber feature scenarios, followed by a UML diagram derived directly from those scenarios, before any production code was written. The core Round/Guess domain logic handles the trickiest part of Lingo's rules honestly — repeated letters in a guess are tracked with a hash map so a correct letter can't be marked twice — with edge cases driven out through iterative JUnit tests rather than assumed upfront. A Spring Data JPA-backed word repository and a random-word REST endpoint sit on top, with GitHub Actions running the full test suite (including a Postgres-free CI profile) on every push.",
+    image: lingoPlaceholder,
+    tags: ["Java", "Spring Boot", "TDD", "Cucumber", "JUnit", "PostgreSQL", "GitHub Actions", "School Assignment"],
+  },
+  {
+    slug: "huland-casino",
+    title: "HUland Casino",
+    shortDescription:
+      "A school assignment: a JWT-secured casino backend where a hand-rolled Blackjack engine (hit, stand, double down, surrender) sits behind its own bounded, layered module.",
+    description:
+      "Built across two phases of HU's Backend Programming 2 (BEP2) course, this is a Spring Boot casino backend with JWT-based authentication and a chip-balance system provided as a starting point, on top of which the actual assignment was to design and build a Blackjack module from scratch. That meant modelling cards, shuffling, dealing, and player/dealer scoring as a proper object-oriented domain layer first, then wiring in the game rules — hit, stand, double down, surrender — and finally exposing it through a REST controller, hiding the dealer's hole card until it's meaningfully revealed. Each bounded component (security, chips, blackjack) is deliberately structured with its own presentation/application/domain/data layers, following a use-case diagram and package architecture worked out before implementation.",
+    image: hulandCasinoUseCase,
+    tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "Domain-Driven Design", "School Assignment"],
+    screenshots: [hulandCasinoUseCase, hulandCasinoPackages],
   },
 ];
