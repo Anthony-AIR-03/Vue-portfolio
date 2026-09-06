@@ -1,4 +1,5 @@
 import hupolArchTest from "@/assets/image/project-hupol-archtest.jpg";
+import hupolResults from "@/assets/image/project-hupol-results.jpg";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
 import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
@@ -25,9 +26,11 @@ import kayaC4Container from "@/assets/image/project-kaya-c4-container.png";
 import kayaC4Component from "@/assets/image/project-kaya-c4-component.png";
 import kayaDomainModel from "@/assets/image/project-kaya-domain-model.png";
 import lingoGuess from "@/assets/image/project-lingo-guess.jpg";
+import lingoOutput from "@/assets/image/project-lingo-output.jpg";
 import hulandCasinoUseCase from "@/assets/image/project-huland-casino-usecase.png";
 import hulandCasinoPackages from "@/assets/image/project-huland-casino-packages.png";
 import hulandCasinoCode from "@/assets/image/project-huland-casino-code.jpg";
+import hulandCasinoOutput from "@/assets/image/project-huland-casino-output.jpg";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -119,7 +122,7 @@ export const projectsData: Project[] = [
       "Hupol is a candidate/voting/results backend built for a software-quality-focused course at Hogeschool Utrecht. Beyond standard Spring Boot and JWT security, it enforces its own layered architecture with an ArchUnit test that fails the build if application-layer code is reached from the wrong package, plus EqualsVerifier-checked value objects and a benchmark-driven refactor exercise comparing two implementations of the same service under test.",
     image: hupolArchTest,
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
-    screenshots: [hupolArchTest],
+    screenshots: [hupolArchTest, hupolResults],
   },
   {
     slug: "smokies",
@@ -181,7 +184,7 @@ export const projectsData: Project[] = [
       "Lingo Trainer is a backend for the word-guessing game Lingo, built for HU's Continuous Integration and Software Quality 1 (CISQ1) course with a strict test-first workflow: it started from user stories and Cucumber feature scenarios, followed by a UML diagram derived directly from those scenarios, before any production code was written. The core Round/Guess domain logic handles the trickiest part of Lingo's rules honestly — repeated letters in a guess are tracked with a hash map so a correct letter can't be marked twice — with edge cases driven out through iterative JUnit tests rather than assumed upfront. A Spring Data JPA-backed word repository and a random-word REST endpoint sit on top, with GitHub Actions running the full test suite (including a Postgres-free CI profile) on every push.",
     image: lingoGuess,
     tags: ["Java", "Spring Boot", "TDD", "Cucumber", "JUnit", "PostgreSQL", "GitHub Actions", "School Assignment"],
-    screenshots: [lingoGuess],
+    screenshots: [lingoGuess, lingoOutput],
   },
   {
     slug: "huland-casino",
@@ -192,6 +195,6 @@ export const projectsData: Project[] = [
       "Built across two phases of HU's Backend Programming 2 (BEP2) course, this is a Spring Boot casino backend with JWT-based authentication and a chip-balance system provided as a starting point, on top of which the actual assignment was to design and build a Blackjack module from scratch. That meant modelling cards, shuffling, dealing, and player/dealer scoring as a proper object-oriented domain layer first, then wiring in the game rules — hit, stand, double down, surrender — and finally exposing it through a REST controller, hiding the dealer's hole card until it's meaningfully revealed. Each bounded component (security, chips, blackjack) is deliberately structured with its own presentation/application/domain/data layers, following a use-case diagram and package architecture worked out before implementation.",
     image: hulandCasinoCode,
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "Domain-Driven Design", "School Assignment"],
-    screenshots: [hulandCasinoCode, hulandCasinoUseCase, hulandCasinoPackages],
+    screenshots: [hulandCasinoCode, hulandCasinoOutput, hulandCasinoUseCase, hulandCasinoPackages],
   },
 ];
