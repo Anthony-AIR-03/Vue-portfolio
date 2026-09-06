@@ -7,6 +7,7 @@ import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
 import wuzziCpMessagesScreenshot from "@/assets/image/project-wuzzi-cp-messages.jpg";
 import wuzziCpAlarmSettingsScreenshot from "@/assets/image/project-wuzzi-cp-alarm-settings.jpg";
 import wuzziCpBillingScreenshot from "@/assets/image/project-wuzzi-cp-billing.jpg";
+import wuzziCpSafezoneMapScreenshot from "@/assets/image/project-wuzzi-cp-safezone-map.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
 import smokiesHero from "@/assets/image/smokies-real-1.png";
 import smokiesMenu from "@/assets/image/smokies-real-2.png";
@@ -26,6 +27,7 @@ import kayaDomainModel from "@/assets/image/project-kaya-domain-model.png";
 import lingoGuess from "@/assets/image/project-lingo-guess.jpg";
 import hulandCasinoUseCase from "@/assets/image/project-huland-casino-usecase.png";
 import hulandCasinoPackages from "@/assets/image/project-huland-casino-packages.png";
+import hulandCasinoCode from "@/assets/image/project-huland-casino-code.jpg";
 
 export interface Project {
   /** Routes to /projects/:slug — must be unique and URL-safe. */
@@ -91,6 +93,7 @@ export const projectsData: Project[] = [
       wuzziCpScreenshot,
       wuzziCpMessagesScreenshot,
       wuzziCpAlarmSettingsScreenshot,
+      wuzziCpSafezoneMapScreenshot,
       wuzziCpBillingScreenshot,
     ],
     liveDemo:
@@ -187,8 +190,8 @@ export const projectsData: Project[] = [
       "A school assignment: a JWT-secured casino backend where a hand-rolled Blackjack engine (hit, stand, double down, surrender) sits behind its own bounded, layered module.",
     description:
       "Built across two phases of HU's Backend Programming 2 (BEP2) course, this is a Spring Boot casino backend with JWT-based authentication and a chip-balance system provided as a starting point, on top of which the actual assignment was to design and build a Blackjack module from scratch. That meant modelling cards, shuffling, dealing, and player/dealer scoring as a proper object-oriented domain layer first, then wiring in the game rules — hit, stand, double down, surrender — and finally exposing it through a REST controller, hiding the dealer's hole card until it's meaningfully revealed. Each bounded component (security, chips, blackjack) is deliberately structured with its own presentation/application/domain/data layers, following a use-case diagram and package architecture worked out before implementation.",
-    image: hulandCasinoUseCase,
+    image: hulandCasinoCode,
     tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "Domain-Driven Design", "School Assignment"],
-    screenshots: [hulandCasinoUseCase, hulandCasinoPackages],
+    screenshots: [hulandCasinoCode, hulandCasinoUseCase, hulandCasinoPackages],
   },
 ];
