@@ -3,6 +3,8 @@ import hupolResults from "@/assets/image/project-hupol-results.jpg";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
 import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
+import telumeraCiList from "@/assets/image/project-telumera-ci-list.jpg";
+import telumeraCiMatrix from "@/assets/image/project-telumera-ci-matrix.jpg";
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
 import wuzziCpLoginScreenshot from "@/assets/image/project-wuzzi-cp-login.jpg";
 import wuzziCpMessagesScreenshot from "@/assets/image/project-wuzzi-cp-messages.jpg";
@@ -69,15 +71,21 @@ export const projectsData: Project[] = [
     shortDescription:
       "A self-hosted, privacy-first analytics platform — built module by module, with strict data-ownership rules over feature count.",
     description:
-      "Telumera is a modular, self-hosted analytics platform in the spirit of PostHog or Plausible, built module by module as a full-stack learning and portfolio project. Each service owns its own database and schema — no service ever reads another's tables directly — and they only ever talk to each other through versioned events and typed APIs. Every metric traces back to raw vs. processed event counts, bot/duplicate classification, and consent state, instead of presenting a polished number with no visible provenance. It's live at telumera.nl, tracking this very portfolio's own traffic.",
+      "Telumera is a modular, self-hosted analytics platform in the spirit of PostHog or Plausible, built module by module as a full-stack learning and portfolio project. Each service owns its own database and schema — no service ever reads another's tables directly — and they only ever talk to each other through versioned events and typed APIs. Every metric traces back to raw vs. processed event counts, bot/duplicate classification, and consent state, instead of presenting a polished number with no visible provenance. A real CI/CD pipeline backs every push: GitHub Actions builds all six services as Docker images in parallel, pushes them to a container registry, then a self-hosted runner on the NAS pulls and redeploys automatically — the same pipeline that shipped every fix disclosed elsewhere on this page. It's live at telumera.nl, tracking this very portfolio's own traffic.",
     image: telumeraScreenshot,
     featured: true,
-    tags: ["Vue 3", "TypeScript", "ASP.NET Core", "C#", "PostgreSQL", "ClickHouse", "Dapr", "Docker", "Azure"],
+    tags: ["Vue 3", "TypeScript", "ASP.NET Core", "C#", "PostgreSQL", "ClickHouse", "Dapr", "Docker", "GitHub Actions", "Azure"],
     links: [
       { label: "GitHub", href: "https://github.com/Anthony-AIR-03/telumera" },
       { label: "Live", href: "https://telumera.nl" },
     ],
-    screenshots: [telumeraScreenshot, telumeraGeographyScreenshot, telumeraQualityScreenshot],
+    screenshots: [
+      telumeraScreenshot,
+      telumeraGeographyScreenshot,
+      telumeraQualityScreenshot,
+      telumeraCiList,
+      telumeraCiMatrix,
+    ],
     liveDemo:
       "The dashboard is live at telumera.nl, sitting behind real sign-in — it's tracking this portfolio's own visitors right now. See the links below for the source and the live site.",
     custom: true,
