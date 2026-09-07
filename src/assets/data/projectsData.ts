@@ -27,6 +27,7 @@ import kayaC4Component from "@/assets/image/project-kaya-c4-component.png";
 import kayaDomainModel from "@/assets/image/project-kaya-domain-model.png";
 import lingoGuess from "@/assets/image/project-lingo-guess.jpg";
 import lingoOutput from "@/assets/image/project-lingo-output.jpg";
+import lingoCi from "@/assets/image/project-lingo-ci.jpg";
 import hulandCasinoUseCase from "@/assets/image/project-huland-casino-usecase.png";
 import hulandCasinoPackages from "@/assets/image/project-huland-casino-packages.png";
 import hulandCasinoCode from "@/assets/image/project-huland-casino-code.jpg";
@@ -179,12 +180,12 @@ export const projectsData: Project[] = [
     slug: "lingo-trainer",
     title: "Lingo Trainer",
     shortDescription:
-      "A school assignment: a TDD-built Lingo word-guessing trainer, developed feature-first from Cucumber scenarios through to a tested Spring Boot API.",
+      "A school assignment: a TDD-built Lingo word-guessing trainer with a real Game/Round state machine, developed feature-first from Cucumber scenarios through to a tested, CI-driven Spring Boot API.",
     description:
-      "Lingo Trainer is a backend for the word-guessing game Lingo, built for HU's Continuous Integration and Software Quality 1 (CISQ1) course with a strict test-first workflow: it started from user stories and Cucumber feature scenarios, followed by a UML diagram derived directly from those scenarios, before any production code was written. The core Round/Guess domain logic handles the trickiest part of Lingo's rules honestly — repeated letters in a guess are tracked with a hash map so a correct letter can't be marked twice — with edge cases driven out through iterative JUnit tests rather than assumed upfront. A Spring Data JPA-backed word repository and a random-word REST endpoint sit on top, with GitHub Actions running the full test suite (including a Postgres-free CI profile) on every push.",
+      "Lingo Trainer is a backend for the word-guessing game Lingo, built for HU's Continuous Integration and Software Quality 1 (CISQ1) course with a strict test-first workflow: it started from user stories and Cucumber feature scenarios, followed by a UML diagram derived directly from those scenarios, before any production code was written. A Game aggregate manages a sequence of Rounds, each with its own five-attempt loss condition, a progressively-revealed hint, and the trickiest part of Lingo's rules handled honestly — repeated letters in a guess are tracked with a hash map so a correct letter can't be marked twice — with a real scoring formula rewarding fewer attempts. GitHub Actions runs the full JUnit suite (plus JaCoCo coverage) on every push, and its real run history is refreshingly unpolished: several early red runs while the workflow itself was being debugged, then a genuine test failure caught while hardening the marking logic, all fixed in later commits rather than force-pushed away. Running it live for this portfolio surfaced one more real bug worth disclosing rather than hiding: guesses are upper-cased before an exact-match dictionary lookup against lower-cased stored words, so no guess currently registers as valid — the screenshot below shows precisely that, a genuine loss after five attempts.",
     image: lingoGuess,
     tags: ["Java", "Spring Boot", "TDD", "Cucumber", "JUnit", "PostgreSQL", "GitHub Actions", "School Assignment"],
-    screenshots: [lingoGuess, lingoOutput],
+    screenshots: [lingoGuess, lingoCi, lingoOutput],
   },
   {
     slug: "huland-casino",
