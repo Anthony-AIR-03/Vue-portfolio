@@ -5,8 +5,6 @@ import { projectsData } from "@/assets/data/projectsData";
 import { customProjectComponents } from "@/components/pages/projects/custom/registry";
 import ProjectDetailContent from "@/components/pages/projects/ProjectDetailContent.vue";
 import ProjectPager from "@/components/pages/projects/ProjectPager.vue";
-import AboutTopLeftElement from "@/components/shared/AboutTopLeftElement.vue";
-import EllipseShapeLandingTwoBottomRight from "@/components/shared/EllipseShapeLandingTwoBottomRight.vue";
 import LinkBackHome from "@/components/shared/LinkBackHome.vue";
 import AfterEffect from "@/components/shared/AfterEffect.vue";
 
@@ -53,8 +51,6 @@ const nextProject = computed(() => {
     />
   </div>
   <AfterEffect />
-  <AboutTopLeftElement />
-  <EllipseShapeLandingTwoBottomRight />
 </template>
 
 <style scoped>
