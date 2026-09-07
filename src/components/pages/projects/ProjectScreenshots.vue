@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { useI18n } from "vue-i18n";
 
 const props = defineProps<{ images: string[]; alt: string }>();
+const { t } = useI18n();
 
 const activeIndex = ref<number | null>(null);
 const isOpen = computed(() => activeIndex.value !== null);
@@ -31,14 +33,14 @@ onMounted(() => document.addEventListener("keydown", handleKeydown));
 onBeforeUnmount(() => document.removeEventListener("keydown", handleKeydown));
 </script>
 <template>
-  <section v-if="images.length" class="project-screenshots" aria-label="Screenshots">
-    <h2 class="heading-3">Screenshots</h2>
+  <section v-if="images.length" class="project-screenshots" :aria-label="t('projects.screenshots')">
+    <h2 class="heading-3">{{ t("projects.screenshots") }}</h2>
     <ul class="project-screenshots__grid">
       <li v-for="(src, i) in images" :key="src">
         <button
           type="button"
           class="project-screenshots__thumb-btn"
-          :aria-label="`Expand screenshot ${i + 1} of ${images.length}`"
+          :aria-label="t('projects.expandScreenshot', { current: i + 1, total: images.length })"
           @click="open(i)"
         >
           <img :src="src" :alt="`${alt} screenshot ${i + 1}`" class="project-screenshots__thumb" />
@@ -54,14 +56,14 @@ onBeforeUnmount(() => document.removeEventListener("keydown", handleKeydown));
         aria-modal="true"
         @click.self="close"
       >
-        <button type="button" class="project-lightbox__close" aria-label="Close" @click="close">
+        <button type="button" class="project-lightbox__close" :aria-label="t('projects.close')" @click="close">
           &times;
         </button>
         <button
           v-if="images.length > 1"
           type="button"
           class="project-lightbox__nav project-lightbox__nav--prev"
-          aria-label="Previous screenshot"
+          :aria-label="t('projects.previousScreenshot')"
           @click="prev"
         >
           &larr;
@@ -75,7 +77,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", handleKeydown));
           v-if="images.length > 1"
           type="button"
           class="project-lightbox__nav project-lightbox__nav--next"
-          aria-label="Next screenshot"
+          :aria-label="t('projects.nextScreenshot')"
           @click="next"
         >
           &rarr;

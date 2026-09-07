@@ -41,7 +41,7 @@ const nextProject = computed(() => {
 </script>
 <template>
   <div v-if="project" class="container">
-    <LinkBackHome :to="{ name: 'projects' }" label="Back To Projects" class="back-link" />
+    <LinkBackHome :to="{ name: 'projects' }" :label="$t('projects.backToProjects')" class="back-link" />
     <component :is="CustomDetail" v-if="CustomDetail" :project="project" />
     <ProjectDetailContent v-else :project="project" />
     <ProjectPager

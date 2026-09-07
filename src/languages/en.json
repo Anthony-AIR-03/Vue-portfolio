@@ -1,6 +1,7 @@
 {
     "general": {
-        "optional": "(Optional)"
+        "optional": "(Optional)",
+        "backToHome": "Back To Home"
     },
     "bioCard": {
         "buttonText": "i'm Anthony Inocencio Ramos",
@@ -87,6 +88,61 @@
             "submitBtn": {
                 "sending": "Sending...",
                 "submit": "Submit Now"
+            }
+        }
+    },
+    "projects": {
+        "backToProjects": "Back To Projects",
+        "gridAriaLabel": "Projects",
+        "screenshots": "Screenshots",
+        "expandScreenshot": "Expand screenshot {current} of {total}",
+        "close": "Close",
+        "previousScreenshot": "Previous screenshot",
+        "nextScreenshot": "Next screenshot",
+        "liveDemo": "Live demo",
+        "techStack": "Tech stack",
+        "projectLinks": "Project links",
+        "otherProjects": "Other projects",
+        "pager": {
+            "previous": "Previous",
+            "next": "Next"
+        },
+        "telumera": {
+            "modulesHeading": "Modules",
+            "modulesNote": "Built module by module, each one only becoming its own deployable service once it genuinely needs independent scaling, storage, or a security boundary.",
+            "status": {
+                "shipped": "Shipped",
+                "planned": "Planned"
+            },
+            "modules": {
+                "productAnalytics": {
+                    "name": "Product Analytics",
+                    "detail": "tracking SDK, collector, ClickHouse pipeline, live dashboard"
+                },
+                "performanceMonitoring": {
+                    "name": "Performance Monitoring",
+                    "detail": "Web Vitals, percentiles, regression detection"
+                },
+                "errorTracking": {
+                    "name": "Error Tracking",
+                    "detail": "grouping, source maps, issue lifecycle"
+                },
+                "deploymentIntelligence": {
+                    "name": "Deployment Intelligence",
+                    "detail": "release tracking, before/after comparison"
+                },
+                "goalsAndFunnels": {
+                    "name": "Goals and Funnels",
+                    "detail": ""
+                },
+                "aiInsights": {
+                    "name": "AI Insights",
+                    "detail": "Claude via typed tools, no raw DB access"
+                },
+                "alertsAndUptime": {
+                    "name": "Alerts and Uptime",
+                    "detail": ""
+                }
             }
         }
     }

@@ -1,31 +1,33 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import ProjectScreenshots from "./ProjectScreenshots.vue";
 import LiveDemoSection from "./LiveDemoSection.vue";
-import type { Project } from "@/assets/data/projectsData";
+import { localize, type Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
+const { t } = useI18n();
 </script>
 <template>
   <CustomTransition>
     <article class="card-style-two project-details p-32px">
       <header class="project-details__banner">
-        <img :src="project.image" :alt="`${project.title} banner`" />
-        <h1 class="heading-2">{{ project.title }}</h1>
-        <p class="textL">{{ project.description }}</p>
+        <img :src="project.image" :alt="`${localize(project.title)} banner`" />
+        <h1 class="heading-2">{{ localize(project.title) }}</h1>
+        <p class="textL">{{ localize(project.description) }}</p>
       </header>
 
-      <ul v-if="project.tags?.length" class="project-tags" aria-label="Tech stack">
+      <ul v-if="project.tags?.length" class="project-tags" :aria-label="t('projects.techStack')">
         <li v-for="tag in project.tags" :key="tag" class="project-tags__item">
           {{ tag }}
         </li>
       </ul>
 
-      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
+      <ProjectScreenshots :images="project.screenshots ?? []" :alt="localize(project.title)" />
 
-      <LiveDemoSection v-if="project.liveDemo" :text="project.liveDemo" />
+      <LiveDemoSection v-if="project.liveDemo" :text="localize(project.liveDemo)" />
 
-      <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
+      <nav v-if="project.links?.length" class="project-links" :aria-label="t('projects.projectLinks')">
         <a
           v-for="link in project.links"
           :key="link.href"

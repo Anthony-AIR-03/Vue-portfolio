@@ -3,7 +3,7 @@ import { projectsData } from "@/assets/data/projectsData";
 import ProjectCard from "./ProjectCard.vue";
 </script>
 <template>
-  <section class="projects-grid" aria-label="Projects">
+  <section class="projects-grid" :aria-label="$t('projects.gridAriaLabel')">
     <ProjectCard
       v-for="project in projectsData"
       :key="project.slug"

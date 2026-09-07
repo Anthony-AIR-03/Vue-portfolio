@@ -1,60 +1,66 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import ProjectScreenshots from "../ProjectScreenshots.vue";
 import LiveDemoSection from "../LiveDemoSection.vue";
-import type { Project } from "@/assets/data/projectsData";
+import { localize, type Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
+const { t } = useI18n();
 
 // Roadmap per telumera/CLAUDE.md — each module only becomes its own deployable service once it
-// actually needs independent scaling/security/failure isolation, not by default.
+// actually needs independent scaling/security/failure isolation, not by default. Names/details
+// live in projects.telumera.modules.* so they translate with the rest of the page.
 const modules = [
-  { name: "Product Analytics", detail: "tracking SDK, collector, ClickHouse pipeline, live dashboard", status: "Shipped" },
-  { name: "Performance Monitoring", detail: "Web Vitals, percentiles, regression detection", status: "Planned" },
-  { name: "Error Tracking", detail: "grouping, source maps, issue lifecycle", status: "Planned" },
-  { name: "Deployment Intelligence", detail: "release tracking, before/after comparison", status: "Planned" },
-  { name: "Goals and Funnels", detail: "", status: "Planned" },
-  { name: "AI Insights", detail: "Claude via typed tools, no raw DB access", status: "Planned" },
-  { name: "Alerts and Uptime", detail: "", status: "Planned" },
-];
+  { key: "productAnalytics", status: "shipped" },
+  { key: "performanceMonitoring", status: "planned" },
+  { key: "errorTracking", status: "planned" },
+  { key: "deploymentIntelligence", status: "planned" },
+  { key: "goalsAndFunnels", status: "planned" },
+  { key: "aiInsights", status: "planned" },
+  { key: "alertsAndUptime", status: "planned" },
+] as const;
 </script>
 <template>
   <CustomTransition>
     <article class="card-style-two project-details p-32px">
       <header class="project-details__banner">
-        <img :src="project.image" :alt="`${project.title} banner`" />
-        <h1 class="heading-2">{{ project.title }}</h1>
-        <p class="textL">{{ project.description }}</p>
+        <img :src="project.image" :alt="`${localize(project.title)} banner`" />
+        <h1 class="heading-2">{{ localize(project.title) }}</h1>
+        <p class="textL">{{ localize(project.description) }}</p>
       </header>
 
-      <ul v-if="project.tags?.length" class="project-tags" aria-label="Tech stack">
+      <ul v-if="project.tags?.length" class="project-tags" :aria-label="t('projects.techStack')">
         <li v-for="tag in project.tags" :key="tag" class="project-tags__item">
           {{ tag }}
         </li>
       </ul>
 
-      <section class="project-modules" aria-label="Modules">
-        <h2 class="heading-3">Modules</h2>
+      <section class="project-modules" :aria-label="t('projects.telumera.modulesHeading')">
+        <h2 class="heading-3">{{ t("projects.telumera.modulesHeading") }}</h2>
         <p class="textL project-modules__note">
-          Built module by module, each one only becoming its own deployable service once it
-          genuinely needs independent scaling, storage, or a security boundary.
+          {{ t("projects.telumera.modulesNote") }}
         </p>
         <ul class="project-modules__list">
-          <li v-for="module in modules" :key="module.name" class="project-modules__item">
-            <span class="project-modules__status" :data-status="module.status">{{ module.status }}</span>
+          <li v-for="module in modules" :key="module.key" class="project-modules__item">
+            <span class="project-modules__status" :data-status="module.status">{{
+              t(`projects.telumera.status.${module.status}`)
+            }}</span>
             <span>
-              <strong>{{ module.name }}</strong>
-              <template v-if="module.detail"> — {{ module.detail }}</template>
+              <strong>{{ t(`projects.telumera.modules.${module.key}.name`) }}</strong>
+              <template v-if="t(`projects.telumera.modules.${module.key}.detail`)">
+                — {{ t(`projects.telumera.modules.${module.key}.detail`) }}
+              </template>
             </span>
           </li>
         </ul>
       </section>
 
-      <ProjectScreenshots :images="project.screenshots ?? []" :alt="project.title" />
+      <ProjectScreenshots :images="project.screenshots ?? []" :alt="localize(project.title)" />
 
-      <LiveDemoSection v-if="project.liveDemo" :text="project.liveDemo" />
+      <LiveDemoSection v-if="project.liveDemo" :text="localize(project.liveDemo)" />
 
-      <nav v-if="project.links?.length" class="project-links" aria-label="Project links">
+      <nav v-if="project.links?.length" class="project-links" :aria-label="t('projects.projectLinks')">
         <a
           v-for="link in project.links"
           :key="link.href"
@@ -117,7 +123,7 @@ const modules = [
 
 .project-modules__status {
   flex-shrink: 0;
-  width: 70px;
+  min-width: 70px;
   text-align: center;
   padding: 2px 8px;
   border-radius: 100px;
@@ -128,11 +134,11 @@ const modules = [
   color: #fff;
 }
 
-.project-modules__status[data-status="Shipped"] {
+.project-modules__status[data-status="shipped"] {
   background: #0ca30c;
 }
 
-.project-modules__status[data-status="Planned"] {
+.project-modules__status[data-status="planned"] {
   background: var(--black-neutral3);
   color: var(--white-neutral1);
 }

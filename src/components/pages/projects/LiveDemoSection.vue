@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
 defineProps<{ text: string }>();
+const { t } = useI18n();
 </script>
 <template>
-  <section class="project-demo" aria-label="Live demo">
-    <h2 class="heading-3">Live demo</h2>
+  <section class="project-demo" :aria-label="t('projects.liveDemo')">
+    <h2 class="heading-3">{{ t("projects.liveDemo") }}</h2>
     <p class="textL">{{ text }}</p>
   </section>
 </template>

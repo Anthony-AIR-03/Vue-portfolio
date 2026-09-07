@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { PhArrowLeft, PhArrowRight } from "@phosphor-icons/vue";
-import type { Project } from "@/assets/data/projectsData";
+import { useI18n } from "vue-i18n";
+import { localize, type Project } from "@/assets/data/projectsData";
 
 defineProps<{ previous: Project; next: Project }>();
+const { t } = useI18n();
 </script>
 <template>
-  <nav class="project-pager" aria-label="Other projects">
+  <nav class="project-pager" :aria-label="t('projects.otherProjects')">
     <router-link
       :to="{ name: 'project-detail', params: { slug: previous.slug } }"
       class="project-pager__link"
     >
       <PhArrowLeft :size="20" />
       <span class="project-pager__text">
-        <small>Previous</small>
-        <strong>{{ previous.title }}</strong>
+        <small>{{ t("projects.pager.previous") }}</small>
+        <strong>{{ localize(previous.title) }}</strong>
       </span>
     </router-link>
     <router-link
@@ -21,8 +23,8 @@ defineProps<{ previous: Project; next: Project }>();
       class="project-pager__link project-pager__link--next"
     >
       <span class="project-pager__text">
-        <small>Next</small>
-        <strong>{{ next.title }}</strong>
+        <small>{{ t("projects.pager.next") }}</small>
+        <strong>{{ localize(next.title) }}</strong>
       </span>
       <PhArrowRight :size="20" />
     </router-link>

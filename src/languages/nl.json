@@ -1,6 +1,7 @@
 {
   "general": {
-    "optional": "(Optioneel)"
+    "optional": "(Optioneel)",
+    "backToHome": "Terug naar home"
   },
   "bioCard": {
     "buttonText": "Anthony Inocencio Ramos",
@@ -85,6 +86,61 @@
       "submitBtn": {
         "sending": "Versturen...",
         "submit": "Nu verzenden"
+      }
+    }
+  },
+  "projects": {
+    "backToProjects": "Terug naar projecten",
+    "gridAriaLabel": "Projecten",
+    "screenshots": "Screenshots",
+    "expandScreenshot": "Screenshot {current} van {total} vergroten",
+    "close": "Sluiten",
+    "previousScreenshot": "Vorige screenshot",
+    "nextScreenshot": "Volgende screenshot",
+    "liveDemo": "Live demo",
+    "techStack": "Technische stack",
+    "projectLinks": "Projectlinks",
+    "otherProjects": "Andere projecten",
+    "pager": {
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "telumera": {
+      "modulesHeading": "Modules",
+      "modulesNote": "Module voor module gebouwd, waarbij elke module pas een eigen deploybare service wordt zodra die daadwerkelijk onafhankelijke schaalbaarheid, opslag of een beveiligingsgrens nodig heeft.",
+      "status": {
+        "shipped": "Uitgebracht",
+        "planned": "Gepland"
+      },
+      "modules": {
+        "productAnalytics": {
+          "name": "Product Analytics",
+          "detail": "tracking-SDK, collector, ClickHouse-pipeline, live dashboard"
+        },
+        "performanceMonitoring": {
+          "name": "Performance Monitoring",
+          "detail": "Web Vitals, percentielen, regressiedetectie"
+        },
+        "errorTracking": {
+          "name": "Error Tracking",
+          "detail": "groepering, source maps, issue-levenscyclus"
+        },
+        "deploymentIntelligence": {
+          "name": "Deployment Intelligence",
+          "detail": "release tracking, vergelijking voor/na"
+        },
+        "goalsAndFunnels": {
+          "name": "Goals and Funnels",
+          "detail": ""
+        },
+        "aiInsights": {
+          "name": "AI Insights",
+          "detail": "Claude via typed tools, geen directe databasetoegang"
+        },
+        "alertsAndUptime": {
+          "name": "Alerts and Uptime",
+          "detail": ""
+        }
       }
     }
   }
