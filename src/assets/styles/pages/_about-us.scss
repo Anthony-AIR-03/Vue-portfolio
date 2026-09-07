@@ -9,6 +9,7 @@
   position: absolute;
   left: -450px;
   top: -450px;
+  pointer-events: none;
   @media (max-width: 768px) {
     width: 400px;
     height: 400px;
