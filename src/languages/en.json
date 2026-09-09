@@ -107,8 +107,13 @@
             "previous": "Previous",
             "next": "Next"
         },
+        "caseStudy": {
+            "backToProject": "Back to {project}",
+            "englishOnly": "This case study is currently only available in English."
+        },
         "telumera": {
             "modulesHeading": "Modules",
+            "caseStudyLink": "Read the case study →",
             "modulesNote": "Built module by module, each one only becoming its own deployable service once it genuinely needs independent scaling, storage, or a security boundary.",
             "status": {
                 "shipped": "Shipped",

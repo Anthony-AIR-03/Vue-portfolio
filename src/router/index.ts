@@ -1,5 +1,6 @@
 import EmptyLayoutVue from "@/layouts/EmptyLayout.vue";
 import About from "@/pages/About.vue";
+import CaseStudyPage from "@/pages/CaseStudyPage.vue";
 import Contact from "@/pages/Contact.vue";
 import Home from "@/pages/Home.vue";
 import InConstruction from "@/pages/InConstruction.vue";
@@ -61,6 +62,14 @@ const router = createRouter({
             component: ProjectDetail,
             meta: {
                 title: "Project",
+            },
+        },
+        {
+            path: "/projects/:slug/case-study/:module",
+            name: "case-study",
+            component: CaseStudyPage,
+            meta: {
+                title: "Case Study",
             },
         },
         // Cheap safety net for any stray links to the old path.

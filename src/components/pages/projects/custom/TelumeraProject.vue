@@ -11,15 +11,18 @@ const { t } = useI18n();
 // Roadmap per telumera/CLAUDE.md — each module only becomes its own deployable service once it
 // actually needs independent scaling/security/failure isolation, not by default. Names/details
 // live in projects.telumera.modules.* so they translate with the rest of the page.
-const modules = [
-  { key: "productAnalytics", status: "shipped" },
+// `caseStudy` is the module stem in src/components/pages/projects/custom/caseStudies.ts — set it
+// once a module has a written case study, and the row links through to /projects/telumera/case-study/*.
+type ModuleRow = { key: string; status: "shipped" | "planned"; caseStudy?: string };
+const modules: readonly ModuleRow[] = [
+  { key: "productAnalytics", status: "shipped", caseStudy: "product-analytics" },
   { key: "performanceMonitoring", status: "planned" },
   { key: "errorTracking", status: "planned" },
   { key: "deploymentIntelligence", status: "planned" },
   { key: "goalsAndFunnels", status: "planned" },
   { key: "aiInsights", status: "planned" },
   { key: "alertsAndUptime", status: "planned" },
-] as const;
+];
 </script>
 <template>
   <CustomTransition>
@@ -46,12 +49,22 @@ const modules = [
             <span class="project-modules__status" :data-status="module.status">{{
               t(`projects.telumera.status.${module.status}`)
             }}</span>
-            <span>
+            <span class="project-modules__text">
               <strong>{{ t(`projects.telumera.modules.${module.key}.name`) }}</strong>
               <template v-if="t(`projects.telumera.modules.${module.key}.detail`)">
                 — {{ t(`projects.telumera.modules.${module.key}.detail`) }}
               </template>
             </span>
+            <RouterLink
+              v-if="module.caseStudy"
+              :to="{
+                name: 'case-study',
+                params: { slug: project.slug, module: module.caseStudy },
+              }"
+              class="project-modules__case-study"
+            >
+              {{ t("projects.telumera.caseStudyLink") }}
+            </RouterLink>
           </li>
         </ul>
       </section>
@@ -118,7 +131,34 @@ const modules = [
 .project-modules__item {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.project-modules__text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.project-modules__case-study {
+  flex-shrink: 0;
+  margin-left: auto;
+  align-self: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+}
+
+.project-modules__case-study:hover {
+  background: var(--secondary-color);
+  color: #fff;
 }
 
 .project-modules__status {

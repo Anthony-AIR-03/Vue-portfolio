@@ -105,8 +105,13 @@
       "previous": "Vorige",
       "next": "Volgende"
     },
+    "caseStudy": {
+      "backToProject": "Terug naar {project}",
+      "englishOnly": "Deze case study is momenteel alleen in het Engels beschikbaar."
+    },
     "telumera": {
       "modulesHeading": "Modules",
+      "caseStudyLink": "Lees de case study →",
       "modulesNote": "Module voor module gebouwd, waarbij elke module pas een eigen deploybare service wordt zodra die daadwerkelijk onafhankelijke schaalbaarheid, opslag of een beveiligingsgrens nodig heeft.",
       "status": {
         "shipped": "Uitgebracht",
