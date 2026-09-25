@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import ProjectScreenshots from "../ProjectScreenshots.vue";
 import LiveDemoSection from "../LiveDemoSection.vue";
-import { localize, type Project } from "@/assets/data/projectsData";
+import { localize, tagTranslationKey, type Project } from "@/assets/data/projectsData";
 
 defineProps<{ project: Project }>();
 const { t } = useI18n();
@@ -28,14 +28,14 @@ const modules: readonly ModuleRow[] = [
   <CustomTransition>
     <article class="card-style-two project-details p-32px">
       <header class="project-details__banner">
-        <img :src="project.image" :alt="`${localize(project.title)} banner`" />
+        <img :src="project.image" :alt="t('projects.bannerAlt', { project: localize(project.title) })" />
         <h1 class="heading-2">{{ localize(project.title) }}</h1>
         <p class="textL">{{ localize(project.description) }}</p>
       </header>
 
       <ul v-if="project.tags?.length" class="project-tags" :aria-label="t('projects.techStack')">
         <li v-for="tag in project.tags" :key="tag" class="project-tags__item">
-          {{ tag }}
+          {{ tagTranslationKey(tag) ? t(tagTranslationKey(tag)!) : tag }}
         </li>
       </ul>
 

@@ -40,7 +40,7 @@ function handleLanguageChange(e: Event) {
 
   <div class="theme-modal" :class="modalOpen ? 'modal-open' : ''">
     <div class="theme-modal__select-wrap">
-      <label for="lang-select" class="sr-only">Language</label>
+      <label for="lang-select" class="sr-only">{{ $t("theme.language") }}</label>
 
       <select
         id="lang-select"
@@ -65,7 +65,7 @@ function handleLanguageChange(e: Event) {
       type="button"
       @click="handleThemeSwitch"
     >
-      {{ isDark ? "Light" : "Dark" }}
+      {{ isDark ? $t("theme.light") : $t("theme.dark") }}
     </button>
   </div>
 </template>

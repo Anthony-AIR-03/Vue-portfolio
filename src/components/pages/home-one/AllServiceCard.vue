@@ -25,7 +25,7 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
                         loading="lazy"
                         decoding="async"
                     />
-                    <span>{{ service.title }}</span>
+                    <span>{{ $t(service.title) }}</span>
                 </li>
             </ul>
 

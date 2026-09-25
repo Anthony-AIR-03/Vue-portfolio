@@ -6,11 +6,11 @@ import LinkPrimaryTwo from "../home-two/LinkPrimaryTwo.vue";
     <CustomTransition>
         <section class="about-get-in-touch about-card p-32px">
             <h4 class="heading-4 about-get-in-touch__title">
-                Let’s Works Together...!
+                {{ $t("about.letsWork") }}
             </h4>
             <LinkPrimaryTwo
                 :link="{ name: 'contact' }"
-                linkText="Get In Touch"
+                :linkText="$t('contactCard.linkText')"
             />
         </section>
     </CustomTransition>

@@ -1,10 +1,11 @@
 {
     "general": {
         "optional": "(Optional)",
-        "backToHome": "Back To Home"
+        "backToHome": "Back To Home",
+        "letsTalk": "Let’s Talk"
     },
     "bioCard": {
-        "buttonText": "i'm Anthony Inocencio Ramos",
+        "buttonText": "I'm Anthony Inocencio Ramos",
         "biography": "biography"
     },
     "allBlogsCard": {
@@ -41,9 +42,7 @@
             "two": "FEATURED"
         }
     },
-    "experienceCard": {
-
-    },
+    "experienceCard": {},
     "projectsCard": {
         "title": {
             "one": "See My",
@@ -149,6 +148,111 @@
                     "detail": ""
                 }
             }
+        },
+        "previewAlt": "{project} preview",
+        "detailLinkAlt": "Go to {project} detail page",
+        "bannerAlt": "{project} banner",
+        "screenshotAlt": "{project} screenshot {number}",
+        "tags": {
+            "schoolAssignment": "School Assignment",
+            "groupProject": "Group Project",
+            "teamProject": "Team Project"
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "blog": "Blog",
+        "services": "Services",
+        "contact": "Contact",
+        "works": "Works"
+    },
+    "theme": {
+        "language": "Language",
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "personal": {
+        "bio": {
+            "hello": "Hello,",
+            "name": "I'm Anthony Inocencio Ramos",
+            "role": "Software Developer.",
+            "description": "As a frontend-focused software developer, I build scalable, maintainable, and user-centered applications. With a strong foundation in modern frameworks and real-world project experience, I translate complex ideas into intuitive and performant digital solutions."
+        },
+        "experiences": {
+            "yearsExperience": "YEARS EXPERIENCE",
+            "totalProjects": "TOTAL PROJECTS",
+            "clientsWorldwide": "CLIENTS WORLDWIDE"
+        },
+        "employment": {
+            "present": "Present",
+            "fullStackDev": "Full-stack dev",
+            "frontEndAccessibility": "Front-end Dev, accessibility advisor"
+        },
+        "skills": {
+            "webDevelopment": "Web Development",
+            "uiUxDesign": "UI/UX Design",
+            "accessibility": "Accessibility",
+            "accessibleUi": "Accessible UI",
+            "codingInfrastructure": "Coding infrastructure",
+            "frontEndTesting": "Front-end testing",
+            "codeMaintenance": "Code maintenance",
+            "designPrecision": "Design Precision",
+            "maintainableCode": "Maintainable code",
+            "components": "Components",
+            "maintainability": "Maintainability",
+            "appDevelopment": "App development"
+        }
+    },
+    "about": {
+        "education": {
+            "title": "Education",
+            "vmbo": "VMBO Services and Products",
+            "mbo": "MBO Application and Media Developer",
+            "hbo": "Bachelor's Degree in HBO-ICT",
+            "present": "present"
+        },
+        "letsWork": "Let’s Work Together...!",
+        "myExperience": "My Experience",
+        "downloadCv": "Download CV",
+        "whatIDo": "What I Do",
+        "stayWithMe": "Stay With Me"
+    },
+    "notFound": {
+        "title": "Page Not Found.",
+        "text": "The page you are looking for doesn't exist or has been moved"
+    },
+    "inConstruction": {
+        "title": "Page under construction.",
+        "text": "The page you are looking for is currently under construction."
+    },
+    "pageTitles": {
+        "siteName": "Anthony Inocencio Ramos's portfolio",
+        "notFound": "Page not found",
+        "inConstruction": "Under construction",
+        "caseStudy": "Case study"
+    },
+    "servicesPage": {
+        "designPrecision": {
+            "top": "Design",
+            "bottom": "Precision",
+            "text": "Pixel-accurate interfaces that stay true to the design, whether it starts as a design file, a style guide, a sketch or an existing product. I translate it into consistent, responsive layouts, with attention to spacing, typography and the small details that make a product feel finished."
+        },
+        "maintainableCode": {
+            "top": "Maintainable",
+            "bottom": "Code",
+            "text": "Code the next developer can pick up without a guided tour. Clear structure, typed components, tests where they matter and small, reviewable changes, so a project stays easy to extend long after launch."
+        },
+        "accessibleUi": {
+            "top": "Accessible",
+            "bottom": "UI",
+            "text": "Interfaces everyone can use. With a background as an accessibility advisor, I build on the WCAG guidelines from the start: semantic HTML, keyboard navigation, screen-reader support and sufficient contrast."
+        },
+        "webDevelopment": {
+            "top": "Web",
+            "bottom": "Development",
+            "text": "Complete web applications, front to back. Vue and TypeScript on the frontend, APIs in ASP.NET Core or Spring Boot behind them, and automated deployments to get it all live."
         }
     }
 }

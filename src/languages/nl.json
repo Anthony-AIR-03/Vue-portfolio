@@ -1,7 +1,8 @@
 {
   "general": {
     "optional": "(Optioneel)",
-    "backToHome": "Terug naar home"
+    "backToHome": "Terug naar home",
+    "letsTalk": "Laten we praten"
   },
   "bioCard": {
     "buttonText": "Anthony Inocencio Ramos",
@@ -57,7 +58,7 @@
     "contactInfo": {
       "title": "Contactinformatie",
       "slogan": "Neem contact op",
-      "note":"Een goed gesprek begint met een simpel bericht.",
+      "note": "Een goed gesprek begint met een simpel bericht.",
       "phone": "Telefoon",
       "email": "E-mail",
       "address": "Adres"
@@ -147,6 +148,111 @@
           "detail": ""
         }
       }
+    },
+    "previewAlt": "Voorbeeld van {project}",
+    "detailLinkAlt": "Ga naar de detailpagina van {project}",
+    "bannerAlt": "Banner van {project}",
+    "screenshotAlt": "Screenshot {number} van {project}",
+    "tags": {
+      "schoolAssignment": "Schoolopdracht",
+      "groupProject": "Groepsproject",
+      "teamProject": "Teamproject"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Over mij",
+    "projects": "Projecten",
+    "blog": "Blog",
+    "services": "Diensten",
+    "contact": "Contact",
+    "works": "Werk"
+  },
+  "theme": {
+    "language": "Taal",
+    "light": "Licht",
+    "dark": "Donker"
+  },
+  "personal": {
+    "bio": {
+      "hello": "Hallo,",
+      "name": "Ik ben Anthony Inocencio Ramos",
+      "role": "Software Developer.",
+      "description": "Als frontend-gerichte software developer bouw ik schaalbare, onderhoudbare en gebruikersgerichte applicaties. Met een sterke basis in moderne frameworks en praktijkervaring uit echte projecten vertaal ik complexe ideeën naar intuïtieve en performante digitale oplossingen."
+    },
+    "experiences": {
+      "yearsExperience": "JAAR ERVARING",
+      "totalProjects": "PROJECTEN IN TOTAAL",
+      "clientsWorldwide": "KLANTEN WERELDWIJD"
+    },
+    "employment": {
+      "present": "Heden",
+      "fullStackDev": "Full-stack developer",
+      "frontEndAccessibility": "Front-end developer, toegankelijkheidsadviseur"
+    },
+    "skills": {
+      "webDevelopment": "Webontwikkeling",
+      "uiUxDesign": "UI/UX-design",
+      "accessibility": "Toegankelijkheid",
+      "accessibleUi": "Toegankelijke UI",
+      "codingInfrastructure": "Code-infrastructuur",
+      "frontEndTesting": "Front-end testen",
+      "codeMaintenance": "Codeonderhoud",
+      "designPrecision": "Precisie in design",
+      "maintainableCode": "Onderhoudbare code",
+      "components": "Componenten",
+      "maintainability": "Onderhoudbaarheid",
+      "appDevelopment": "App-ontwikkeling"
+    }
+  },
+  "about": {
+    "education": {
+      "title": "Opleiding",
+      "vmbo": "VMBO Dienstverlening en Producten",
+      "mbo": "MBO Applicatie- en mediaontwikkelaar",
+      "hbo": "Bachelor HBO-ICT",
+      "present": "heden"
+    },
+    "letsWork": "Laten we samenwerken...!",
+    "myExperience": "Mijn ervaring",
+    "downloadCv": "Cv downloaden",
+    "whatIDo": "Wat ik doe",
+    "stayWithMe": "Blijf verbonden"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden.",
+    "text": "De pagina die je zoekt bestaat niet of is verplaatst"
+  },
+  "inConstruction": {
+    "title": "Pagina in aanbouw.",
+    "text": "De pagina die je zoekt is momenteel nog in aanbouw."
+  },
+  "pageTitles": {
+    "siteName": "Portfolio van Anthony Inocencio Ramos",
+    "notFound": "Pagina niet gevonden",
+    "inConstruction": "In aanbouw",
+    "caseStudy": "Case study"
+  },
+  "servicesPage": {
+    "designPrecision": {
+      "top": "Precisie in",
+      "bottom": "Design",
+      "text": "Pixelnauwkeurige interfaces die trouw blijven aan het ontwerp, of dat nu begint als ontwerpbestand, huisstijlgids, schets of bestaand product. Ik vertaal het naar consistente, responsive layouts, met oog voor witruimte, typografie en de kleine details die een product af laten voelen."
+    },
+    "maintainableCode": {
+      "top": "Onderhoudbare",
+      "bottom": "Code",
+      "text": "Code die de volgende developer kan oppakken zonder rondleiding. Een heldere structuur, getypeerde componenten, tests waar ze ertoe doen en kleine, reviewbare wijzigingen, zodat een project ook lang na de lancering makkelijk uit te breiden blijft."
+    },
+    "accessibleUi": {
+      "top": "Toegankelijke",
+      "bottom": "UI",
+      "text": "Interfaces die iedereen kan gebruiken. Met mijn achtergrond als toegankelijkheidsadviseur bouw ik vanaf het begin volgens de WCAG-richtlijnen: semantische HTML, toetsenbordnavigatie, ondersteuning voor screenreaders en voldoende contrast."
+    },
+    "webDevelopment": {
+      "top": "Web",
+      "bottom": "Ontwikkeling",
+      "text": "Complete webapplicaties, van front-end tot back-end. Vue en TypeScript aan de voorkant, API's in ASP.NET Core of Spring Boot erachter, en geautomatiseerde deployments om alles live te krijgen."
     }
   }
 }

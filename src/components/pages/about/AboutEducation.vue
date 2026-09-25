@@ -1,13 +1,13 @@
 <template>
     <CustomTransition>
         <section class="about-education about-card p-32px">
-            <p class="heading-4 about-education__title">Education</p>
+            <p class="heading-4 about-education__title">{{ $t("about.education.title") }}</p>
             <section class="about-education__content">
                 <AboutContentItem
                     v-for="education in educations"
                     :key="education.year"
-                    :title="education.title"
-                    :year="education.year"
+                    :title="$t(education.title)"
+                    :year="education.ongoing ? `${education.year} - ${$t('about.education.present')}` : education.year"
                     :university="education.university"
                 />
             </section>
@@ -39,18 +39,19 @@ export default {
             shapeImage,
             educations: [
                 {
-                    title: "VMBO Dienstverlening en product",
+                    title: "about.education.vmbo",
                     year: "2015 - 2019",
                     university: "Focus Beroeps Academie",
                 },
                 {
-                    title: "MBO in Applicatie en mediaontwikkelaar",
+                    title: "about.education.mbo",
                     year: "2019 - 2023",
-                    university: "Da vinci college Dordrecht",
+                    university: "Da Vinci College Dordrecht",
                 },
                 {
-                    title: "Bachelor Degree in HBO-ICT",
-                    year: "2023 - heden",
+                    title: "about.education.hbo",
+                    year: "2023",
+                    ongoing: true,
                     university: "Hogeschool Utrecht",
                 },
             ],

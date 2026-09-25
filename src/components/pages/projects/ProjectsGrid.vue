@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { projectsData } from "@/assets/data/projectsData";
+import { projectsInGridOrder } from "@/assets/data/projectsData";
 import ProjectCard from "./ProjectCard.vue";
 </script>
 <template>
   <section class="projects-grid" :aria-label="$t('projects.gridAriaLabel')">
     <ProjectCard
-      v-for="project in projectsData"
+      v-for="project in projectsInGridOrder"
       :key="project.slug"
       :project="project"
     />

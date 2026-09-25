@@ -12,6 +12,9 @@ import wuzziCpMessagesScreenshot from "@/assets/image/project-wuzzi-cp-messages.
 import wuzziCpAlarmSettingsScreenshot from "@/assets/image/project-wuzzi-cp-alarm-settings.jpg";
 import wuzziCpBillingScreenshot from "@/assets/image/project-wuzzi-cp-billing.jpg";
 import wuzziCpSafezoneMapScreenshot from "@/assets/image/project-wuzzi-cp-safezone-map.jpg";
+import qmobielHero from "@/assets/image/project-qmobiel-hero.jpg";
+import qmobielConnectivity from "@/assets/image/project-qmobiel-connectivity.jpg";
+import qmobielExpertise from "@/assets/image/project-qmobiel-expertise.jpg";
 import githubDashboardScreenshot from "@/assets/image/project-github-dashboard.png";
 import smokiesHero from "@/assets/image/smokies-real-1.png";
 import smokiesMenu from "@/assets/image/smokies-real-2.png";
@@ -46,6 +49,21 @@ export interface LocalizedText {
 export function localize(text: LocalizedText): string {
   const lang = getLanguage() as keyof LocalizedText;
   return text[lang] ?? text.en;
+}
+
+/**
+ * Tags that are descriptive labels rather than tech names, mapped to their i18n key.
+ * Every other tag is a proper noun and renders as-is.
+ */
+const TRANSLATED_TAGS: Record<string, string> = {
+  "School Assignment": "projects.tags.schoolAssignment",
+  "Group Project": "projects.tags.groupProject",
+  "Team Project": "projects.tags.teamProject",
+};
+
+/** i18n key for a tag, or null when the tag should be shown untranslated. */
+export function tagTranslationKey(tag: string): string | null {
+  return TRANSLATED_TAGS[tag] ?? null;
 }
 
 export interface Project {
@@ -140,6 +158,22 @@ export const projectsData: Project[] = [
     },
   },
   {
+    slug: "qmobiel-website",
+    title: { en: "Qmobiel Website", nl: "Qmobiel-website" },
+    shortDescription: {
+      en: "The company website for Qmobiel, an enterprise connectivity provider: a bilingual Vue 3 site with a self-built, spam-protected PHP contact endpoint.",
+      nl: "De bedrijfswebsite van Qmobiel, een aanbieder van zakelijke connectiviteit: een tweetalige Vue 3-site met een zelfgebouwd, tegen spam beveiligd PHP-contactendpoint.",
+    },
+    description: {
+      en: "Built at Qmobiel as the project's sole developer: the public website for the company's enterprise connectivity services, covering IoT, managed security, multi-cloud connect and real-time insights. It's a Vue 3 + Vite single-page site made of self-contained section components (hero, partners, connectivity, stats, expertise, approach, tech stack and contact), fully bilingual through vue-i18n with the visitor's language choice remembered, and built mobile-first. The contact form posts to a small PHP endpoint that sends mail over SMTP with PHPMailer using an HTML email template, protected by a honeypot field, per-IP rate limiting, server-side validation and output escaping, so the form stays easy to use without letting bots through. Company details such as email, phone number and socials come from environment variables instead of being hard-coded.",
+      nl: "Gebouwd bij Qmobiel als enige developer van het project: de publieke website voor de zakelijke connectiviteitsdiensten van het bedrijf, waaronder IoT, managed security, multi-cloud connect en realtime inzichten. Het is een Vue 3 + Vite single-page site, opgebouwd uit op zichzelf staande sectiecomponenten (hero, partners, connectiviteit, statistieken, expertise, aanpak, tech stack en contact), volledig tweetalig via vue-i18n waarbij de taalkeuze van de bezoeker wordt onthouden, en mobile-first gebouwd. Het contactformulier post naar een klein PHP-endpoint dat via SMTP mailt met PHPMailer en een HTML-e-mailtemplate, beveiligd met een honeypot-veld, rate limiting per IP-adres, validatie aan de serverkant en output-escaping, zodat het formulier makkelijk te gebruiken blijft zonder bots door te laten. Bedrijfsgegevens zoals e-mailadres, telefoonnummer en socials komen uit omgevingsvariabelen in plaats van hardcoded in de code te staan.",
+    },
+    image: qmobielHero,
+    tags: ["Vue 3", "Vite", "vue-i18n", "PHP", "PHPMailer", "Responsive Design"],
+    links: [{ label: "Live", href: "https://qmobiel.nl" }],
+    screenshots: [qmobielHero, qmobielConnectivity, qmobielExpertise],
+  },
+  {
     slug: "github-dashboard",
     title: { en: "GitHub Analytics Dashboard", nl: "GitHub-analysedashboard" },
     shortDescription: {
@@ -155,19 +189,19 @@ export const projectsData: Project[] = [
     screenshots: [githubDashboardScreenshot],
   },
   {
-    slug: "hupol",
-    title: { en: "Hupol Voting System", nl: "Hupol Stemsysteem" },
+    slug: "dali",
+    title: { en: "Dali", nl: "Dali" },
     shortDescription: {
-      en: "A school assignment: a JWT-secured Spring Boot voting system with its own architecture rules enforced by automated tests.",
-      nl: "Een schoolopdracht: een met JWT beveiligd stemsysteem in Spring Boot, met eigen architectuurregels die worden afgedwongen door geautomatiseerde tests.",
+      en: "A year-long Buro CITE internship — researching WCAG and ISO/IEC 25010, then refactoring a public-space reference handbook into accessible, testable components.",
+      nl: "Een jaar durende stage bij Buro CITE — onderzoek naar WCAG en ISO/IEC 25010, gevolgd door het refactoren van een naslagwerk voor de openbare ruimte naar toegankelijke, testbare componenten.",
     },
     description: {
-      en: "Hupol is a candidate/voting/results backend built for a software-quality-focused course at Hogeschool Utrecht. Beyond standard Spring Boot and JWT security, it enforces its own layered architecture with an ArchUnit test that fails the build if application-layer code is reached from the wrong package, plus EqualsVerifier-checked value objects and a benchmark-driven refactor exercise comparing two implementations of the same service under test.",
-      nl: "Hupol is een backend voor kandidaten, stemmen en uitslagen, gebouwd voor een vak gericht op softwarekwaliteit aan de Hogeschool Utrecht. Naast standaard Spring Boot en JWT-beveiliging handhaaft het zijn eigen gelaagde architectuur met een ArchUnit-test die de build laat falen zodra applicatielaag-code vanuit het verkeerde package wordt benaderd, plus met EqualsVerifier gecontroleerde value objects en een benchmark-gedreven refactor-oefening die twee implementaties van dezelfde service met elkaar vergelijkt.",
+      en: "Dali is a reference and requirements handbook for public-space management — chapters like climate adaptation, earthworks, sewage, and utilities, each with its own source references and a two-column \"Program of Requirements\" view. This was a roughly year-long (2022–2023) Front-end & Accessibility Developer internship at Buro CITE Nederland, spent researching and applying the WCAG and ISO/IEC 25010 standards throughout: auditing the existing application for accessibility and usability problems, translating WCAG guidelines into concrete technical fixes, and restructuring its semantic HTML and navigation for different user groups. Two documented sprints from that year show the work concretely — a component-based refactor to match a new house style, with client-run screen-reader testing that caught a real accessibility bug (skip links inside accordions that stayed invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
+      nl: "Dali is een naslag- en eisenhandboek voor het beheer van de openbare ruimte — hoofdstukken als klimaatadaptatie, grondwerk, riolering en nutsvoorzieningen, elk met eigen bronverwijzingen en een tweekoloms \"Programma van Eisen\"-weergave. Dit was een ruwweg jaar durende (2022–2023) stage als Front-end & Accessibility Developer bij Buro CITE Nederland, waarin voortdurend onderzoek werd gedaan naar en toepassing werd gegeven aan de standaarden WCAG en ISO/IEC 25010: de bestaande applicatie doorlichten op toegankelijkheids- en bruikbaarheidsproblemen, WCAG-richtlijnen vertalen naar concrete technische oplossingen, en de semantische HTML en navigatie herstructureren voor verschillende gebruikersgroepen. Twee gedocumenteerde sprints uit dat jaar laten het werk concreet zien — een componentgebaseerde refactor om aan te sluiten bij een nieuwe huisstijl, met screenreader-tests door de klant die een echte toegankelijkheidsbug aan het licht brachten (skip-links binnen accordeons die onzichtbaar bleven totdat toetsenbordfocus ze onthulde) — en een backend-sprint waarin een ASP.NET Core Web API werd gebouwd voor het beheren van documentbijlagen, samen met een mede-ontwikkelaar (Swen Sperling). Sprintrapportages meldden echte, bekende bugs in plaats van ze te verbergen: een login die via localStorage bleef bestaan in plaats van via sessionStorage (waardoor gebruikers nooit automatisch werden uitgelogd), en een trage weergave van pdf's binnen accordeons die tijdens het testen werd gevonden.",
     },
-    image: hupolArchTest,
-    tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
-    screenshots: [hupolArchTest, hupolResults],
+    image: daliDashboard,
+    tags: ["Accessibility", "WCAG", "ISO 25010", "JavaScript", "ASP.NET Core", "Web API"],
+    screenshots: [daliDashboard, daliPve, daliBronnen],
   },
   {
     slug: "smokies",
@@ -178,7 +212,7 @@ export const projectsData: Project[] = [
     },
     description: {
       en: "Smokies was a real burger restaurant in Rotterdam. Built together with a fellow developer (Berkan Kaya) — commits from both of us are in its history, not just a shared repo — with a JSON menu feed building the page instead of hand-written HTML per item, an image carousel, an about page, and a PHPMailer-backed contact form, plus hand-tuned responsive and animation fixes down to iOS-specific quirks. No framework, no build step — just vanilla HTML/CSS/JS and PHP. The restaurant has since closed and its site is offline; the screenshots below are from its last live version.",
-      nl: "Smokies was een echt burgerrestaurant in Rotterdam. Gebouwd samen met een mede-ontwikkelaar (Berkan Kaya) — commits van ons beiden staan in de geschiedenis, niet alleen een gedeelde repo — met een JSON-menufeed die de pagina opbouwt in plaats van met de hand geschreven HTML per gerecht, een afbeeldingencarrousel, een over-ons-pagina en een contactformulier op basis van PHPMailer, plus met de hand afgestemde responsive- en animatiefixes tot en met iOS-specifieke eigenaardigheden. Geen framework, geen buildstap — puur vanilla HTML/CSS/JS en PHP. Het restaurant is inmiddels gesloten en de site is offline; de screenshots hieronder zijn van de laatst live versie.",
+      nl: "Smokies was een echt burgerrestaurant in Rotterdam. Gebouwd samen met een mede-ontwikkelaar (Berkan Kaya) — commits van ons beiden staan in de geschiedenis, niet alleen een gedeelde repo — met een JSON-menufeed die de pagina opbouwt in plaats van met de hand geschreven HTML per gerecht, een afbeeldingencarrousel, een over-ons-pagina en een contactformulier op basis van PHPMailer, plus met de hand afgestemde responsive- en animatiefixes tot en met iOS-specifieke eigenaardigheden. Geen framework, geen buildstap — puur vanilla HTML/CSS/JS en PHP. Het restaurant is inmiddels gesloten en de site is offline; de screenshots hieronder zijn van de laatste live versie.",
     },
     image: smokiesHero,
     tags: ["Vanilla JavaScript", "PHP", "PHPMailer", "Responsive Design"],
@@ -207,21 +241,6 @@ export const projectsData: Project[] = [
     tags: ["PHP", "Laravel", "JavaScript", "Group Project"],
   },
   {
-    slug: "dali",
-    title: { en: "Dali", nl: "Dali" },
-    shortDescription: {
-      en: "A year-long Buro CITE internship — researching WCAG and ISO/IEC 25010, then refactoring a public-space reference handbook into accessible, testable components.",
-      nl: "Een jaar durende stage bij Buro CITE — onderzoek naar WCAG en ISO/IEC 25010, gevolgd door het refactoren van een naslagwerk voor de openbare ruimte naar toegankelijke, testbare componenten.",
-    },
-    description: {
-      en: "Dali is a reference and requirements handbook for public-space management — chapters like climate adaptation, earthworks, sewage, and utilities, each with its own source references and a two-column \"Program of Requirements\" view. This was a roughly year-long (2022–2023) Front-end & Accessibility Developer internship at Buro CITE Nederland, spent researching and applying the WCAG and ISO/IEC 25010 standards throughout: auditing the existing application for accessibility and usability problems, translating WCAG guidelines into concrete technical fixes, and restructuring its semantic HTML and navigation for different user groups. Two documented sprints from that year show the work concretely — a component-based refactor to match a new house style, with client-run screen-reader testing that caught a real accessibility bug (skip links inside accordions that stayed invisible until keyboard focus revealed them) — and a backend sprint building an ASP.NET Core Web API for managing document attachments, done together with a fellow developer (Swen Sperling). Sprint reports disclosed real, known bugs rather than hiding them: a login that persisted via localStorage instead of sessionStorage (so users were never auto-logged-out), and a slow PDF-in-accordion render found during testing.",
-      nl: "Dali is een naslag- en eisenhandboek voor het beheer van de openbare ruimte — hoofdstukken als klimaatadaptatie, grondwerk, riolering en nutsvoorzieningen, elk met eigen bronverwijzingen en een tweekoloms \"Programma van Eisen\"-weergave. Dit was een ruwweg jaar durende (2022–2023) stage als Front-end & Accessibility Developer bij Buro CITE Nederland, waarin voortdurend onderzoek werd gedaan naar en toepassing werd gegeven aan de standaarden WCAG en ISO/IEC 25010: de bestaande applicatie doorlichten op toegankelijkheids- en bruikbaarheidsproblemen, WCAG-richtlijnen vertalen naar concrete technische oplossingen, en de semantische HTML en navigatie herstructureren voor verschillende gebruikersgroepen. Twee gedocumenteerde sprints uit dat jaar laten het werk concreet zien — een componentgebaseerde refactor om aan te sluiten bij een nieuwe huisstijl, met screenreader-tests door de klant die een echte toegankelijkheidsbug aan het licht brachten (skip-links binnen accordeons die onzichtbaar bleven totdat toetsenbordfocus ze onthulde) — en een backend-sprint waarin een ASP.NET Core Web API werd gebouwd voor het beheren van documentbijlagen, samen met een mede-ontwikkelaar (Swen Sperling). Sprintrapportages meldden echte, bekende bugs in plaats van ze te verbergen: een login die via localStorage bleef bestaan in plaats van via sessionStorage (waardoor gebruikers nooit automatisch werden uitgelogd), en een trage weergave van pdf's binnen accordeons die tijdens het testen werd gevonden.",
-    },
-    image: daliDashboard,
-    tags: ["Accessibility", "WCAG", "ISO 25010", "JavaScript", "ASP.NET Core", "Web API"],
-    screenshots: [daliDashboard, daliPve, daliBronnen],
-  },
-  {
     slug: "kaya-airbarlines",
     title: { en: "Kaya AIRBARlines", nl: "Kaya AIRBARlines" },
     shortDescription: {
@@ -235,6 +254,21 @@ export const projectsData: Project[] = [
     image: kayaC4Context,
     tags: ["Software Architecture", "DDD", "C4 Model", "Hexagonal Architecture", "Spring Boot", "Team Project"],
     screenshots: [kayaC4Context, kayaC4Container, kayaC4Component, kayaDomainModel],
+  },
+  {
+    slug: "hupol",
+    title: { en: "Hupol Voting System", nl: "Hupol Stemsysteem" },
+    shortDescription: {
+      en: "A school assignment: a JWT-secured Spring Boot voting system with its own architecture rules enforced by automated tests.",
+      nl: "Een schoolopdracht: een met JWT beveiligd stemsysteem in Spring Boot, met eigen architectuurregels die worden afgedwongen door geautomatiseerde tests.",
+    },
+    description: {
+      en: "Hupol is a candidate/voting/results backend built for a software-quality-focused course at Hogeschool Utrecht. Beyond standard Spring Boot and JWT security, it enforces its own layered architecture with an ArchUnit test that fails the build if application-layer code is reached from the wrong package, plus EqualsVerifier-checked value objects and a benchmark-driven refactor exercise comparing two implementations of the same service under test.",
+      nl: "Hupol is een backend voor kandidaten, stemmen en uitslagen, gebouwd voor een vak gericht op softwarekwaliteit aan de Hogeschool Utrecht. Naast standaard Spring Boot en JWT-beveiliging handhaaft het zijn eigen gelaagde architectuur met een ArchUnit-test die de build laat falen zodra applicatielaag-code vanuit het verkeerde package wordt benaderd, plus met EqualsVerifier gecontroleerde value objects en een benchmark-gedreven refactor-oefening die twee implementaties van dezelfde service met elkaar vergelijkt.",
+    },
+    image: hupolArchTest,
+    tags: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "PostgreSQL", "ArchUnit", "Docker", "School Assignment"],
+    screenshots: [hupolArchTest, hupolResults],
   },
   {
     slug: "lingo-trainer",
@@ -267,3 +301,22 @@ export const projectsData: Project[] = [
     screenshots: [hulandCasinoCode, hulandCasinoOutput, hulandCasinoUseCase, hulandCasinoPackages],
   },
 ];
+
+/**
+ * Order the projects grid (and the detail-page pager) actually shows. On the 3-column layout,
+ * rows alternate [featured, single] then [single, featured] so double-width cards never leave
+ * an empty slot; once featured projects run out, the remaining singles follow in data order.
+ * Featured and single projects each keep their relative order from projectsData.
+ */
+export const projectsInGridOrder: Project[] = (() => {
+  const featured = projectsData.filter((p) => p.featured);
+  const singles = projectsData.filter((p) => !p.featured);
+  const ordered: Project[] = [];
+  let featuredFirst = true;
+  while (featured.length) {
+    const row = [featured.shift()!, singles.shift()].filter((p): p is Project => !!p);
+    ordered.push(...(featuredFirst ? row : row.reverse()));
+    featuredFirst = !featuredFirst;
+  }
+  return [...ordered, ...singles];
+})();

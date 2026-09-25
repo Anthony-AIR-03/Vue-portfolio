@@ -11,103 +11,35 @@ import AboutEducation from "@/components/pages/about/AboutEducation.vue";
 import AboutLetsWorks from "@/components/pages/about/AboutLetsWorks.vue";
 import ProfileCardAbout from "@/components/pages/about/ProfileCardAbout.vue";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
+
+// Same four services (and icons) as the home page's services card. The modifier/shape
+// classes position each card and its decorative shape in _service.scss.
+const services = [
+  { key: "designPrecision", icon: uxDesignImage, cardClass: "service-body__design", shape: shape11, shapeClass: "shape-image-service" },
+  { key: "maintainableCode", icon: developmentImage, cardClass: "service-body__marketing", shape: serviceShape, shapeClass: "shape-image-marketing" },
+  { key: "accessibleUi", icon: brandImage, cardClass: "service-body__brand-identity", shape: shape29, shapeClass: "shape-image-brand" },
+  { key: "webDevelopment", icon: marketingImage, cardClass: "service-body__web-development", shape: shape53, shapeClass: "shape-image-developer" },
+];
 </script>
 <template>
   <div class="mt-xxl-10 mt-xl-8 mt-6 position-relative z-2">
     <div class="service-body">
-      <CustomTransition>
-        <div class="service-body__design service-card">
+      <CustomTransition v-for="service in services" :key="service.key">
+        <div class="service-card" :class="service.cardClass">
           <h3 class="heading-3 card-title">
-            <span class="title-top">UI/UX</span>
-            <span class="title-bottom">Design</span>
+            <span class="title-top">{{ $t(`servicesPage.${service.key}.top`) }}</span>
+            <span class="title-bottom"> {{ $t(`servicesPage.${service.key}.bottom`) }}</span>
           </h3>
-          <img
-            :src="uxDesignImage"
-            alt="UI/UX design Image"
-            class="m-t-40px img-fluid"
-          />
+          <img :src="service.icon" alt="" class="m-t-40px img-fluid" />
           <p class="m-t-40px textL font-thin card-text-color">
-            Welcome to our UI/UX Design Showcase, where creativity meets
-            functionality. Dive world where user experience is paramount, and
-            portfolio and witness the art of user-centric design that elevates
-            digital experiences to new heights.
+            {{ $t(`servicesPage.${service.key}.text`) }}
           </p>
           <img
-            :src="shape11"
-            alt="Shape 11"
-            class="img-fluid shape-image-service light-mood-image-shape"
-          />
-        </div>
-      </CustomTransition>
-      <CustomTransition>
-        <div class="service-body__marketing service-card">
-          <h3 class="heading-3 card-title">
-            <span class="title-top">Digital</span>
-            <span class="title-bottom"> Marketing</span>
-          </h3>
-          <img
-            :src="marketingImage"
-            alt="UI/UX design Image"
-            class="m-t-40px img-fluid"
-          />
-          <p class="m-t-40px textL font-thin card-text-color">
-            Unlock your brand&apos;s potential with Digital Marketing expertise.
-            From strategic campaigns to engaging content, we navigate the
-            digital landscape to elevate your online presence and drive
-            meaningful connections.
-          </p>
-          <img
-            :src="serviceShape"
-            alt="Service Shape"
-            class="img-fluid shape-image-marketing light-mood-image-shape"
-          />
-        </div>
-      </CustomTransition>
-      <CustomTransition>
-        <div class="service-body__brand-identity service-card">
-          <h3 class="heading-3 card-title">
-            <span class="title-top">Brand</span>
-            <span class="title-bottom">Identity</span>
-          </h3>
-          <img
-            :src="brandImage"
-            alt="UI/UX design Image"
-            class="m-t-40px img-fluid"
-          />
-          <p class="m-t-40px textL font-thin card-text-color">
-            Crafting brand identities that resonate. Our Brand Identity
-            portfolio showcases unique logos, color schemes, and style guides
-            that leave a lasting impression, defining your brand with visual
-            excellence.
-          </p>
-          <img
-            :src="shape29"
-            alt="Service Shape"
-            class="img-fluid shape-image-brand light-mood-image-shape"
-          />
-        </div>
-      </CustomTransition>
-      <CustomTransition>
-        <div class="service-body__web-development service-card">
-          <h3 class="heading-3 card-title">
-            <span class="title-top">Web</span>
-            <span class="title-bottom"> Development</span>
-          </h3>
-          <img
-            :src="developmentImage"
-            alt="UI/UX design Image"
-            class="m-t-40px img-fluid"
-          />
-          <p class="m-t-40px textL font-thin card-text-color">
-            Elevate your online presence with Web Development expertise.
-            portfolio showcases visually stunning and functionally robust
-            websites, meticulously crafted captivate audiences and drive digital
-            success.
-          </p>
-          <img
-            :src="shape53"
-            alt="Service Shape"
-            class="img-fluid shape-image-developer light-mood-image-shape"
+            :src="service.shape"
+            alt=""
+            class="img-fluid light-mood-image-shape"
+            :class="service.shapeClass"
+            aria-hidden="true"
           />
         </div>
       </CustomTransition>

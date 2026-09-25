@@ -12,13 +12,13 @@ import inConstructionImage from "@/assets/image/in-construction.png";
             loading="lazy"
             decoding="async"
         />
-        <h4 className="m-t-60px heading-2 text-center">Page under construction.</h4>
+        <h4 className="m-t-60px heading-2 text-center">{{ $t('inConstruction.title') }}</h4>
         <p className="textXL font-thin text-center not-found-text">
-            The page you are looking for is currently under construction.
+            {{ $t('inConstruction.text') }}
         </p>
         <nav className="m-t-60px">
             <router-link :to="{ name: 'home' }" className=" back-to-home">
-                Back To Home
+                {{ $t('general.backToHome') }}
             </router-link>
         </nav>
     </article>

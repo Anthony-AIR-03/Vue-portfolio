@@ -10,11 +10,12 @@ import { personalData } from "@/assets/data/personalData";
     <CustomTransition>
         <section class="about-card my-experience p-32px">
             <div class="d-flex align-items-center justify-content-between">
-                <p class="heading-4">My Experience</p>
+                <p class="heading-4">{{ $t("about.myExperience") }}</p>
                 <a
                     class="download-icon"
                     :href="personalCV"
                     download="Anthony_cv.pdf"
+                    :aria-label="$t('about.downloadCv')"
                 >
                     <PhDownloadSimple :size="24" />
                 </a>
@@ -23,8 +24,8 @@ import { personalData } from "@/assets/data/personalData";
                 <MyExperienceItem
                     v-for="(experience, index) in personalData.employments"
                     :key="`${experience}_${index}`"
-                    :time="`${experience.startDate} // ${experience.endDate}`"
-                    :title="`${experience.function}`"
+                    :time="`${experience.startDate} // ${experience.endDate ?? $t('personal.employment.present')}`"
+                    :title="$t(experience.function)"
                     :company="`${experience.company}`"
                 />
             </div>
