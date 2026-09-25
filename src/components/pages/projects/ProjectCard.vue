@@ -10,7 +10,7 @@ defineProps<{ project: Project }>();
     <article class="image-body" :class="{ 'project-featured': project.featured }">
       <img
         :src="project.image"
-        :alt="`${localize(project.title)} preview`"
+        :alt="$t('projects.previewAlt', { project: localize(project.title) })"
         class="image-body__image img-fluid"
       />
       <router-link
@@ -26,7 +26,7 @@ defineProps<{ project: Project }>();
             :src="linkImage"
             width="175"
             height="100"
-            :alt="`Go to ${localize(project.title)} detail page`"
+            :alt="$t('projects.detailLinkAlt', { project: localize(project.title) })"
             class="img-fluid"
           />
         </span>

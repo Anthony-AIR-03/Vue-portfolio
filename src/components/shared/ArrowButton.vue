@@ -8,14 +8,14 @@ defineProps({
   },
   text: {
     type: String,
-    default: "Let’s Talk",
+    required: false,
   },
 });
 </script>
 
 <template>
   <router-link :to="link" class="kewta-btn d-flex align-items-center">
-    <span class="kew-text light-theme-white-text">{{ text }}</span>
+    <span class="kew-text light-theme-white-text">{{ text ?? $t('general.letsTalk') }}</span>
     <span class="kew-arrow">
       <div class="kt-one">
         <svg

@@ -11,7 +11,7 @@ import { personalData } from "@/assets/data/personalData";
                 v-for="(experience, index) in personalData.experiences"
                 :key="`${experience.name}_${index}`"
                 :counterNumber="+experience.count"
-                :text="experience.name"
+                :text="$t(experience.name)"
                 :counterElement="experience.prefix"
             />
         </section>

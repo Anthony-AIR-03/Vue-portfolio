@@ -40,7 +40,7 @@ const isActive = (item: MenuItem) => {
                 isActive(item) ? 'text-secondary' : 'menu-item-text-white'
               }`"
             >
-              {{ item.menuTitle }}
+              {{ $t(item.menuTitle) }}
             </span>
             <PhCaretDown :size="24" v-if="item.menuItems" />
           </p>
@@ -69,7 +69,7 @@ const isActive = (item: MenuItem) => {
                 : 'menu-item-text-white'
             }`"
           >
-            {{ item.menuTitle }}
+            {{ $t(item.menuTitle) }}
           </router-link>
         </li>
       </template>

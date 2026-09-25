@@ -39,6 +39,8 @@ export const i18n = createI18n({
   messages: { en, nl },
 });
 
+document.documentElement.lang = i18n.global.locale.value;
+
 export function getLanguage() {
   return normalizeLocale(i18n.global.locale.value);
 }

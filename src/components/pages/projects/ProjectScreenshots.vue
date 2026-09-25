@@ -43,7 +43,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", handleKeydown));
           :aria-label="t('projects.expandScreenshot', { current: i + 1, total: images.length })"
           @click="open(i)"
         >
-          <img :src="src" :alt="`${alt} screenshot ${i + 1}`" class="project-screenshots__thumb" />
+          <img :src="src" :alt="t('projects.screenshotAlt', { project: alt, number: i + 1 })" class="project-screenshots__thumb" />
         </button>
       </li>
     </ul>
@@ -70,7 +70,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", handleKeydown));
         </button>
         <img
           :src="images[activeIndex!]"
-          :alt="`${alt} screenshot ${activeIndex! + 1}`"
+          :alt="t('projects.screenshotAlt', { project: alt, number: activeIndex! + 1 })"
           class="project-lightbox__image"
         />
         <button

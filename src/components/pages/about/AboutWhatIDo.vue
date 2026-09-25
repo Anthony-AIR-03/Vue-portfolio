@@ -8,7 +8,7 @@ import { personalData } from "@/assets/data/personalData";
 <template>
     <CustomTransition>
         <section class="about-card what-i-do p-32px">
-            <p class="heading-4">What I Do</p>
+            <p class="heading-4">{{ $t("about.whatIDo") }}</p>
             <div class="what-i-do__content">
                 <p
                     class="what-i-do__content-item"
@@ -16,7 +16,7 @@ import { personalData } from "@/assets/data/personalData";
                     :key="`${item}_${index}`"
                 >
                     <PhCaretDoubleRight :size="20" />
-                    <span class="textL">{{ item }}</span>
+                    <span class="textL">{{ $t(item) }}</span>
                 </p>
             </div>
             <img

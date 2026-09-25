@@ -18,10 +18,10 @@ import SocialsLink from "@/components/shared/socialsLink.vue";
                 </SocialsLink>
             </nav>
             <nav>
-                <span class="textM about-profile__text">Stay With Me</span>
+                <span class="textM about-profile__text">{{ $t("about.stayWithMe") }}</span>
                 <LinkPrimaryTwo
                     :link="{ name: 'about-us'}"
-                    linkText="Profiles"
+                    :linkText="$t('profileCard.linkText')"
                     class="about-profile-link"
                 />
             </nav>

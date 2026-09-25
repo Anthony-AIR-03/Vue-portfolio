@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { personalData } from "@/assets/data/personalData";
 import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
+
+// tel: links can't contain the spaces used for display.
+const phoneHref = `tel:${personalData.contactInfo.phoneNumber.replace(/\s/g, "")}`;
 </script>
 <template>
     <div class="contact-section__left">
@@ -18,7 +21,7 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
                 </div>
                 <div class="contact-info__card-info">
                     <p class="textLead">{{ $t('contactPage.contactInfo.phone') }}</p>
-                    <a href="tel:+3567897483" class="textM font-thin link">
+                    <a :href="phoneHref" class="textM font-thin link">
                         {{ personalData.contactInfo.phoneNumber }}
                     </a>
                 </div>
@@ -31,7 +34,7 @@ import { PhMapPin, PhPaperPlaneTilt, PhPhone } from "@phosphor-icons/vue";
                 <div class="contact-info__card-info">
                     <p class="textLead">{{ $t('contactPage.contactInfo.email') }}</p>
                     <a
-                        href="mailto:tanya.hill@example.com"
+                        :href="`mailto:${personalData.contactInfo.email}`"
                         class="textM font-thin link"
                     >
                         {{ personalData.contactInfo.email }}

@@ -26,15 +26,6 @@ export const personalData = {
             Two: "Developer",
         },
     },
-    bio: {
-        introduction: {
-            one: "Hello,",
-            two: "I'm Anthony Inocencio Ramos",
-            three: "Software Developer.",
-        },
-        description:
-            "As a frontend-focused software developer, I build scalable, maintainable, and user-centered applications. With a strong foundation in modern frameworks and real-world project experience, I translate complex ideas into intuitive and performant digital solutions.",
-    },
     socials: {
         linkedIn:
             "https://www.linkedin.com/in/anthony-inoc%C3%AAncio-ramos-b89003277/",
@@ -43,17 +34,17 @@ export const personalData = {
     },
     experiences: [
         {
-            name: "YEARS EXPERIENCE",
+            name: "personal.experiences.yearsExperience",
             count: "6",
             prefix: "0",
         },
         {
-            name: "TOTAL PROJECTS",
+            name: "personal.experiences.totalProjects",
             count: "21",
             prefix: "+",
         },
         {
-            name: "CLIENTS WORLDWIDE",
+            name: "personal.experiences.clientsWorldwide",
             count: "6",
             prefix: "+",
         },
@@ -71,43 +62,43 @@ export const personalData = {
     employments: [
         {
             startDate: "2023",
-            endDate: "Present",
-            function: "Full-stack dev",
+            endDate: null, // current role, rendered as "Present"
+            function: "personal.employment.fullStackDev",
             company: "Qmobiel",
         },
         {
             startDate: "2022",
             endDate: "2023",
-            function: "Front-end Dev, accessibility adviseur",
+            function: "personal.employment.frontEndAccessibility",
             company: "Buro CITE",
         },
     ],
     abilities: [
-        "Web Development",
-        "UI/UX design",
-        "Toegankelijkheid",
-        "Coding infrastructure",
-        "Front-end testing",
-        "Code maintainance",
+        "personal.skills.webDevelopment",
+        "personal.skills.uiUxDesign",
+        "personal.skills.accessibility",
+        "personal.skills.codingInfrastructure",
+        "personal.skills.frontEndTesting",
+        "personal.skills.codeMaintenance",
     ],
     // Real project data now lives in assets/data/projectsData.ts (its own domain, with
     // routing/slug/layout concerns personalData has no business knowing about).
     services: [
         {
             image: service1,
-            title: "Design Precision",
+            title: "personal.skills.designPrecision",
         },
         {
             image: service2,
-            title: "Maintainable code",
+            title: "personal.skills.maintainableCode",
         },
         {
             image: service3,
-            title: "Accessible UI",
+            title: "personal.skills.accessibleUi",
         },
         {
             image: service4,
-            title: "Web Development",
+            title: "personal.skills.webDevelopment",
         },
         // {
         //   image: ,
@@ -115,24 +106,24 @@ export const personalData = {
         // },
     ],
     skills: [
-        "UI/UX Design",
-        "Components",
-        "Maintainability",
-        "Web development",
-        "App development",
-        "Accesible UI",
-        "UI/UX Design",
-        "Components",
-        "Maintainability",
-        "Web development",
-        "App development",
-        "Accesible UI",
-        "UI/UX Design",
-        "Components",
-        "Maintainability",
-        "Web development",
-        "App development",
-        "Accesible UI",
+        "personal.skills.uiUxDesign",
+        "personal.skills.components",
+        "personal.skills.maintainability",
+        "personal.skills.webDevelopment",
+        "personal.skills.appDevelopment",
+        "personal.skills.accessibleUi",
+        "personal.skills.uiUxDesign",
+        "personal.skills.components",
+        "personal.skills.maintainability",
+        "personal.skills.webDevelopment",
+        "personal.skills.appDevelopment",
+        "personal.skills.accessibleUi",
+        "personal.skills.uiUxDesign",
+        "personal.skills.components",
+        "personal.skills.maintainability",
+        "personal.skills.webDevelopment",
+        "personal.skills.appDevelopment",
+        "personal.skills.accessibleUi",
     ],
     tools: [
         { icon: PhFigmaLogo },

@@ -73,7 +73,7 @@ const isActive = (item: MenuItem) => {
             >
               <span class="mobile-menu-link">
                 <component :is="item.icon" :size="20"></component>
-                <span class="textXL">{{ item.menuTitle }}</span>
+                <span class="textXL">{{ $t(item.menuTitle) }}</span>
               </span>
               <PhCaretDown
                 :class="`${
@@ -124,7 +124,7 @@ const isActive = (item: MenuItem) => {
             >
               <span class="textXL mobile-menu-link">
                 <component :is="item.icon" :size="20"></component>
-                <span>{{ item.menuTitle }}</span>
+                <span>{{ $t(item.menuTitle) }}</span>
               </span>
             </router-link>
           </li>

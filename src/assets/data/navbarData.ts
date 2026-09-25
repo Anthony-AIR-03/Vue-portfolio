@@ -3,6 +3,7 @@ import type { Component } from "vue";
 
 export interface MenuItem {
   id: string;
+  /** i18n key, translated at render time. */
   menuTitle: string;
   icon?: Component;
   path: string;
@@ -16,7 +17,7 @@ export interface MenuItem {
 export const navbarData: MenuItem[] = [
   {
     id: "menu1",
-    menuTitle: "Home",
+    menuTitle: "nav.home",
     path: "/",
     // menuItems: [
     //   {
@@ -33,17 +34,22 @@ export const navbarData: MenuItem[] = [
   },
   {
     id: "about-page",
-    menuTitle: "About",
+    menuTitle: "nav.about",
     path: "/about-us",
   },
   {
     id: "project",
-    menuTitle: "Projects",
+    menuTitle: "nav.projects",
     path: "/projects",
   },
   {
+    id: "services-section",
+    menuTitle: "nav.services",
+    path: "/services",
+  },
+  {
     id: "menu2",
-    menuTitle: "Blog",
+    menuTitle: "nav.blog",
     path: "/blogs",
     // menuItems: [
     //   {
@@ -60,7 +66,7 @@ export const navbarData: MenuItem[] = [
   },
   {
     id: "contact-page",
-    menuTitle: "Contact",
+    menuTitle: "nav.contact",
     path: "/contact",
   },
 ];
@@ -70,12 +76,12 @@ export const mobileNavbarData: MenuItem[] = [
   {
     id: "menu1",
     icon: PhHouse,
-    menuTitle: "Home",
+    menuTitle: "nav.home",
     path: "/",
   },
   {
     id: "menu2",
-    menuTitle: "Blog",
+    menuTitle: "nav.blog",
     icon: PhBook,
     path: "/blogs",
     // menuItems: [
@@ -93,7 +99,7 @@ export const mobileNavbarData: MenuItem[] = [
   },
   {
     id: "project",
-    menuTitle: "Projects",
+    menuTitle: "nav.projects",
     icon: PhBagSimple,
     path: "/projects",
     // menuItems: [
@@ -111,7 +117,7 @@ export const mobileNavbarData: MenuItem[] = [
   },
   {
     id: "services-section",
-    menuTitle: "Services",
+    menuTitle: "nav.services",
     icon: PhBriefcase,
     path: "/services",
   },
@@ -119,13 +125,13 @@ export const mobileNavbarData: MenuItem[] = [
   {
     id: "about-page",
     icon: PhUsers,
-    menuTitle: "About",
+    menuTitle: "nav.about",
     path: "/about-us",
   },
   {
     id: "contact-page",
     icon: PhPhonePlus,
-    menuTitle: "Contact",
+    menuTitle: "nav.contact",
     path: "/contact",
   },
 ];

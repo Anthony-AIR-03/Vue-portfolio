@@ -10,6 +10,7 @@ import Projects from "@/pages/Projects.vue";
 import Services from "@/pages/Services.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
+// `meta.title` is an i18n key; App.vue turns it into the browser-tab title.
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -17,14 +18,14 @@ const router = createRouter({
             path: "/",
             name: "home",
             component: Home,
-            meta: { title: "Home" },
+            meta: { title: "nav.home" },
         },
         {
             path: "/about-us",
             name: "about-us",
             component: About,
             meta: {
-                title: "About",
+                title: "nav.about",
             },
         },
         {
@@ -35,7 +36,7 @@ const router = createRouter({
             },
             // component: Blogs,
             meta: {
-                title: "Blogs -Grid System Unique Portfolio VueJs Template",
+                title: "nav.blog",
             },
         },
         {
@@ -45,7 +46,7 @@ const router = createRouter({
             },
             // component: BlogDetails,
             meta: {
-                title: "Blog Details",
+                title: "nav.blog",
             },
         },
         {
@@ -53,7 +54,7 @@ const router = createRouter({
             name: "projects",
             component: Projects,
             meta: {
-                title: "Projects",
+                title: "nav.projects",
             },
         },
         {
@@ -61,7 +62,7 @@ const router = createRouter({
             name: "project-detail",
             component: ProjectDetail,
             meta: {
-                title: "Project",
+                title: "nav.projects",
             },
         },
         {
@@ -69,7 +70,7 @@ const router = createRouter({
             name: "case-study",
             component: CaseStudyPage,
             meta: {
-                title: "Case Study",
+                title: "pageTitles.caseStudy",
             },
         },
         // Cheap safety net for any stray links to the old path.
@@ -83,7 +84,7 @@ const router = createRouter({
 
             component: Services,
             meta: {
-                title: "Services",
+                title: "nav.services",
             },
         },
         {
@@ -91,7 +92,7 @@ const router = createRouter({
             name: "contact",
             component: Contact,
             meta: {
-                title: "Services",
+                title: "nav.contact",
             },
         },
         {
@@ -99,7 +100,7 @@ const router = createRouter({
             component: NotFound,
             meta: {
                 layout: EmptyLayoutVue,
-                title: "Not Found",
+                title: "pageTitles.notFound",
             },
         },
         {
@@ -108,7 +109,7 @@ const router = createRouter({
             component: InConstruction,
             meta: {
                 layout: EmptyLayoutVue,
-                title: "construction (web)site",
+                title: "pageTitles.inConstruction",
             },
         },
         {
@@ -116,7 +117,7 @@ const router = createRouter({
             component: NotFound,
             meta: {
                 layout: EmptyLayoutVue,
-                title: "Not Found",
+                title: "pageTitles.notFound",
             },
         },
     ],

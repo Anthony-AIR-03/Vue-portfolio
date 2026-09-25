@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { projectsData } from "@/assets/data/projectsData";
+import { projectsData, projectsInGridOrder } from "@/assets/data/projectsData";
 import { customProjectComponents } from "@/components/pages/projects/custom/registry";
 import ProjectDetailContent from "@/components/pages/projects/ProjectDetailContent.vue";
 import ProjectPager from "@/components/pages/projects/ProjectPager.vue";
@@ -25,18 +25,19 @@ const CustomDetail = computed(() => {
   return defineAsyncComponent(customProjectComponents[slug]);
 });
 
+// Previous/next follow the same order as the projects grid.
 const currentIndex = computed(() =>
-  projectsData.findIndex((p) => p.slug === route.params.slug)
+  projectsInGridOrder.findIndex((p) => p.slug === route.params.slug)
 );
 const previousProject = computed(() => {
   if (currentIndex.value === -1) return null;
-  const index = (currentIndex.value - 1 + projectsData.length) % projectsData.length;
-  return projectsData[index];
+  const index = (currentIndex.value - 1 + projectsInGridOrder.length) % projectsInGridOrder.length;
+  return projectsInGridOrder[index];
 });
 const nextProject = computed(() => {
   if (currentIndex.value === -1) return null;
-  const index = (currentIndex.value + 1) % projectsData.length;
-  return projectsData[index];
+  const index = (currentIndex.value + 1) % projectsInGridOrder.length;
+  return projectsInGridOrder[index];
 });
 </script>
 <template>
