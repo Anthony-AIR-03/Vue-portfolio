@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anthony-air.nl/sitemap.xml
