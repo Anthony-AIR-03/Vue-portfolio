@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://collect.telumera.nl/telumera.js"></script>
         <title>Home - Anthony Inocencio Ramos's portfolio</title>
-        <meta name="description" content="Software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
+        <meta name="description" content="Anthony Inocencio Ramos is a software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
 
         <!-- Link previews (LinkedIn, WhatsApp, Slack, etc. read these; they don't run JS) -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Anthony Inocencio Ramos" />
         <meta property="og:title" content="Anthony Inocencio Ramos - Software Developer" />
-        <meta property="og:description" content="Software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
+        <meta property="og:description" content="Anthony Inocencio Ramos is a software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
         <meta property="og:url" content="https://anthony-air.nl/" />
         <meta property="og:image" content="https://anthony-air.nl/og-image.png" />
         <meta property="og:image:width" content="1200" />
@@ -22,8 +22,43 @@
         <meta property="og:locale:alternate" content="nl_NL" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Anthony Inocencio Ramos - Software Developer" />
-        <meta name="twitter:description" content="Software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
+        <meta name="twitter:description" content="Anthony Inocencio Ramos is a software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot. Portfolio, projects and case studies." />
         <meta name="twitter:image" content="https://anthony-air.nl/og-image.png" />
+
+        <!-- Structured data: tells search engines who the site is about and links the profiles -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Person",
+                        "@id": "https://anthony-air.nl/#person",
+                        "name": "Anthony Inocencio Ramos",
+                        "alternateName": ["Anthony Air", "Anthony Ramos"],
+                        "jobTitle": "Software Developer",
+                        "url": "https://anthony-air.nl/",
+                        "image": "https://anthony-air.nl/og-image.png",
+                        "address": { "@type": "PostalAddress", "addressLocality": "Rotterdam", "addressCountry": "NL" },
+                        "knowsAbout": ["Vue", "TypeScript", "ASP.NET Core", "Spring Boot", "Web accessibility", "WCAG", "Front-end development"],
+                        "sameAs": [
+                            "https://www.linkedin.com/in/anthony-inoc%C3%AAncio-ramos-b89003277/",
+                            "https://github.com/Anthony-AIR-03",
+                            "https://www.instagram.com/anthony.air/",
+                            "https://www.threads.com/@anthony.air"
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://anthony-air.nl/#website",
+                        "url": "https://anthony-air.nl/",
+                        "name": "Anthony Inocencio Ramos",
+                        "alternateName": ["Anthony Air", "anthony-air.nl"],
+                        "inLanguage": ["en", "nl"],
+                        "publisher": { "@id": "https://anthony-air.nl/#person" }
+                    }
+                ]
+            }
+        </script>
     </head>
     <body>
         <div id="app"></div>

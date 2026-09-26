@@ -254,5 +254,12 @@
             "bottom": "Development",
             "text": "Complete web applications, front to back. Vue and TypeScript on the frontend, APIs in ASP.NET Core or Spring Boot behind them, and automated deployments to get it all live."
         }
+    },
+    "pageDescriptions": {
+        "home": "Anthony Inocencio Ramos is a software developer from Rotterdam building accessible, maintainable web applications with Vue, TypeScript, ASP.NET Core and Spring Boot.",
+        "about": "About Anthony Inocencio Ramos: software developer from Rotterdam with a background in front-end development and accessibility. Experience, education and skills.",
+        "projects": "Projects by Anthony Inocencio Ramos: a self-hosted analytics platform, client portals, company websites and school projects in Vue, TypeScript, C# and Java.",
+        "services": "Services from software developer Anthony Inocencio Ramos: design precision, maintainable code, accessible UI and complete web development.",
+        "contact": "Get in touch with Anthony Inocencio Ramos, software developer in Rotterdam."
     }
 }
