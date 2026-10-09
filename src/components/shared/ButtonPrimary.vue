@@ -19,6 +19,7 @@
   transition: all 0.3s ease-in-out;
   margin-top: 32px;
   align-self: center;
+  min-height: 44px;
 }
 
 @media (max-width: 992px) {
@@ -37,18 +38,7 @@
   transition: all 0.4s;
 }
 
-.button-primary .primary-button-icon {
-  font-size: 0px;
-  transition: all 0.4s;
-}
-
 .button-primary .primary-button-text {
-  color: #fff;
-}
-
-.button-primary:hover .primary-button-icon {
-  transition: all 0.4s;
-  font-size: 24px;
   color: #fff;
 }
 

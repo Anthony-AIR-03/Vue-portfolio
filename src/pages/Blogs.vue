@@ -11,5 +11,3 @@ import AfterEffect from '@/components/shared/AfterEffect.vue';
   </div>
   <AfterEffect />
 </template>
-
-<style scoped></style>

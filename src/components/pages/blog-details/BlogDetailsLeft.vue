@@ -91,5 +91,3 @@ import CustomTransition from "@/components/shared/CustomTransition.vue";
     </div>
   </div>
 </template>
-
-<style scoped></style>

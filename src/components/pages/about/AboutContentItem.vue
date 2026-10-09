@@ -12,5 +12,3 @@ defineProps<{
         <p class="textM university">{{ university }}</p>
     </article>
 </template>
-
-<style scoped></style>

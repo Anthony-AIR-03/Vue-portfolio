@@ -69,6 +69,9 @@ const { t } = useI18n();
 }
 
 .project-links__item {
+  /* 44px tap target; the negative margin keeps the layout unchanged. */
+  padding: 10px 7px;
+  margin: -10px -7px;
   color: var(--secondary-color);
   font-weight: 500;
   text-decoration: underline;

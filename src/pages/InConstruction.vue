@@ -4,5 +4,3 @@ import InConstructionPage from "@/components/pages/not-found/InConstructionPage.
 <template>
   <InConstructionPage />
 </template>
-
-<style scoped></style>

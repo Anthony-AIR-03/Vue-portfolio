@@ -31,7 +31,7 @@ defineProps<{ image: string }>();
     display: grid;
     gap: 1rem;
     grid-template-rows: repeat(10, auto);
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .image-card {
@@ -80,7 +80,7 @@ defineProps<{ image: string }>();
         display: grid;
         gap: 1rem;
         grid-template-rows: repeat(5, auto);
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .image-card {
@@ -130,7 +130,7 @@ defineProps<{ image: string }>();
 
 @media (min-width: 1200px) {
     .about-body {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .hello-card {

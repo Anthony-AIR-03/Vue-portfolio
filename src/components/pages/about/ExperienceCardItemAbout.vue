@@ -21,5 +21,3 @@ defineProps<{
     <p class="textL experience-in-number__item-text">{{ text }}</p>
   </div>
 </template>
-
-<style scoped></style>

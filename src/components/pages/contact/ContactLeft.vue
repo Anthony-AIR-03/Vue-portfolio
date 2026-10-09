@@ -56,4 +56,9 @@ const phoneHref = `tel:${personalData.contactInfo.phoneNumber.replace(/\s/g, "")
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Vertical padding on an inline link grows the tap area to 44px without shifting the layout. */
+a.link {
+    padding-block: 12px;
+}
+</style>

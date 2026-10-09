@@ -9,5 +9,3 @@ defineProps<{
 <template>
   <count-up :end-val="counterNumber" :decimal-places="decimalPlaces"></count-up>
 </template>
-
-<style scoped></style>

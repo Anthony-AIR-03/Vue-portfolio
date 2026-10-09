@@ -48,5 +48,3 @@ import BlogSlider from "./BlogSlider.vue";
     </div>
   </div>
 </template>
-
-<style scoped></style>

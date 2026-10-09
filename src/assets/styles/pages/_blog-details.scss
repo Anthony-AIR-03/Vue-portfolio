@@ -508,13 +508,6 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .icon-inner {
-    transition: all 0.3s ease-in-out;
-  }
-
-  &:hover .icon-inner {
-    transform: rotate(45deg);
-  }
 }
 
 .kewta-btn {
@@ -607,11 +600,14 @@
   }
 }
 
-.next-project {
-  display: block;
-  color: var(--white-neutral1);
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    color: var(--secondary-color);
-  }
+// Blog sidebar search box (moved from the removed dashboard/_skills-tools.scss)
+.search-field {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--black-neutral2);
+  background: inherit;
+}
+
+[theme="custom-light"] .search-field {
+  border-color: #6e6d6d6b;
 }

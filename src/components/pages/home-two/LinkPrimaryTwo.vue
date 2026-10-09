@@ -34,5 +34,3 @@ defineProps<{ link: string|Object; linkText: string; className?: string }>();
     </router-link>
   </div>
 </template>
-
-<style scoped></style>

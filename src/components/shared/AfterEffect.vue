@@ -19,5 +19,3 @@ onUnmounted(() => {
     <div class="layla-preloader text-center"></div>
   </div>
 </template>
-
-<style scoped></style>

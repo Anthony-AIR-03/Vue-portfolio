@@ -22,5 +22,3 @@ import CustomTransition from "@/components/shared/CustomTransition.vue";
         </article>
     </CustomTransition>
 </template>
-
-<style scoped></style>

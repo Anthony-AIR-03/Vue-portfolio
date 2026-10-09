@@ -10,5 +10,3 @@ import LinkBackHome from "@/components/shared/LinkBackHome.vue";
     </main>
     <AfterEffect />
 </template>
-
-<style scoped></style>

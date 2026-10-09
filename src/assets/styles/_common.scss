@@ -96,10 +96,6 @@ span {
   background-color: var(--secondary-color);
 }
 
-.cart-scrollbar::-webkit-scrollbar {
-  height: 3px;
-}
-
 ::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color);
   border-radius: 10px;
@@ -164,9 +160,6 @@ span {
   }
 }
 
-.m-b-60px {
-  margin-bottom: 60px;
-}
 .m-t-32px {
   margin-top: 32px;
 }
@@ -181,10 +174,6 @@ span {
 
 .overflow-x-hidden {
   overflow-x: hidden;
-}
-
-.gap-6px {
-  gap: 6px;
 }
 
 // animation
@@ -206,11 +195,6 @@ span {
   100% {
     left: -200%;
   }
-}
-
-.to-left {
-  animation: marqueeLeft 10s linear infinite;
-  white-space: nowrap;
 }
 
 // marque right
@@ -259,10 +243,6 @@ span {
   animation: rotating 2s linear infinite;
 }
 
-.to-right {
-  animation: marqueeRight 25s linear infinite;
-}
-
 // back to home button style
 .button-back-to-home {
   padding: 12px 20px;
@@ -281,4 +261,9 @@ span {
     scale: 1.02;
     color: var(--white-neutral1);
   }
+}
+
+// Primary button text colour (moved from the removed dashboard/_skills-tools.scss)
+.n0-color {
+  color: var(--white-neutral1) !important;
 }

@@ -133,5 +133,3 @@ const isActive = (item: MenuItem) => {
     </div>
   </div>
 </template>
-
-<style scoped></style>

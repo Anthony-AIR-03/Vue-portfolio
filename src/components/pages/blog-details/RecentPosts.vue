@@ -24,5 +24,3 @@ import RecentPost from "./RecentPost.vue";
     />
   </div>
 </template>
-
-<style scoped></style>

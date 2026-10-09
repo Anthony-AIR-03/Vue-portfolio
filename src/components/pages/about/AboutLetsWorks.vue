@@ -15,5 +15,3 @@ import LinkPrimaryTwo from "../home-two/LinkPrimaryTwo.vue";
         </section>
     </CustomTransition>
 </template>
-
-<style scoped></style>

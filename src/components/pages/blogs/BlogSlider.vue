@@ -213,5 +213,3 @@ const handleFilterData = (event: MouseEvent) => {
     </div>
   </div>
 </template>
-
-<style scoped></style>

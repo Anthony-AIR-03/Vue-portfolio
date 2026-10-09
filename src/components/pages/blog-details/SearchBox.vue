@@ -11,5 +11,3 @@ import { PhMagnifyingGlass } from "@phosphor-icons/vue";
     </div>
   </div>
 </template>
-
-<style scoped></style>

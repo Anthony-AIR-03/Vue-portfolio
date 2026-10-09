@@ -27,8 +27,11 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
 </template>
 
 <style scoped>
+/* minmax(0, ...) lets tracks shrink below their content's min-content width — without it the
+   marquee cards (max-content wide tracks) blow a column out to ~5000px on narrow screens. */
 .parent {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
 }
 
@@ -38,7 +41,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
 
 @media (min-width: 576px) {
     .parent {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(8, auto);
     }
 
@@ -104,8 +107,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
 @media (min-width: 922px) {
     .parent {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(, auto);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
     }
 
@@ -170,7 +172,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
 @media (min-width: 1200px) {
     .parent {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-template-rows: repeat(10, auto);
         gap: 1rem;
     }

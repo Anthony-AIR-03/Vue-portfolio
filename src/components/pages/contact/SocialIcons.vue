@@ -5,6 +5,7 @@ import {
     PhBehanceLogo,
     PhDribbbleLogo,
     PhFacebookLogo,
+    PhGithubLogo,
     PhInstagramLogo,
     PhLinkedinLogo,
     PhTwitchLogo,
@@ -17,6 +18,12 @@ import {
                 <PhLinkedinLogo :size="24" />
             </span>
             <span class="textLead icon-name">LinkedIn</span>
+        </a>
+        <a :href="personalData.socials.github" class="social-icon">
+            <span class="icon">
+                <PhGithubLogo :size="24" />
+            </span>
+            <span class="textLead icon-name">GitHub</span>
         </a>
         <a :href="personalData.socials.instagram" class="social-icon">
             <span class="icon">
@@ -33,5 +40,3 @@ import {
         </a>
     </div>
 </template>
-
-<style scoped></style>
