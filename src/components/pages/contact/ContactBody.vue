@@ -12,5 +12,3 @@ import SocialIcons from "./SocialIcons.vue";
     <SocialIcons />
   </div>
 </template>
-
-<style scoped></style>

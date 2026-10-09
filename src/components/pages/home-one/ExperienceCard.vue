@@ -17,5 +17,3 @@ import { personalData } from "@/assets/data/personalData";
         </section>
     </CustomTransition>
 </template>
-
-<style scoped></style>

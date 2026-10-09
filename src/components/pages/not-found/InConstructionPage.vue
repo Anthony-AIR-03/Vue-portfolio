@@ -23,5 +23,3 @@ import inConstructionImage from "@/assets/image/in-construction.png";
         </nav>
     </article>
 </template>
-
-<style scoped></style>

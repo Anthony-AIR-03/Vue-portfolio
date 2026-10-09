@@ -70,12 +70,4 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     top: 0;
     flex-shrink: 0;
 }
-
-[dir="rtl"] .all-blog-card__shapes-image-articles {
-    position: absolute;
-    left: 24px;
-    top: 0;
-    right: auto !important;
-    flex-shrink: 0;
-}
 </style>

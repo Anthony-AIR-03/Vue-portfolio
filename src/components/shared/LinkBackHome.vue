@@ -18,5 +18,3 @@ const resolvedLabel = computed(() => props.label ?? t("general.backToHome"));
     </router-link>
   </div>
 </template>
-
-<style scoped></style>

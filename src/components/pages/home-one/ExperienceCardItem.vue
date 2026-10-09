@@ -17,5 +17,3 @@ defineProps<{
     <h4 class="experience-card__item-text textM">{{ text }}</h4>
   </article>
 </template>
-
-<style scoped></style>

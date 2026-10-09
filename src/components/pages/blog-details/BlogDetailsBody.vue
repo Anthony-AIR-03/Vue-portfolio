@@ -85,5 +85,3 @@ const blogSlider = [
     </div>
   </div>
 </template>
-
-<style scoped></style>

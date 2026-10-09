@@ -33,5 +33,3 @@ import {
         </a>
     </div>
 </template>
-
-<style scoped></style>

@@ -34,5 +34,3 @@ defineProps<{
     </div>
   </CustomTransition>
 </template>
-
-<style scoped></style>

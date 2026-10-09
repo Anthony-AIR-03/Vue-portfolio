@@ -29,5 +29,3 @@ import BlogLink from "./BlogLink.vue";
     </div>
   </div>
 </template>
-
-<style scoped></style>

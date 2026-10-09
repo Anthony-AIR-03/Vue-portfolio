@@ -77,5 +77,3 @@ const isActive = (item: MenuItem) => {
     <ArrowButton :link="{name: 'contact'}" />
   </div>
 </template>
-
-<style scoped></style>

@@ -28,5 +28,3 @@ import SocialsLink from "@/components/shared/socialsLink.vue";
         </section>
     </CustomTransition>
 </template>
-
-<style scoped></style>

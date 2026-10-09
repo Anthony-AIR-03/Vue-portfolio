@@ -34,5 +34,3 @@ defineProps<{ project: Project }>();
     </article>
   </CustomTransition>
 </template>
-
-<style scoped></style>

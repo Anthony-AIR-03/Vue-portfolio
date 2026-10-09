@@ -22,5 +22,3 @@ import notFoundImage from "@/assets/image/not-found.png";
         </nav>
     </article>
 </template>
-
-<style scoped></style>

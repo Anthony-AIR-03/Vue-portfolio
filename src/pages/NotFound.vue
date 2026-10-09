@@ -4,5 +4,3 @@ import NotFoundPage from "@/components/pages/not-found/NotFoundPage.vue";
 <template>
   <NotFoundPage />
 </template>
-
-<style scoped></style>

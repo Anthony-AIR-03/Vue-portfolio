@@ -202,52 +202,10 @@
   right: 24px;
 }
 
-[dir="rtl"] .group-shape {
-  position: absolute;
-  top: 0;
-  left: 24px;
-}
-
 [dir="ltr"] .bottom-shape {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-[dir="rtl"] .bottom-shape {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: rotate(90deg);
-}
-
-[dir="ltr"] .about-body__1st-row .card-hello img {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  @media (max-width: 992px) {
-    width: 70px;
-    height: 70px;
-  }
-  @media (max-width: 576px) {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-[dir="rtl"] .about-body__1st-row .card-hello img {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  transform: rotate(-90deg);
-  @media (max-width: 992px) {
-    width: 70px;
-    height: 70px;
-  }
-  @media (max-width: 576px) {
-    width: 50px;
-    height: 50px;
-  }
 }
 
 .about-profile {
@@ -362,12 +320,6 @@
   position: absolute;
   right: 20px;
   top: 20px;
-}
-[dir="rtl"] .about-education-shape {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  transform: rotate(-90deg);
 }
 
 .about-get-in-touch {
