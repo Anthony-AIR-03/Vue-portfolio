@@ -29,6 +29,7 @@ export const personalData = {
     socials: {
         linkedIn:
             "https://www.linkedin.com/in/anthony-inoc%C3%AAncio-ramos-b89003277/",
+        github: "https://github.com/Anthony-AIR-03",
         instagram: "https://www.instagram.com/anthony.air/",
         threads: "https://www.threads.com/@anthony.air",
     },

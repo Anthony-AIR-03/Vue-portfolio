@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PhLinkedinLogo, PhInstagramLogo } from "@phosphor-icons/vue";
+import { PhGithubLogo, PhInstagramLogo, PhLinkedinLogo } from "@phosphor-icons/vue";
 import LinkPrimaryTwo from "../home-two/LinkPrimaryTwo.vue";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import { personalData } from "@/assets/data/personalData";
@@ -12,6 +12,9 @@ import SocialsLink from "@/components/shared/socialsLink.vue";
             <nav class="profile-icons">
                 <SocialsLink :socialLink="personalData.socials.linkedIn">
                     <PhLinkedinLogo :size="40" />
+                </SocialsLink>
+                <SocialsLink :socialLink="personalData.socials.github">
+                    <PhGithubLogo :size="40" />
                 </SocialsLink>
                 <SocialsLink :socialLink="personalData.socials.instagram">
                     <PhInstagramLogo :size="40" />

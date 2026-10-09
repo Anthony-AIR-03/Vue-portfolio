@@ -82,50 +82,44 @@
 
 .profile-icons {
   display: flex;
-  gap: 26px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
+  container-type: inline-size;
 
   .profile-icon {
-    padding: 30px;
+    // Up to three icons share the row: each gets a third of it, capped at the original 102px,
+    // so they fit any card width. The logo and hover ring scale with the circle.
+    width: min(102px, calc((100cqi - 32px) / 3));
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 1000px;
     border: 1px solid var(--accent2);
     color: var(--white-neutral1);
     transition: all 0.3s ease-in-out;
-    display: block;
-    @media (max-width: 1400px) {
-      padding: 24px;
-    }
 
     &:hover {
       color: var(--secondary-color);
     }
 
     svg {
-      @media (max-width: 1400px) {
-        width: 30px;
-        height: 30px;
-      }
+      width: 40%;
+      height: 40%;
     }
 
     .hover-icon {
       position: absolute;
-      top: 0;
-      left: 0;
-      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       transition: all 0.3s cubic-bezier(0.29, 0.12, 0.75, 0.4);
       opacity: 0;
-
-      @media (max-width: 1400px) {
-        width: 80px;
-        height: 80px;
-      }
     }
     &:hover .hover-icon {
       opacity: 1;
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
     }
   }
 }
