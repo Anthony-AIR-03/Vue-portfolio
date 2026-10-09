@@ -12,6 +12,10 @@ import wuzziCpMessagesScreenshot from "@/assets/image/project-wuzzi-cp-messages.
 import wuzziCpAlarmSettingsScreenshot from "@/assets/image/project-wuzzi-cp-alarm-settings.jpg";
 import wuzziCpBillingScreenshot from "@/assets/image/project-wuzzi-cp-billing.jpg";
 import wuzziCpSafezoneMapScreenshot from "@/assets/image/project-wuzzi-cp-safezone-map.jpg";
+import irmaosHero from "@/assets/image/project-irmaos-hero.png";
+import irmaosAtlas from "@/assets/image/project-irmaos-atlas.png";
+import irmaosAtlasDark from "@/assets/image/project-irmaos-atlas-dark.png";
+import irmaosProblems from "@/assets/image/project-irmaos-problems.png";
 import qmobielHero from "@/assets/image/project-qmobiel-hero.jpg";
 import qmobielConnectivity from "@/assets/image/project-qmobiel-connectivity.jpg";
 import qmobielExpertise from "@/assets/image/project-qmobiel-expertise.jpg";
@@ -156,6 +160,22 @@ export const projectsData: Project[] = [
       en: "A live demo ran at wuzzi-cp.anthony-air.nl against the mocked backend described above — the real Wuzzi Alert production API was never exposed. It's currently locked down for confidentiality reasons agreed with the company, so it isn't publicly reachable right now.",
       nl: "Er draaide een live demo op wuzzi-cp.anthony-air.nl tegen de hierboven beschreven gemockte backend — de echte productie-API van Wuzzi Alert is nooit blootgesteld. Deze is momenteel afgesloten om vertrouwelijkheidsredenen die met het bedrijf zijn afgesproken, en is op dit moment dus niet publiek bereikbaar.",
     },
+  },
+  {
+    slug: "irmaos-cleaners",
+    title: { en: "Irmãos Cleaners", nl: "Irmãos Cleaners" },
+    shortDescription: {
+      en: "A brand refresh and bilingual website for a Rotterdam stainless steel specialist, with 3D-rendered objects instead of stock photos.",
+      nl: "Een vernieuwde huisstijl en tweetalige website voor een Rotterdamse specialist in roestvast staal, met 3D-renders in plaats van stockfoto's.",
+    },
+    description: {
+      en: "Irmãos Cleaners is a Rotterdam family business that grinds, polishes, pickles and passivates stainless steel: cargo tanks, tank containers, heating coils, piping, process tanks, silos and ship scrubbers. It had no online presence and an old business card, so this project delivered two things. First, a refreshed brand: the original logo, a slanted blue i and orange c, redrawn on a fixed 72° slant with a single stroke weight, plus a new wordmark and a complete kit of lockups, colourways, favicons, colour and type tokens and usage rules. Second, a static website in Dutch and English built straight from that brand book. Visitors pick their object in an object atlas and see the problems usually found on it and how they're treated, with a WhatsApp button that pre-fills the object they chose. The seven objects are modelled and rendered offline with three.js (PBR stainless steel, studio lighting), with heat-tinted welds showing the damage the company removes. A problem guide explains seven types of damage, from pitting to free-iron contamination: how to recognise each, how it happens and what fixes it. There's a white theme and a steel-ink dark theme, with every text colour pair checked against WCAG AA in both. The site has no backend: a small Node.js script generates both language versions, and contact goes through phone, WhatsApp and email.",
+      nl: "Irmãos Cleaners is een Rotterdams familiebedrijf dat roestvast staal slijpt, polijst, beitst en passiveert: ladingtanks, tankcontainers, verwarmingsspiralen, leidingwerk, procestanks, silo's en scrubbers. Het bedrijf had geen online aanwezigheid en een verouderd visitekaartje, dus dit project leverde twee dingen op. Ten eerste een vernieuwde huisstijl: het oorspronkelijke logo, een schuine blauwe i en een oranje c, opnieuw getekend op een vaste hoek van 72° met één lijndikte, plus een nieuw woordmerk en een complete kit met lockups, kleurvarianten, favicons, kleur- en typografietokens en gebruiksregels. Ten tweede een statische website in het Nederlands en Engels, rechtstreeks gebouwd vanuit dat brandbook. Bezoekers kiezen hun object in een objectenatlas en zien welke problemen daar meestal op zitten en hoe die worden behandeld, met een WhatsApp-knop die het gekozen object alvast invult. De zeven objecten zijn offline gemodelleerd en gerenderd met three.js (PBR-roestvast staal, studioverlichting), met aangelopen lasnaden die de schade laten zien die het bedrijf verwijdert. Een probleemgids legt zeven soorten schade uit, van putcorrosie tot vreemd-ijzerbesmetting: hoe je ze herkent, hoe ze ontstaan en wat ze verhelpt. Er is een wit thema en een donker staalthema, waarbij elk tekstkleurpaar in beide thema's is gecontroleerd op WCAG AA. De site heeft geen backend: een klein Node.js-script genereert beide taalversies, en contact loopt via telefoon, WhatsApp en e-mail.",
+    },
+    image: irmaosHero,
+    tags: ["HTML", "CSS", "Vanilla JavaScript", "Three.js", "Node.js", "Brand Identity", "Accessibility", "Responsive Design"],
+    links: [{ label: "Live", href: "https://irmaoscleaners.com" }],
+    screenshots: [irmaosHero, irmaosAtlas, irmaosProblems, irmaosAtlasDark],
   },
   {
     slug: "qmobiel-website",
