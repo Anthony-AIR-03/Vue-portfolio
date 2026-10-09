@@ -59,6 +59,16 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
     color: var(--white-neutral1);
     opacity: 0.9;
     text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Phones: an even 2x2 grid, labels wrap inside their cell instead of overflowing the card. */
+@media (max-width: 575px) {
+    .all-services-card__services {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 8px;
+    }
 }
 
 .all-services-card__link {

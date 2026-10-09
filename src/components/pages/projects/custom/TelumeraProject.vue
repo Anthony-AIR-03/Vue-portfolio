@@ -141,6 +141,7 @@ const modules: readonly ModuleRow[] = [
 }
 
 .project-modules__case-study {
+  position: relative;
   flex-shrink: 0;
   margin-left: auto;
   align-self: center;
@@ -154,6 +155,13 @@ const modules: readonly ModuleRow[] = [
   transition:
     background 0.15s ease-in-out,
     color 0.15s ease-in-out;
+}
+
+/* Invisible hit area: grows the 32px pill to a 44px tap target without changing how it looks. */
+.project-modules__case-study::before {
+  content: "";
+  position: absolute;
+  inset: -6px 0;
 }
 
 .project-modules__case-study:hover {
@@ -190,6 +198,9 @@ const modules: readonly ModuleRow[] = [
 }
 
 .project-links__item {
+  /* 44px tap target; the negative margin keeps the layout unchanged. */
+  padding: 10px 7px;
+  margin: -10px -7px;
   color: var(--secondary-color);
   font-weight: 500;
   text-decoration: underline;

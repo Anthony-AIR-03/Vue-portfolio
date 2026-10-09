@@ -23,4 +23,10 @@
   </footer>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/* Grow short links like "Werk" to a 44px tap area without shifting the layout. */
+.landing-footer__menu-item a {
+  padding: 10px 8px;
+  margin-inline: -8px;
+}
+</style>

@@ -79,6 +79,12 @@ defineProps<{ link: string|Object; linkText: string; className?: string }>();
         width: 60px;
         height: 32px;
     }
+
+    /* Pad the 32px-tall link to a 44px tap target; the negative margin keeps the layout unchanged. */
+    .link-primary__image {
+        padding-block: 6px;
+        margin-block: -6px;
+    }
 }
 
 [theme="custom-light"] .link-primary__image svg {

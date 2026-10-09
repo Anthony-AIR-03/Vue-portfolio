@@ -19,6 +19,7 @@
   transition: all 0.3s ease-in-out;
   margin-top: 32px;
   align-self: center;
+  min-height: 44px;
 }
 
 @media (max-width: 992px) {
