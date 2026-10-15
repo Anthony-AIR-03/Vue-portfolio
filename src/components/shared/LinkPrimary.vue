@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { computed, defineProps } from "vue";
 
-defineProps<{ link: string|Object; linkText: string; className?: string }>();
+const props = defineProps<{ link: string|Object; linkText: string; className?: string }>();
+
+// Absolute URLs (e.g. the minor subdomain) leave the SPA, so they need a plain <a> instead of router-link.
+const isExternal = computed(() => typeof props.link === "string" && /^https?:\/\//.test(props.link));
 </script>
 
 <template>
@@ -10,7 +13,12 @@ defineProps<{ link: string|Object; linkText: string; className?: string }>();
         :class="className"
     >
         <p class="link-primary__content__text textM">{{ linkText }}</p>
-        <router-link :to="link" class="link-primary__image">
+        <component
+            :is="isExternal ? 'a' : 'router-link'"
+            v-bind="isExternal ? { href: link, target: '_blank', rel: 'noopener' } : { to: link }"
+            :aria-label="linkText"
+            class="link-primary__image"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="78"
@@ -27,7 +35,7 @@ defineProps<{ link: string|Object; linkText: string; className?: string }>();
                     fill="white"
                 />
             </svg>
-        </router-link>
+        </component>
     </nav>
 </template>
 
