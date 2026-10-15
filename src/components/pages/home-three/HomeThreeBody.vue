@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AllBlogsCard from "@/components/pages/home-one/AllBlogsCard.vue";
+import MinorCard from "@/components/pages/home-one/MinorCard.vue";
 import AllProjects from "@/components/pages/home-one/AllProjects.vue";
 import AllServiceCard from "@/components/pages/home-one/AllServiceCard.vue";
 import BioCard from "@/components/pages/home-one/BioCard.vue";
@@ -14,7 +14,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
 <template>
     <section class="parent m-t-60px container position-relative z-2">
         <BioCard class="BioCard" />
-        <AllBlogsCard class="AllBlogsCard" />
+        <MinorCard class="MinorCard" />
         <TitleCard class="TitleCard" />
         <ProfileCard class="ProfileCard" />
         <AllServiceCard class="AllServiceCard" />
@@ -62,7 +62,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
         grid-row: span 1;
     }
 
-    .AllBlogsCard {
+    .MinorCard {
         grid-column-start: 1;
         grid-row-start: 3;
         grid-column: span 2;
@@ -127,7 +127,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
         grid-column-start: 3;
     }
 
-    .AllBlogsCard {
+    .MinorCard {
         grid-row-start: 2;
         grid-column-start: 2;
         grid-column-end: 4;
@@ -181,7 +181,7 @@ import TitleCard from "@/components/pages/home-three/TitleCard.vue";
         grid-row: span 4 / span 4;
     }
 
-    .AllBlogsCard {
+    .MinorCard {
         grid-row: span 2 / span 2;
         grid-column-start: 1;
         grid-row-start: 5;

@@ -8,12 +8,12 @@
         "buttonText": "I'm Anthony Inocencio Ramos",
         "biography": "biography"
     },
-    "allBlogsCard": {
+    "minorCard": {
         "title": {
-            "partOne": "Articles &",
-            "partTwo": "Publications"
+            "partOne": "Minor AI, Games",
+            "partTwo": "& Digital Literacy"
         },
-        "linkText": "All Blogs"
+        "linkText": "View minor"
     },
     "titleCard": {
         "title": "title"

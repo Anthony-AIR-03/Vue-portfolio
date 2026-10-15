@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import allBlogsStar from "@/assets/image/all-blog-card-star.png";
+import minorCardStar from "@/assets/image/all-blog-card-star.png";
 import CustomTransition from "@/components/shared/CustomTransition.vue";
 import LinkPrimary from "@/components/shared/LinkPrimary.vue";
 </script>
 
 <template>
     <CustomTransition>
-        <section class="card-style all-blog-card">
-            <article class="all-blog-card__title-text">
-                <p class="heading-4">{{ $t("allBlogsCard.title.partOne")}}</p>
-                <p class="all-blog-card__title-text-two heading-4">
-                    {{ $t("allBlogsCard.title.partTwo")}}
+        <section class="card-style minor-card">
+            <article class="minor-card__title-text">
+                <p class="heading-4">{{ $t("minorCard.title.partOne")}}</p>
+                <p class="minor-card__title-text-two heading-4">
+                    {{ $t("minorCard.title.partTwo")}}
                 </p>
             </article>
 
             <LinkPrimary
-                :linkText="$t('allBlogsCard.linkText')"
-                :link="{ name: 'blogs'}"
-                class="all-blog-card__link"
+                :linkText="$t('minorCard.linkText')"
+                link="https://minor.anthony-air.nl"
+                class="minor-card__link"
             />
             <img
-                :src="allBlogsStar"
+                :src="minorCardStar"
                 alt="Title Card Shape"
-                class="all-blog-card__shapes-image-articles light-mood-image-shape"
+                class="minor-card__shapes-image-articles light-mood-image-shape"
                 aria-hidden="true"
                 loading="lazy"
                 decoding="async"
@@ -32,39 +32,39 @@ import LinkPrimary from "@/components/shared/LinkPrimary.vue";
 </template>
 
 <style scoped>
-.all-blog-card__link {
+.minor-card__link {
     margin-top: 53px;
 }
 
 @media (max-width: 1400px) {
-    .all-blog-card__link {
+    .minor-card__link {
         margin-top: 53px;
     }
 }
 
 @media (max-width: 992px) {
-    .all-blog-card__link {
+    .minor-card__link {
         margin-top: 37px;
     }
 }
 
-/* All Blogs card */
-.all-blog-card {
+/* Minor card */
+.minor-card {
     padding: 32px;
     position: relative;
 }
 
 @media (max-width: 1400px) {
-    .all-blog-card {
+    .minor-card {
         padding: 20px;
     }
 }
 
-.all-blog-card__title-text-two {
+.minor-card__title-text-two {
     margin-left: 38px;
 }
 
-.all-blog-card__shapes-image-articles {
+.minor-card__shapes-image-articles {
     position: absolute;
     right: 24px;
     top: 0;

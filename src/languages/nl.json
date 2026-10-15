@@ -8,12 +8,12 @@
     "buttonText": "Anthony Inocencio Ramos",
     "biography": "biografie"
   },
-  "allBlogsCard": {
+  "minorCard": {
     "title": {
-      "partOne": "Artikelen &",
-      "partTwo": "Publicaties"
+      "partOne": "Minor AI, Games",
+      "partTwo": "& Digitale Geletterdheid"
     },
-    "linkText": "Alle blogs"
+    "linkText": "Bekijk minor"
   },
   "titleCard": {
     "title": "titel"
