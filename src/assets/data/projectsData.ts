@@ -16,6 +16,17 @@ import irmaosHero from "@/assets/image/project-irmaos-hero.png";
 import irmaosAtlas from "@/assets/image/project-irmaos-atlas.png";
 import irmaosAtlasDark from "@/assets/image/project-irmaos-atlas-dark.png";
 import irmaosProblems from "@/assets/image/project-irmaos-problems.png";
+import quireFrontPage from "@/assets/image/project-quire-front-page.jpg";
+import quireArticle from "@/assets/image/project-quire-article.jpg";
+import quireReadingSettings from "@/assets/image/project-quire-reading-settings.jpg";
+import quireNight from "@/assets/image/project-quire-night.jpg";
+import quirePhone from "@/assets/image/project-quire-phone.jpg";
+import hercuLeanHero from "@/assets/image/project-hercu-lean-hero.png";
+import hercuLeanToday from "@/assets/image/project-hercu-lean-today.jpg";
+import hercuLeanTodayDark from "@/assets/image/project-hercu-lean-today-dark.jpg";
+import hercuLeanAdd from "@/assets/image/project-hercu-lean-add.jpg";
+import hercuLeanLibrary from "@/assets/image/project-hercu-lean-library.jpg";
+import hercuLeanTrends from "@/assets/image/project-hercu-lean-trends.jpg";
 import qmobielHero from "@/assets/image/project-qmobiel-hero.jpg";
 import qmobielConnectivity from "@/assets/image/project-qmobiel-connectivity.jpg";
 import qmobielExpertise from "@/assets/image/project-qmobiel-expertise.jpg";
@@ -176,6 +187,37 @@ export const projectsData: Project[] = [
     tags: ["HTML", "CSS", "Vanilla JavaScript", "Three.js", "Node.js", "Brand Identity", "Accessibility", "Responsive Design"],
     links: [{ label: "Live", href: "https://irmaoscleaners.com" }],
     screenshots: [irmaosHero, irmaosAtlas, irmaosProblems, irmaosAtlasDark],
+  },
+  {
+    slug: "hercu-lean",
+    title: { en: "Hercu-lean", nl: "Hercu-lean" },
+    shortDescription: {
+      en: "An invite-only food diary that tracks kcal, protein, fibre and carbs honestly: what isn't on the label stays unknown, not zero.",
+      nl: "Een eetdagboek op uitnodiging dat kcal, eiwit, vezels en koolhydraten eerlijk bijhoudt: wat niet op het etiket staat, blijft onbekend in plaats van nul.",
+    },
+    description: {
+      en: "Hercu-lean (Hercules + lean) is a calorie and nutrient tracker in the spirit of MyFitnessPal, built for a small invited circle of mostly Dutch users who log food on their phone in a few seconds. What sets it apart is that it refuses to pretend. A missing nutrient stays unknown, and every total says how much of the day it covers (\"fibre known for 4 of 5 items\"); labels that only give kJ get a derived kcal that is marked as such. Every diary entry stores the nutrition it was logged with, so editing a product never rewrites your history. You log by meal in grams, millilitres or servings, scan barcodes with the phone camera (the native BarcodeDetector, with ZXing as a fallback), and reuse favourites, saved meals, recipes and whole days. Barcode lookups and search hit a local copy of the Open Food Facts catalogue first, kept current with a monthly full import and daily deltas, and only call the live API when that misses. Barcode products are shared, products without one stay private, and you can keep a private correction instead of changing someone else's. Trends show kcal and macros over 7, 30 or 90 days next to a body-weight log. There's no public sign-up and no coaching: no streaks, no badges, no red when you go over. Ownership is checked on the server for every read and write. The design, De Twaalf Werken, sets each day like a painted Doric temple frieze: the day's kcal carved into a cinnabar band, protein, fibre and carbs as the three grooves of a triglyph filling with gold, and each meal guarded by one of Hercules' labours. It's Dutch first, with English as a second language, and deploys automatically from GitHub Actions as Docker images.",
+      nl: "Hercu-lean (Hercules + lean) is een calorie- en voedingstracker in de geest van MyFitnessPal, gebouwd voor een kleine kring genodigde, vooral Nederlandse gebruikers die hun eten in een paar seconden op hun telefoon bijhouden. Wat het anders maakt, is dat het niets verzint. Een ontbrekende voedingswaarde blijft onbekend, en elk totaal laat zien hoeveel van de dag het dekt (\"vezels bekend voor 4 van 5 items\"); etiketten met alleen kJ krijgen een afgeleide kcal die als zodanig is gemarkeerd. Elke regel in het dagboek bewaart de voedingswaarden waarmee hij is gelogd, dus een product aanpassen herschrijft nooit je geschiedenis. Je logt per maaltijd in grammen, milliliters of porties, scant barcodes met de camera van je telefoon (de native BarcodeDetector, met ZXing als terugvaloptie) en hergebruikt favorieten, opgeslagen maaltijden, recepten en hele dagen. Barcodes en zoekopdrachten gaan eerst naar een lokale kopie van de Open Food Facts-catalogus, actueel gehouden met een maandelijkse volledige import en dagelijkse delta's, en pas naar de live API als daar niets wordt gevonden. Producten met een barcode worden gedeeld, producten zonder blijven privé, en je kunt een eigen correctie bewaren in plaats van het product van een ander aan te passen. Trends tonen kcal en macro's over 7, 30 of 90 dagen, naast een gewichtslogboek. Er is geen openbare registratie en geen coaching: geen streaks, geen badges, geen rood als je over je doel gaat. Eigenaarschap wordt bij elke lees- en schrijfactie op de server gecontroleerd. Het ontwerp, De Twaalf Werken, zet elke dag neer als een beschilderd Dorisch tempelfries: de kcal van de dag uitgehouwen in een cinnaberrode band, eiwit, vezels en koolhydraten als de drie groeven van een triglief die zich met goud vullen, en elke maaltijd bewaakt door een van de werken van Hercules. De app is Nederlandstalig met Engels als tweede taal, en wordt automatisch uitgerold vanuit GitHub Actions als Docker-images.",
+    },
+    image: hercuLeanHero,
+    tags: ["Vue 3", "TypeScript", "Pinia", "Hono", "Node.js", "PostgreSQL", "Drizzle", "Better Auth", "Open Food Facts", "Docker", "GitHub Actions"],
+    screenshots: [hercuLeanToday, hercuLeanAdd, hercuLeanLibrary, hercuLeanTrends, hercuLeanTodayDark],
+  },
+  {
+    slug: "quire",
+    title: { en: "Quire", nl: "Quire" },
+    shortDescription: {
+      en: "A personal press for one reader: save links, bind them into an issue and read it like a Sunday paper, set for dyslexic readers.",
+      nl: "Een eigen drukpers voor één lezer: bewaar links, bundel ze tot een editie en lees die als een zondagskrant, gezet voor lezers met dyslexie.",
+    },
+    description: {
+      en: "Quire is for people who keep articles to read later and then never do. Paste a link and Quire saves it at once, then fills the card in step by step: headline, photo, what the piece claims, and other reporting on that claim, each labelled by stance (other reporting, a contrasting angle, or could not place), using Grok and a search API. It never invents a related page; fewer results beat junk. You tick what belongs together and bind it into an issue: Quire fetches the authors' own words once and locks them, so an issue reads the same tomorrow. You read it as a front page, then one piece per page, and can print the issue as a PDF. Bookmarks remember the page and paragraph where you stopped, so reading follows you from laptop to phone. This is my own build of William Gomes' original project: I added owner-only sign-in with Better Auth, self-hosting on PostgreSQL with Docker images built by GitHub Actions, bookmarks, and a complete redesign. The design, the Sunday Bundle, frames each issue like a British Sunday paper (blackletter nameplate, Oxford rules, ears, a marigold band at the head of each piece) while the reading itself follows the BDA Dyslexia Style Guide: Atkinson Hyperlegible Next at 19px, one ragged-right column of at most 64 characters, no italics or justified text. Readers choose from six paper colours, four text sizes and the WCAG 1.4.12 wide spacing.",
+      nl: "Quire is voor mensen die artikelen bewaren om later te lezen en dat dan nooit doen. Plak een link en Quire bewaart hem meteen, en vult de kaart daarna stap voor stap aan: kop, foto, wat het stuk beweert, en andere berichtgeving over die bewering, elk gelabeld naar standpunt (andere berichtgeving, een andere invalshoek, of niet te plaatsen), met Grok en een zoek-API. Het verzint nooit een gerelateerde pagina; minder resultaten is beter dan rommel. Je vinkt aan wat bij elkaar hoort en bundelt het tot een editie: Quire haalt de eigen woorden van de auteurs één keer op en legt ze vast, zodat een editie morgen nog precies hetzelfde leest. Je leest het als een voorpagina en daarna één stuk per pagina, en kunt de editie als pdf afdrukken. Bladwijzers onthouden de pagina en de alinea waar je bent gestopt, zodat het lezen je van laptop naar telefoon volgt. Dit is mijn eigen versie van het oorspronkelijke project van William Gomes: ik heb inloggen voor alleen de eigenaar toegevoegd met Better Auth, self-hosting op PostgreSQL met Docker-images die GitHub Actions bouwt, bladwijzers en een volledig nieuw ontwerp. Het ontwerp, de Sunday Bundle, omlijst elke editie als een Britse zondagskrant (een gotische krantenkop, Oxford-lijnen, oren naast de kop, een goudsbloemgele band boven elk stuk), terwijl het lezen zelf de BDA Dyslexia Style Guide volgt: Atkinson Hyperlegible Next op 19px, één kolom van hoogstens 64 tekens met rechts rafelige regels, geen cursief en geen uitgevulde tekst. Lezers kiezen uit zes papierkleuren, vier tekstgroottes en de ruime spatiëring van WCAG 1.4.12.",
+    },
+    image: quireFrontPage,
+    tags: ["React", "TypeScript", "TanStack Start", "Vite", "PostgreSQL", "Better Auth", "Grok API", "Docker", "GitHub Actions", "Accessibility"],
+    links: [{ label: "GitHub", href: "https://github.com/Anthony-AIR-03/quire" }],
+    screenshots: [quireFrontPage, quireArticle, quireReadingSettings, quireNight, quirePhone],
   },
   {
     slug: "qmobiel-website",
