@@ -216,7 +216,7 @@ export const projectsData: Project[] = [
     },
     image: quireFrontPage,
     tags: ["React", "TypeScript", "TanStack Start", "Vite", "PostgreSQL", "Better Auth", "Grok API", "Docker", "GitHub Actions", "Accessibility"],
-    links: [{ label: "GitHub", href: "https://github.com/Anthony-AIR-03/quire" }],
+    links: [{ label: "GitHub", href: "https://github.com/Anthony-AIR-03/quire/tree/personal" }],
     screenshots: [quireFrontPage, quireArticle, quireReadingSettings, quireNight, quirePhone],
   },
   {
