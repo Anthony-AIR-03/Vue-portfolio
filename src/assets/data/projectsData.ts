@@ -4,6 +4,7 @@ import hupolResults from "@/assets/image/project-hupol-results.jpg";
 import telumeraScreenshot from "@/assets/image/project-telumera.jpg";
 import telumeraGeographyScreenshot from "@/assets/image/project-telumera-geography.jpg";
 import telumeraQualityScreenshot from "@/assets/image/project-telumera-quality.jpg";
+import telumeraTechnologyScreenshot from "@/assets/image/project-telumera-technology.jpg";
 import telumeraCiList from "@/assets/image/project-telumera-ci-list.jpg";
 import telumeraCiMatrix from "@/assets/image/project-telumera-ci-matrix.jpg";
 import wuzziCpScreenshot from "@/assets/image/project-wuzzi-cp.jpg";
@@ -136,6 +137,7 @@ export const projectsData: Project[] = [
       telumeraScreenshot,
       telumeraGeographyScreenshot,
       telumeraQualityScreenshot,
+      telumeraTechnologyScreenshot,
       telumeraCiList,
       telumeraCiMatrix,
     ],
